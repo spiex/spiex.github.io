@@ -1,0 +1,143 @@
+.switch {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  margin: 0;
+  & ::before {
+    position: absolute;
+    content: '';
+    top: 4px;
+    left: 4px;
+    background: white;
+    height: calc(100% - 8px);
+    width: 22px;
+    transition: .4s;
+  }
+  & ::after {
+    position: absolute;
+    content: '';
+    color: white;
+    font-size: 14px;
+    transition: .4s;
+    top: 6px;
+    right: 6px;
+    left: 36px;
+    text-align: center;
+  }
+  input {
+    display: none;
+    &:checked + span {
+    background: $green;
+    }
+    &:checked + span:after {
+      transform: translateX(-30px);
+    }
+  }
+  span {
+    background: $dark-grey;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+  }
+}
+
+.switch-medium input:checked + span:before {
+  transform: translateX(70px);
+}
+
+
+.switch-medium {
+  width: $item-m;
+}
+
+
+.spiex::after {
+  content: 'śpiex';
+}
+.trybul::after {
+  content: 'trybul';
+}
+.mareczek::after {
+  content: 'mareczek';
+}
+
+
+// ===== BOX SETTINGS
+.future-runs-item {
+  box-shadow: 0 2px 2px rgba(0,0,0,.5);
+  position: relative;
+  margin-top: 8px;
+  width: 400px;
+  &:last-of-type {
+    margin-bottom: 8px;
+  }
+  text-align: center;
+  font-size: .8em;
+  p, h4, .box-header {
+    margin: 2px 0;
+    display: inline-block;
+    min-height: 25px;
+    margin: 0 auto;
+  }
+  h4 {
+    background-color: $color-primary;
+    color: $white;
+    padding: 2px 0;
+  }
+  .box-header {
+    @include flexy($just: space-around);
+    width: 100%;
+    h4 {
+      flex: 6;
+    }
+    p {
+      flex: 2;
+      background-color: $color-primary;
+      color: $white;
+    }
+  }
+  .delete-box {
+    flex: 1;
+    max-width: 20px;
+    font-weight: 700;
+  }
+  .edit-box,
+  .edit-box-hidden {
+    flex: 2;
+  }
+  .delete-box,
+  .edit-box,
+  .edit-box-hidden {
+    cursor: pointer;
+    background-color: $color-primary;
+    color: $white;
+    &:hover {
+      background-color: $white;
+      color: $color-primary;
+    }
+  }
+  p {
+    flex: 1;
+    padding: 3px 0;
+  }
+}
+
+.future-runs-item-flex {
+  @include flexy($dir: row, $just: space-around);
+  align-items: center;
+  label {
+    margin: 4px 0;
+  }
+  padding: 8px 0;
+  display: none;
+}
+
+
+aside {
+  border-left: $border-thin $light-grey;
+  text-align: center;
+}

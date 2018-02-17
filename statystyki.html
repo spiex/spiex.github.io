@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tabelka biegowa: sezony</title>
+  <link rel="stylesheet" href="scss/style.min.css">
+</head>
+
+<body>
+  <header class="jumbo">
+    <nav>
+      <ul>
+        <li class="nav-dropdown">
+          <a href="#" class="selected">statystyki</a>
+          <div class="nav-dropdown-content">
+            <a href="#" onclick="zyciowki()">życiówki</a>
+            <a href="#">tabelka przekrojowa</a>
+            <a href="#">porównywarka czasów</a>
+            <a href="#">top startów</a>
+          </div>
+        </li>
+        <li class="nav-dropdown"><a href="bazastartow.html">baza startów</a></li>
+        <li class="nav-dropdown"><a href="sezony.html">sezony</a></li>
+      </ul>
+    </nav>
+    <h1>tabelka biegowa</h1>
+    <p id="table-top">sezon 2014-<script>document.write(new Date().getFullYear())</script></p>
+  </header>
+
+  <main id="zyciowki">
+  
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script/database.js"></script>
+  <script src="script/statystyki.js"></script>
+</body>
+</html>

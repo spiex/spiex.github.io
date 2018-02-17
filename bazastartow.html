@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabelka biegowa: baza startów</title>
+    <link rel="stylesheet" href="scss/style.min.css">
+  </head>
+  <body>
+    <header class="jumbo">
+      <nav>
+        <ul>
+          <li><a href="statystyki.html">statystyki</a></li>
+          <li><a href="#" class="selected">baza startów</a></li>
+          <li><a href="sezony.html">sezony</a></li>
+        </ul>
+      </nav>
+      <h1>tabelka biegowa</h1>
+      <p id="table-top">sezon 2014-<script>document.write(new Date().getFullYear())</script></p>
+    </header>
+
+    <main>
+      <div class="side-box">
+        <div id="stats-select">
+          <h3>filtruj bazę startów</h3>
+          <div id="box-filtrow">
+            <select id="distance-select">
+              <option value="all">wszystkie</option>
+              <option value="5">5k</option>
+              <option value="10">10k</option>
+              <option value="15">15k</option>
+              <option value="21.1">21.1k</option>
+              <option value="42.2">42.2k</option>
+            </select>
+            <select id="year-select">
+              <option value="all">wszystko</option>
+              <option value="all14">od 2014</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+            </select>
+            <select id="runner-select">
+              <option value="all">wszyscy</option>
+              <option value="Śpiex">śpiex</option>
+              <option value="Trybul">trybul</option>
+              <option value="Mareczek">mareczek</option>
+            </select>
+            <button class="btn-primary" id="filter-button">filtruj wyniki</button>
+          </div>
+          <a class="btn-secondary" id="btn-up" href="#table-top">do góry</a>
+        </div>
+        <form id="add-result">
+          <h3>dodaj bieg do bazy</h3>
+          <select id="kto-biegu" required>
+            <option selected disabled> --- wybierz zawodnika z listy ---</option>
+            <option value="Śpiex">śpiex</option>
+            <option value="Trybul">trybul</option>
+            <option value="Mareczek">mareczek</option>
+          </select>
+          <select id="nazwa-biegu" required></select>
+          <button class="btn-primary" id="wpisz-recznie">biegu nie ma na liście?</button>
+          <div id="box-czasu">
+            <input type="text" id="data-biegu" autocomplete="off" required placeholder="data (rrrr/mm/dd)" pattern="(19|20)\d\d[/](0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])">
+            <input type="text" id="dystans-biegu" autocomplete="off" required placeholder="dystans (5 / 21.1)" pattern="[0-9.]*">
+
+            <input type="text" id="czas-biegu" autocomplete="off" required placeholder="czas (00:00:00)" pattern="[0-9][0-9]:[0-5][0-9]:[0-5][0-9]">
+            <label class="switch switch-medium">
+              <input class="wybranyzawodnik switch-mareczek" type="checkbox" id="zyciowka-biegu">
+              <span class="zyciowka"></span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary" id="add-result-button">dodaj bieg do bazy</button>
+        </form>
+      </div>
+      <div class="table-wrapper">
+        <div class="wyniki">
+        <table id="top-row">
+          <tr><td class="cell-numeral">#</td><td onclick="sortTable(1)" class="cell-date"> data </td><td onclick="sortTable(2)" class="cell-run-name"> bieg </td><td onclick="sortTable(3)" class="cell-distance"> km </td><td onclick="sortTable(4)" class="cell-duration"> czas </td><td onclick="sortTable(5)" class="cell-duration"> tempo </td><td onclick="sortTable(6)" class="cell-duration"> kto </td></tr>
+        </table>
+        <table id="baza-startow">
+        </table>
+      </div>
+      </div>
+      <a href="#table-top" id="up">up</a>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script/database.js"></script>
+    <script src="script/bazastartow.js"></script>
+    <script>filterAll();</script>
+  </body>
+</html>
