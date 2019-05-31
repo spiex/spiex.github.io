@@ -8,7 +8,7 @@
 * {
   box-sizing: border-box;
 }
- 
+
 h1 {
   font: 2em/2 'Coda', cursive; //'Lalezar', cursive;
   text-align: center;
@@ -442,9 +442,7 @@ nav {
 .button-box {
   @include flexy($dir: row, $just: center);
   align-items: center;
-  margin-top: 10px;
-  margin-left: 40px;
-  margin-right: 34px;
+  margin: 10px 34px 40px 40px;
 }
 
 button {
