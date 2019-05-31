@@ -1,0 +1,495 @@
+// import partials
+@import 'partials/variables';
+
+// import fonts
+@import url('https://fonts.googleapis.com/css?family=Coda|Titillium+Web:400,700&display=swap&subset=latin-ext');
+
+// general
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font: 2em/2 'Coda', cursive; //'Lalezar', cursive;
+  text-align: center;
+}
+
+h2 {
+  font: 1.4em/2 'Coda', cursive;
+  text-align: left;
+  margin: 4px auto;
+  border-bottom: 2px solid $champions-league-blue;
+}
+
+body {
+  font: .85em/1.5 'Titillium Web', sans-serif;
+  font-weight: 400;
+  background-color: $white;
+  margin: 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+p {
+  margin: 4px 0;
+}
+
+.handicap-1 {
+  color: $handicap-1;
+}
+
+.handicap-2 {
+  color: $handicap-2;
+}
+
+
+// specific boxes and other
+#header-table {
+  margin: 15px 0;
+  table {
+    max-width: 450px;
+    border-collapse: collapse;
+    tr:first-child {
+      font-variant: small-caps;
+      font-weight: 700;
+    }
+    tr:last-child td {
+      font-variant: small-caps;
+    }
+
+    // kolory rzędów
+    tr:nth-child(2) td {
+      background-color: $wyroznienie-1;
+      // background-color: $champions-league-blue;
+      // color: $white;
+    }
+
+    tr:nth-child(3) td,
+    tr:nth-child(4) td {
+      background-color: $wyroznienie-2;
+      // background-color: $wyroznienie-1;
+    }
+    // kolory rzędów
+
+    td {
+      text-align: center;
+      padding: 2px 4px;
+    }
+    tr td:first-child {
+      text-align: left;
+      font-weight: 700;
+      min-width: 25%;
+    }
+    tr:nth-child(2) td {
+      border-top: 1px solid $black;
+    }
+    //
+    // tr:nth-child(4) td {
+    //   border-bottom: 1px dotted $black;
+    // }
+
+    tr:last-child td {
+      border-top: 1px solid $black;
+    }
+
+    tr td:nth-child(3),
+    tr td:nth-child(4) {
+      font-weight: 700;
+    }
+
+    tr td:nth-child(2) {
+      text-align: right;
+      font-weight: 700;
+    }
+
+    tr:not(:first-child) td:nth-child(2),
+    tr:not(:first-child) td:nth-child(5) {
+      font-size: .85em;
+    }
+  }
+}
+
+#current-matches-box {
+
+}
+
+#graph-box {
+
+}
+
+.jumbo {
+  // background: url(https://s3-eu-central-1.amazonaws.com/centaur-wp/creativereview/prod/content/uploads/2018/06/banner-UCL18-21_PressKit_KeyVisual_Stadium-1920x604.jpg) no-repeat;
+  // background-attachment: fixed;
+  // background-position: 50% 0%;
+  background-color: $champions-league-blue;
+  text-shadow: 0 4px 4px rgba(0,0,0,.5);
+  box-shadow: 0 2px 2px rgba(black,.8);
+  padding-top: 40px;
+  height: $jumbo-height;
+  h1 {
+    color: $white;
+    margin-bottom: -10px;
+  }
+  p {
+    color: $white;
+    text-align: center;
+    font-size: .9em;
+  }
+}
+
+footer,
+.text-small {
+  text-align: center;
+  font-size: .75em;
+}
+
+.main-box {
+  @include flexy($dir: column, $just: space-around);
+}
+
+
+
+.info-text {
+  text-align: justify;
+  margin-top: 15px;
+}
+
+.wrapper {
+  flex: 1;
+  width: 94%;
+  margin: auto;
+}
+
+nav {
+  background-color: rgba($black,1);
+  box-shadow: 0 2px 2px rgba(black,.8);
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  transition: .4s;
+  top: 0;
+  z-index: 10;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @include flexy($dir: row, $just: space-around);
+  }
+  li, a {
+    flex: 1;
+    height: 40px;
+  }
+  a {
+    text-decoration: none;
+    text-align: center;
+    @include flexy($dir: column, $just: center);
+    color: $white;
+    &:hover {
+      background: rgba($champions-league-blue,1);
+    }
+  }
+}
+
+// class selected
+.selected {
+  background: rgba($champions-league-blue,1);
+}
+
+
+
+// == imported from codepen
+.matches {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.match-box {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  width: 99%;
+  height: 30px;
+  box-shadow: 0 2px 4px rgba($black,.8);
+  margin: 2px auto;
+  p {
+  flex-grow: 3;
+  margin: 2px 0;
+    &:nth-child(6n+2),
+    &:nth-child(6n+5) {
+      font-weight: 700;
+      width: 30%;
+      padding: 3px 4px;
+    }
+    &:nth-child(6n+5) {
+      text-align: right;
+    }
+  }
+  .typ,
+  .pseudoinput {
+    margin: 2px 2px;
+    padding: 3px 0;
+  }
+  .support {
+    font-size: .8em;
+    padding: 5px 0;
+    max-width: 40px;
+    min-width: 40px;
+    text-align: center;
+  }
+  p:last-child {
+    font-size: .75em;
+    padding: 5px 0;
+    // flex-grow: 1;
+    max-width: 30px;
+    min-width: 30px;
+    text-align: center;
+  }
+
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  margin: 2px 2px;
+  padding: 1px;
+  flex-grow: 1;
+  min-width: 30px;
+  max-width: 30px;
+}
+
+
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  height: 24px;
+  width: 24px;
+  background-color: $white;
+
+  // x2
+  color: rgba($black,.5); //$champions-league-blue;
+  font-size: .5em;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px 0;
+
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba($black,.8) inset;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: $handicap-1; // #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $champions-league-blue;
+  box-shadow: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid $handicap-1;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.pseudoinput {
+  background: $white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba($black,.8) inset;
+  color: $champions-league-blue;
+  text-align: center;
+  font-weight: bold;
+  max-width: 26px;
+  width: 26px;
+  flex-grow: 3;
+  margin: 2px 2px;
+  padding: 1px;
+}
+
+.typ {
+  max-width: 26px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba($black,.8) inset;
+  color: $champions-league-blue;
+  height: 26px;
+  text-align: center;
+  font: inherit;
+  font-weight: bold;
+  &::placeholder {
+    color: rgba($black,.5);
+  }
+}
+
+.match-box {
+  background: $champions-league-blue;
+  color: $white;
+}
+
+.handicap-1 {
+  color: $handicap-1;
+}
+
+.handicap-2 {
+  color: $handicap-2;
+  // text-shadow: -1px 0 1px $white, 0 1px 1px $white, 1px 0 1px $white, 0 -1px 1px $white;
+}
+
+.hidden-content {
+  text-indent: 0;
+  @include flexy($dir: row, $wrap: wrap);
+  // display: none;
+  width: 95%; // or 99%, same as match-box
+  height: 0;
+  overflow: hidden;
+  transition: .4s;
+  margin: auto;
+  margin-bottom: 4px;
+  margin-top: -2px;
+  z-index: -1;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 8px rgba($black,.8);
+  p {
+    padding: 4px;
+    margin: 0;
+    flex-grow: 1;
+    border: none;
+    text-align: center;
+    &:nth-child(5n+1) {
+      width: 35px;
+    }
+    &:nth-child(5n+5) {
+      width: 25px;
+      font-size: .9em;
+      padding: 5px 0;
+    }
+    &:nth-child(5n+3),
+    &:nth-child(5n+2),
+    &:nth-child(5n+4) {
+      width: calc((100% - 80px) / 3); // -the width of 1st and 5th
+    }
+
+    &:nth-child(5n+2) {
+      text-align: left;
+    }
+    &:nth-child(5n+4) {
+      text-align: right;
+      font-weight: bold;
+    }
+  }
+}
+
+.trafiony-wynik {
+  background: $wyroznienie-1;
+}
+
+.trafiony-rezultat {
+  background: $wyroznienie-2;
+}
+
+.bold {
+  font-weight:700;
+}
+
+.rozwin,
+.zwin {
+  cursor: pointer;
+}
+
+
+// === BUTTONS
+.button-box {
+  @include flexy($dir: row, $just: center);
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 34px;
+}
+
+button {
+  width: 50%;
+  height: 30px;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+  margin: 4px .5%;
+}
+
+.btn-primary-2 {
+  color: $champions-league-blue;
+  background: $handicap-1;
+  box-shadow: 0 2px 4px rgba($black,.8);
+  &:active {
+    background: rgba($handicap-1,.4);
+    // transform:translateY(1px);
+  }
+  &:disabled {
+    background-color: $red;
+    color: $white;
+    border: none;
+    }
+}
+
+.btn-secondary-2 {
+  color: $black;
+  background: $white;
+  box-shadow: 0 2px 4px rgba($black,.8);
+  &:active {
+    background: $gray;
+  }
+}
+
+
+
+
+
+// random IDs
+#typy-1 {
+
+}

@@ -1,0 +1,34 @@
+// colors
+$green: #9FC490;
+$salmon: #FFA69E;
+$light-green: #4ECDC4;
+$red: #FE4A49;
+
+$white: #f9f9f9;
+$black: #333;
+$gray: #CEE0DC;
+
+$wyroznienie-1: #AFC2D5;
+$wyroznienie-2: #CEE0DC; // pinkish #F1DEDE; //#D6D1CD;
+
+$champions-league-blue: #162E58;
+$handicap-1: #FFF275;
+$handicap-2: #FFA69E;
+
+
+
+// measurements
+$max-width: 90%;
+$jumbo-height: 140px;
+
+// MIXINS
+@mixin flexy(
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
