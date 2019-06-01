@@ -9,7 +9,7 @@ for (let i = 0; i < wyniki.length; i++) {
       if (e.target.className == "rozwin" ) {
         let box2 = e.target.parentNode;
         let box3 = box2.nextElementSibling;
-        box3.style.height = "204px"; // TODO: 28px x liczba graczy
+        box3.style.height = "196px"; // TODO: 28px x liczba graczy
         e.target.textContent = "▲";
         e.target.className = "zwin";
       } else if (e.target.className == "zwin" ) {
