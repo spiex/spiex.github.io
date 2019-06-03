@@ -531,6 +531,7 @@ $strong-red: #92140C;
 .legenda-tabeli {
   @include flexy($dir: row, $just: space-between);
   font-variant: small-caps;
+  width: 100%;
   margin: 4px auto;
   border-bottom: 1px dashed $black;
   p {
@@ -584,7 +585,7 @@ $strong-red: #92140C;
 
 .legenda-tabeli,
 .table-row {
-    p:first-child {
+  p:first-child {
     width: 10%;
     text-align: center;
   }
