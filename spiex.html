@@ -34,6 +34,7 @@
       </div>
       <h2>Nadchodzące mecze</h2>
       <div class="main-box" id="typy">
+
       </div>
         <!-- <div class="match-box">
           <p class="support">9</p>
@@ -128,10 +129,8 @@
           <div class="progress-slider" id="pozostale-kapitany"></div>
         </div>
         <div class="button-box">
-
           <button class="btn-secondary-2">SPRAWDŹ TYPY</button>
           <button class="btn-primary-2">PRZEŚLIJ TYPY</button>
-
         </div>
       </div>
     </div>
@@ -172,16 +171,16 @@
           let typy = [];
           for(let i = 1; i < result.length; i++) {
             typy += `<div class="match-box">
-              <p class="support">${result[i][2]}</p>
-              <p class="handicap-2">${result[i][3]}</p>
-              <input class="typ" placeholder="?">${result[i][4]}</input>
-              <input class="typ" placeholder="?">${result[i][5]}</input>
-              <p>${result[i][4]}</p>
-              <label class="container">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark">x2</span>
-              </label>
-            </div>`
+                      <p class="support">${result[i][1]}</p>
+                      <p class="handicap-2">${result[i][2]}</p>
+                      <input class="typ" placeholder="?">${result[i][4]}</input>
+                      <input class="typ" placeholder="?">${result[i][5]}</input>
+                      <p>${result[i][3]}</p>
+                      <label class="container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark">x2</span>
+                      </label>
+                    </div>`
           }
           console.log(typy);
           print(typy,'#typy');
@@ -192,7 +191,7 @@
         request.then(function(response) {
           // TODO: Change code below to process the `response` object:
           console.log(response.result);
-          nadchodzaceMecze(response.result);
+          nadchodzaceMecze(response);
 
         }, function(reason) {
           console.error('error: ' + reason.result.error.message);
