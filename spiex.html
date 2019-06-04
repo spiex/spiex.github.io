@@ -169,7 +169,7 @@
 
         function nadchodzaceMecze(result) {
           let typy = [];
-          for(let i = 1; i < result.length; i++) { // ternary operator on 180
+          for(let i = 1; i < result.length -1; i++) { // ternary operator on 180
             typy += `<div class="match-box">
                       <p class="support">${result[i][2]}</p>
                       <p>${result[i][3]}</p>
