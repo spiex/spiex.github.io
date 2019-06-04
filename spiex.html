@@ -162,7 +162,8 @@
 
 
         // added
-        let activePlayer = "player-2";
+        let activePlayer = "player-1"; // player identifier, can be hardcoded into every betting page, may recognize based on logged email
+        let currentRound = 2; // TODO: can't be hardcoded
 
         function print(message, location) {
           let div = document.querySelector(location);
@@ -171,7 +172,7 @@
 
         function nadchodzaceMecze(result) {
           let typy = [];
-          let numerKolejki = 1; // TODO: can't be hardcoded
+          let numerKolejki = currentRound;
           for(let i = 1; i < result.length; i++) { // ternary operator on 180
             if (result[i][1] == numerKolejki && result[i][0] == activePlayer) {
             typy += `<div class="match-box">
