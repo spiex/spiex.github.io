@@ -169,7 +169,7 @@
 
         function nadchodzaceMecze(result) {
           let typy = [];
-          for(let i = 1; i < 8; i++) {
+          for(let i = 1; i < 8; i++) { // ternary operator on 180
             typy += `<div class="match-box">
                       <p class="support">${result[i][2]}</p>
                       <p>${result[i][3]}</p>
@@ -177,7 +177,7 @@
                       <input class="typ" placeholder="?" value="${result[i][6]}"></input>
                       <p>${result[i][4]}</p>
                       <label class="container">
-                        <input type="checkbox" ${if(result[i][7] === true) { checked="checked";}}>
+                        <input type="checkbox" ${result[i][7] ? 'checked="checked"' : '';}>
                         <span class="checkmark">x2</span>
                       </label>
                     </div>`
