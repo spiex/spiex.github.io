@@ -171,13 +171,13 @@
           let typy = [];
           for(let i = 1; i < 8; i++) {
             typy += `<div class="match-box">
-                      <p class="support">${result[i][1]}</p>
-                      <p>${result[i][2]}</p>
-                      <input class="typ" placeholder="?" value="${result[i][4]}"></input>
-                      <input class="typ" placeholder="?" value="${result[i][5]}"></input>
+                      <p class="support">${result[i][2]}</p>
                       <p>${result[i][3]}</p>
+                      <input class="typ" placeholder="?" value="${result[i][5]}"></input>
+                      <input class="typ" placeholder="?" value="${result[i][6]}"></input>
+                      <p>${result[i][4]}</p>
                       <label class="container">
-                        <input type="checkbox" checked="checked">
+                        <input type="checkbox" ${if(result[i][7] === true) { checked="checked"};}>
                         <span class="checkmark">x2</span>
                       </label>
                     </div>`
