@@ -177,7 +177,7 @@
                       <input class="typ" placeholder="?" value="${result[i][6]}"></input>
                       <p>${result[i][4]}</p>
                       <label class="container">
-                        <input type="checkbox" ${result[i][7] ? checked="checked" : ''}>
+                        <input type="checkbox" ${result[i][7] === "TRUE" ? checked="checked" : ''}>
                         <span class="checkmark">x2</span>
                       </label>
                     </div>`
