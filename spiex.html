@@ -168,7 +168,7 @@
         }
 
         function nadchodzaceMecze(result) {
-          let typy = [];
+          let typy = {};
           for(let i = 1; i < result.length; i++) {
             typy += `<div class="match-box">
                       <p class="support">${result[i][1]}</p>
@@ -191,7 +191,7 @@
         request.then(function(response) {
           // TODO: Change code below to process the `response` object:
           console.log(response.result);
-          nadchodzaceMecze(response);
+          nadchodzaceMecze(response.result);
 
         }, function(reason) {
           console.error('error: ' + reason.result.error.message);
