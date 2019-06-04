@@ -175,18 +175,20 @@
           let numerKolejki = currentRound;
           for(let i = 1; i < result.length; i++) { // ternary operator on 180
             if (result[i][1] == numerKolejki && result[i][0] == activePlayer) {
-            typy += `<div class="match-box">
-                      <p class="support">${result[i][2]}</p>
-                      <p>${result[i][3]}</p>
-                      <input class="typ" placeholder="?" value="${result[i][5]}"></input>
-                      <input class="typ" placeholder="?" value="${result[i][6]}"></input>
-                      <p>${result[i][4]}</p>
-                      <label class="container">
-                        <input type="checkbox" ${result[i][7] === "TRUE" ? checked="checked" : ''}>
-                        <span class="checkmark">x2</span>
-                      </label>
-                    </div>`
-                  }
+            // template literal, back-tick
+            typy +=
+              `<div class="match-box">
+                <p class="support">${result[i][2]}</p>
+                <p>${result[i][3]}</p>
+                <input class="typ" placeholder="?" value="${result[i][5]}"></input>
+                <input class="typ" placeholder="?" value="${result[i][6]}"></input>
+                <p>${result[i][4]}</p>
+                <label class="container">
+                  <input type="checkbox" ${result[i][7] === "TRUE" ? checked="checked" : ''}>
+                  <span class="checkmark">x2</span>
+                </label>
+              </div>`
+            }
           }
           // console.log(typy);
           print(typy,'#typy');
