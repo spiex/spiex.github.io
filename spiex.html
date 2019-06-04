@@ -160,6 +160,32 @@
           // dateTimeRenderOption: '',  // TODO: Update placeholder value.
         };
 
+
+        // added
+        function print(message, location) {
+          let div = document.querySelector(location);
+          div.innerHTML = message;
+        }
+
+        function nadchodzaceMecze(result) {
+          let typy = [];
+          for(let i = 1, i < result.length, i++) {
+            typy += `<div class="match-box">
+              <p class="support">${result[i].[2]}</p>
+              <p class="handicap-2">${result[i].[3]}</p>
+              <input class="typ" placeholder="?">${result[i].[4]}</input>
+              <input class="typ" placeholder="?">${result[i].[5]}</input>
+              <p>${result[i].[4]}</p>
+              <label class="container">
+                <input type="checkbox" checked="checked">
+                <span class="checkmark">x2</span>
+              </label>
+            </div>`
+          }
+          print(typy,'#typy');
+        }
+        // end of added
+
         var request = gapi.client.sheets.spreadsheets.values.get(params);
         request.then(function(response) {
           // TODO: Change code below to process the `response` object:
@@ -212,33 +238,6 @@
       function handleSignOutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
       }
-
-      function print(message, location) {
-        let div = document.querySelector(location);
-        div.innerHTML = message;
-      }
-
-      function nadchodzaceMecze(result) {
-        let typy = [];
-        for(let i = 1, i < result.length, i++) {
-          typy += `<div class="match-box">
-            <p class="support">${result[i].[2]}</p>
-            <p class="handicap-2">${result[i].[3]}</p>
-            <input class="typ" placeholder="?">${result[i].[4]}</input>
-            <input class="typ" placeholder="?">${result[i].[5]}</input>
-            <p>${result[i].[4]}</p>
-            <label class="container">
-              <input type="checkbox" checked="checked">
-              <span class="checkmark">x2</span>
-            </label>
-          </div>`
-        }
-        print(typy,'#typy');
-      }
-
-
-
-
     </script>
     <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
