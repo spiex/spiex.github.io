@@ -501,6 +501,10 @@ $strong-red: #92140C;
   border: 1px solid $wyroznienie-1;
   background: $white;
   position: relative;
+}
+
+#pozostale-mecze {
+  width: 87%;
   &::before {
     content: "rozegrane mecze: 66/75";
     position: absolute;
@@ -508,7 +512,7 @@ $strong-red: #92140C;
     right: 2px;
     text-align: right;
     font-size: .85em;
-    padding: 3px 4px;
+    padding: 2px 4px;
   }
   &::after {
     content: "87%";
@@ -519,9 +523,28 @@ $strong-red: #92140C;
   }
 }
 
+#pozostale-kapitany {
+  width: 69%;
+  &::before {
+    content: "pozostało kapitanów: 11/16";
+    position: absolute;
+    left: 5%;
+    right: 2px;
+    text-align: right;
+    font-size: .85em;
+    padding: 2px 4px;
+  }
+  &::after {
+    content: "69%";
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    color: $black;
+  }
+}
+
 .progress-slider {
   height: 23px;
-  width: 87%;
   background: $wyroznienie-2;
   border-radius: 6px;
   margin: 1px 0;
