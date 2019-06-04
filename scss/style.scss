@@ -214,6 +214,7 @@ nav {
   width: 99%;
   height: 30px;
   box-shadow: 0 2px 4px rgba($black,.8);
+  border-radius: 4px;
   margin: 2px auto;
   p {
   flex-grow: 3;
@@ -442,7 +443,7 @@ nav {
 .button-box {
   @include flexy($dir: row, $just: center);
   align-items: center;
-  margin: 10px 34px 40px 40px;
+  margin: 0 34px 40px 40px;
 }
 
 button {
