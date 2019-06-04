@@ -172,7 +172,7 @@
         function nadchodzaceMecze(result) {
           let typy = [];
           let numerKolejki = 1; // TODO: can't be hardcoded
-          for(let i = 1; i < result.length -1; i++) { // ternary operator on 180
+          for(let i = 1; i < result.length; i++) { // ternary operator on 180
             if (result[i][1] == numerKolejki && result[i][0] == activePlayer) {
             typy += `<div class="match-box">
                       <p class="support">${result[i][2]}</p>
