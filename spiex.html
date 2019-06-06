@@ -130,7 +130,7 @@
         </div>
         <div class="button-box">
           <button class="btn-secondary-2">ODŚWIEŻ</button>
-          <button class="btn-primary-2">PRZEŚLIJ TYPY</button>
+          <button class="btn-primary-2" id="save-button" onclick="handleSaveClick()">PRZEŚLIJ TYPY</button>
         </div>
       </div>
     </div>
@@ -204,7 +204,7 @@
         }, function(reason) {
           console.error('error: ' + reason.result.error.message);
         });
-      }
+      } // END OF MAKE API CALL
 
       function initClient() {
         var API_KEY = 'AIzaSyDteHMNEiCdA0XHbEPUM3plvjQzRw-rVVU';
@@ -246,6 +246,10 @@
 
       function handleSignOutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
+      }
+
+      function handleSaveClick() {
+        makeApiCall(action="write");
       }
     </script>
     <script async defer src="https://apis.google.com/js/api.js"
