@@ -279,22 +279,23 @@
        const button2 = document.querySelector("#punktacja-2");
        const button3 = document.querySelector("#punktacja-3");
 
-       function checkActive(result) {
+       function checkActive(array) {
          let buttons = document.querySelectorAll("button");
          let typy = [];
 
          for (i=0; buttons.length; i++) {
            if (buttons[i].classList.contains('active')) {
              identifier = [i]*3;
+             console.log(array[i]);
              console.log(identifier);
-             for (g=0; result.length; g++) {
+             for (g=0; array.length; g++) {
                typy +=
                  `<div class="punktacja">
-                   <p class="przykladowy-wynik">${result[g][1]}</p>
+                   <p class="przykladowy-wynik">${array[g][1]}</p>
                    <div>
-                     <p>${result[g][1+identifier]}</p>
-                     <p>${result[g][2+identifier]}</p>
-                     <p>${result[g][3+identifier]}</p>
+                     <p>${array[g][1+identifier]}</p>
+                     <p>${array[g][2+identifier]}</p>
+                     <p>${array[g][3+identifier]}</p>
                    </div>
                  </div>`
                }
