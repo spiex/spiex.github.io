@@ -32,6 +32,7 @@ toggleWykres.addEventListener('click',()=>{
   pojemnikTabelka.style.transform = 'translateX(-200%)';
   //pojemnikWykres.style.opacity = 1;
   pojemnikWykres.style.transform = 'translateX(0)';
+  // console.log(document.querySelector('input[name="tabela"]:checked').value);
 });
 
 toggleTabelka.addEventListener('click',()=>{
@@ -40,4 +41,6 @@ toggleTabelka.addEventListener('click',()=>{
   pojemnikTabelka.style.transform = 'translateX(0)';
   //pojemnikWykres.style.opacity = 0;
   pojemnikWykres.style.transform = 'translateX(200%)';
+
+  // console.log(document.querySelector('input[name="tabela"]:checked').value);
 });
