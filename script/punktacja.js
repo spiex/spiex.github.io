@@ -10,6 +10,10 @@
 //   console.log(buttons[i].content);
 // }
 
+const button1 = document.querySelector("#punktacja-1");
+const button2 = document.querySelector("#punktacja-2");
+const button3 = document.querySelector("#punktacja-3");
+
 button1.addEventListener('click',()=>{
   button1.classList.add('active');
   button2.classList.remove('active');
