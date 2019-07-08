@@ -1,4 +1,4 @@
-const button = document.querySelector('input[name="punktacja"]');
+const button = document.querySelectorAll("label");
 
 for (let i = 0; i < button.length; i++) {
   button[i].addEventListener('click', (e) => {
