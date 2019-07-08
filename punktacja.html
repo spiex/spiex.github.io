@@ -33,12 +33,9 @@
 
     <div class="pojemnik-punktacja">
       <div class="button-box-wide">
-        <input type="radio" name="punktacja" value="0" id="punktacja-1" checked>
-        <label for="punktacja-1">NORMALNA</label>
-        <input type="radio" name="punktacja" value="1" id="punktacja-2">
-        <label for="punktacja-2">HANDICAP 1</label>
-        <input type="radio" name="punktacja" value="2" id="punktacja-3">
-        <label for="punktacja-3">HANDICAP 2</label>
+        <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
+        <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
+        <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
       </div>
 
       <div class="punktacja-legenda">
@@ -278,12 +275,40 @@
          div.innerHTML = message;
        }
 
+       const button1 = document.querySelector("#punktacja-1");
+       const button2 = document.querySelector("#punktacja-2");
+       const button3 = document.querySelector("#punktacja-3");
 
+       function checkActive(result) {
+         let buttons = document.querySelectorAll("button");
+         let typy = [];
+
+         for (i=0; buttons.length; i++) {
+           if (buttons[i].classList.contains('active')) {
+             identifier = [i]*3;
+             console.log(identifier);
+             for (g=0; result.length; g++) {
+               typy +=
+                 `<div class="punktacja">
+                   <p class="przykladowy-wynik">${result[g][1]}</p>
+                   <div>
+                     <p>${result[g][1+identifier]}</p>
+                     <p>${result[g][2+identifier]}</p>
+                     <p>${result[g][3+identifier]}</p>
+                   </div>
+                 </div>`
+               }
+             console.log(typy);
+             // console.log(buttons[i].getAttribute('id'));
+           }
+         }
+       }
        // end of custom
 
        var request = gapi.client.sheets.spreadsheets.values.get(params);
        request.then(function(response) {
          console.log(response.result);
+         checkActive(response.result);
        }, function(reason) {
          console.error('error: ' + reason.result.error.message);
        });
