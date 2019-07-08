@@ -887,6 +887,16 @@ button {
   }
 }
 
+#tabelka-toggles {
+  @include flexy($dir: row);
+  label:first-child {
+    flex: 1;
+  }
+  label:last-child {
+    flex: 2;
+  }
+}
+
 
 input[type="radio"]:checked + label {
   background: $main-color;
