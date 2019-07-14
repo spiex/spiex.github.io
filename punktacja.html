@@ -32,12 +32,12 @@
     </div>
 
     <div class="pojemnik-punktacja" id="boksNaTypy">
-      <!-- <div class="button-box-wide">
+      <div class="button-box-wide">
         <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
         <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
         <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
       </div>
-
+<!--
       <div class="punktacja-legenda">
         <p>wynik</p>
         <div>
@@ -275,27 +275,7 @@
         div.innerHTML = message;
       }
 
-      const button1 = document.querySelector("#punktacja-1");
-      const button2 = document.querySelector("#punktacja-2");
-      const button3 = document.querySelector("#punktacja-3");
 
-      button1.addEventListener('click',()=>{
-        button1.classList.add('active');
-        button2.classList.remove('active');
-        button3.classList.remove('active');
-      });
-
-      button2.addEventListener('click',()=>{
-        button2.classList.add('active');
-        button1.classList.remove('active');
-        button3.classList.remove('active');
-      });
-
-      button3.addEventListener('click',()=>{
-        button3.classList.add('active');
-        button2.classList.remove('active');
-        button1.classList.remove('active');
-      });
 
       function printPoints(array) {
         let typy = [];
