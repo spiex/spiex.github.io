@@ -31,8 +31,8 @@
       </div>
     </div>
 
-    <div class="pojemnik-punktacja">
-      <div class="button-box-wide">
+    <div class="pojemnik-punktacja" id="boks-na-typy">
+      <!-- <div class="button-box-wide">
         <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
         <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
         <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
@@ -253,7 +253,7 @@
           <p>10</p>
           <p>18</p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <footer>
@@ -270,67 +270,105 @@
        };
 
       // custom functions
-       function print(message, location) {
-         let div = document.querySelector(location);
-         div.innerHTML = message;
-       }
+      function print(message, location) {
+        let div = document.querySelector(location);
+        div.innerHTML = message;
+      }
 
-              function checkActive(array) {
-         let buttons = document.querySelectorAll("button");
-         let typy = [];
+      function printPoints(array) {
+        let typy = [];
+        let boksNaTypy = document.querySelector("#boks-na-typy");
+        typy +=
+        `<div class="button-box-wide">
+          <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
+          <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
+          <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
+        </div>
 
-         for (i=0; buttons.length; i++) {
-           if (buttons[i].classList.contains('active')) {
-             identifier = [i]*3;
-             console.log(array[i]);
-             console.log(identifier);
-             for (g=0; array.length; g++) {
-               typy +=
-                 `<div class="punktacja">
-                   <p class="przykladowy-wynik">${array[g][1]}</p>
-                   <div>
-                     <p>${array[g][1+identifier]}</p>
-                     <p>${array[g][2+identifier]}</p>
-                     <p>${array[g][3+identifier]}</p>
-                   </div>
-                 </div>`
-               }
-             console.log(typy);
-             // console.log(buttons[i].getAttribute('id'));
-           }
-         }
-       }
+        <div class="punktacja-legenda">
+          <p>wynik</p>
+          <div>
+            <p>1x2</p>
+            <p>różnica</p>
+            <p>dokładny</p>
+          </div>
+        </div>`;
+        for (i=0; array.length; i++) {
+          typy +=
+          `<div class="punktacja">
+            <p class="przykladowy-wynik">${array[i][0]}</p>
+            <div>
+              <p>${array[g][1]}</p>
+              <p>${array[g][2]}</p>
+              <p>${array[g][3]}</p>
+            </div>
+          </div>`;
+        }
+        print(typy,boksNaTypy);
+      }
 
-       const button1 = document.querySelector("#punktacja-1");
-       const button2 = document.querySelector("#punktacja-2");
-       const button3 = document.querySelector("#punktacja-3");
-
-       button1.addEventListener('click',()=>{
-         button1.classList.add('active');
-         button2.classList.remove('active');
-         button3.classList.remove('active');
-         checkActive(response.result);
-       });
-
-       button2.addEventListener('click',()=>{
-         button2.classList.add('active');
-         button1.classList.remove('active');
-         button3.classList.remove('active');
-         checkActive(response.result);
-       });
-
-       button3.addEventListener('click',()=>{
-         button3.classList.add('active');
-         button2.classList.remove('active');
-         button1.classList.remove('active');
-         checkActive(response.result);
-       });
+      // function print(message, location) {
+      //   let div = document.querySelector(location);
+      //   div.innerHTML = message;
+      // }
+      //
+      // function checkActive(array) {
+      //   let buttons = document.querySelectorAll("button");
+      //   let typy = [];
+      //
+      //   for (i=0; buttons.length; i++) {
+      //     if (buttons[i].classList.contains('active')) {
+      //       identifier = [i]*3;
+      //       console.log(array[i]);
+      //       console.log(identifier);
+      //       for (g=0; array.length; g++) {
+      //         typy +=
+      //           `<div class="punktacja">
+      //             <p class="przykladowy-wynik">${array[g][1]}</p>
+      //             <div>
+      //               <p>${array[g][1+identifier]}</p>
+      //               <p>${array[g][2+identifier]}</p>
+      //               <p>${array[g][3+identifier]}</p>
+      //             </div>
+      //           </div>`
+      //         }
+      //        console.log(typy);
+      //        // console.log(buttons[i].getAttribute('id'));
+      //      }
+      //    }
+      //  }
+      //
+      //  const button1 = document.querySelector("#punktacja-1");
+      //  const button2 = document.querySelector("#punktacja-2");
+      //  const button3 = document.querySelector("#punktacja-3");
+      //
+      //  button1.addEventListener('click',()=>{
+      //    button1.classList.add('active');
+      //    button2.classList.remove('active');
+      //    button3.classList.remove('active');
+      //    checkActive(response.result);
+      //  });
+      //
+      //  button2.addEventListener('click',()=>{
+      //    button2.classList.add('active');
+      //    button1.classList.remove('active');
+      //    button3.classList.remove('active');
+      //    checkActive(response.result);
+      //  });
+      //
+      //  button3.addEventListener('click',()=>{
+      //    button3.classList.add('active');
+      //    button2.classList.remove('active');
+      //    button1.classList.remove('active');
+      //    checkActive(response.result);
+      //  });
        // end of custom
 
        var request = gapi.client.sheets.spreadsheets.values.get(params);
        request.then(function(response) {
          console.log(response.result);
-         checkActive(response.result);
+         // checkActive(response.result);
+         printPoints(response.result);
        }, function(reason) {
          console.error('error: ' + reason.result.error.message);
        });
