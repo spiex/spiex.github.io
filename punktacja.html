@@ -293,8 +293,8 @@
         </div>`;
 
         let identifier = 0;
-        let buttons = [button1, button2, button3];
-        let (g = 0; g < buttons.length; g++) {
+        let buttons = {button1, button2, button3};
+        for (g = 0; g < buttons.length; g++) {
           if (buttons[g].classList.contains('active')) {
             identifier += [g]*3;
           }
