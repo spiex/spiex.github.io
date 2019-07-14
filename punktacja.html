@@ -322,6 +322,7 @@
        }, function(reason) {
          console.error('error: ' + reason.result.error.message);
        });
+     }
 
        button1.addEventListener('click',()=>{
          button1.classList.add('active');
@@ -343,7 +344,7 @@
          button1.classList.remove('active');
          // printPoints(response.result.values);
        }
-     }
+
 
      function initClient() {
        var API_KEY = 'AIzaSyDteHMNEiCdA0XHbEPUM3plvjQzRw-rVVU';
