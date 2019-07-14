@@ -89,6 +89,14 @@ footer,
   font-size: .75em;
 }
 
+footer {
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid $complementary-gray;
+  background: $main-color;
+  color: $white;
+}
+
 // TODO: maybe utilize
 .main-box {
   @include flexy($dir: column, $just: space-around);
