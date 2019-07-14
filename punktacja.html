@@ -31,12 +31,13 @@
       </div>
     </div>
 
-    <div class="pojemnik-punktacja" id="boksNaTypy">
+    <div class="pojemnik-punktacja">
       <div class="button-box-wide">
         <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
         <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
         <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
       </div>
+      <div id="boksNaTypy"></div>
 <!--
       <div class="punktacja-legenda">
         <p>wynik</p>
@@ -280,13 +281,7 @@
       function printPoints(array) {
         let typy = [];
         typy +=
-        `<div class="button-box-wide">
-          <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
-          <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
-          <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
-        </div>
-
-        <div class="punktacja-legenda">
+        `<div class="punktacja-legenda">
           <p>wynik</p>
           <div>
             <p>1x2</p>
