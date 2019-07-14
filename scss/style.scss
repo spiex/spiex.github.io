@@ -843,9 +843,9 @@ button {
   color: $black;
   background: $white;
   box-shadow: 0 2px 4px rgba($black,.8);
-  &:active {
-    background: $complementary-gray;
-  }
+  // &:active {
+  //   background: $complementary-gray;
+  // }
   &:disabled {
     background-color: $complementary-gray;
     color: $black;
