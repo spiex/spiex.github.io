@@ -315,26 +315,7 @@
         print(typy,"#boksNaTypy");
       }
 
-      button1.addEventListener('click',()=>{
-        button1.classList.add('active');
-        button2.classList.remove('active');
-        button3.classList.remove('active');
-        // printPoints(response.result.values);
-      }
-
-      button2.addEventListener('click',()=>{
-        button2.classList.add('active');
-        button1.classList.remove('active');
-        button3.classList.remove('active');
-        // printPoints(response.result.values);
-      }
-
-      button3.addEventListener('click',()=>{
-        button3.classList.add('active');
-        button2.classList.remove('active');
-        button1.classList.remove('active');
-        // printPoints(response.result.values);
-      }
+      
 
      var request = gapi.client.sheets.spreadsheets.values.get(params);
        request.then(function(response) {
