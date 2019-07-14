@@ -319,21 +319,42 @@
         button1.classList.add('active');
         button2.classList.remove('active');
         button3.classList.remove('active');
-        printPoints(response.result.values);
+        var request = gapi.client.sheets.spreadsheets.values.get(params);
+          request.then(function(response) {
+            console.log(response.result);
+            printPoints(response.result.values);
+          }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+          });
+        }
       });
 
       button2.addEventListener('click',()=>{
         button2.classList.add('active');
         button1.classList.remove('active');
         button3.classList.remove('active');
-        printPoints(response.result.values);
+        var request = gapi.client.sheets.spreadsheets.values.get(params);
+          request.then(function(response) {
+            console.log(response.result);
+            printPoints(response.result.values);
+          }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+          });
+        }
       });
 
       button3.addEventListener('click',()=>{
         button3.classList.add('active');
         button2.classList.remove('active');
         button1.classList.remove('active');
-        printPoints(response.result.values);
+        var request = gapi.client.sheets.spreadsheets.values.get(params);
+          request.then(function(response) {
+            console.log(response.result);
+            printPoints(response.result.values);
+          }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+          });
+        }
       });
 
       // function print(message, location) {
@@ -370,10 +391,9 @@
 
        // end of custom
 
-       var request = gapi.client.sheets.spreadsheets.values.get(params);
+     var request = gapi.client.sheets.spreadsheets.values.get(params);
        request.then(function(response) {
          console.log(response.result);
-         // checkActive(response.result);
          printPoints(response.result.values);
        }, function(reason) {
          console.error('error: ' + reason.result.error.message);
