@@ -51,6 +51,28 @@
           div.innerHTML = message;
         }
 
+        function printPoints(array) {
+          let wyniki = [];
+
+          for (i=1; i < array.length; i++) {
+            // console.log(array[i][0]);
+            wyniki +=
+            `<div class="match-box">
+              <p class="druzyna">${array[i][4]}</p>
+              <div class="wynik-czas">
+                <div class="wynik">
+                  <p>${array[i][7]}</p>
+                  <p>:</p>
+                  <p>${array[i][8]}</p>
+                </div>
+                <p class="czas">${array[i][2]}</p>
+              </div>
+              <p class="druzyna">${array[i][5]}</p>
+            </div>`;
+          }
+          print(wyniki,"#boksNaWyniki");
+        }
+
         var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
             console.log(response.result);
