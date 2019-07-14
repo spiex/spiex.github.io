@@ -297,7 +297,7 @@
         for (g = 0; g < buttons.length; g++) {
           if (buttons[g].classList.contains('active')) {
             identifier += [g]*3;
-          }
+          };
         }
 
         for (i=0; i < array.length; i++) {
@@ -314,41 +314,6 @@
         }
         print(typy,"#boksNaTypy");
       }
-
-
-      // function print(message, location) {
-      //   let div = document.querySelector(location);
-      //   div.innerHTML = message;
-      // }
-      //
-      // function checkActive(array) {
-      //   let buttons = document.querySelectorAll("button");
-      //   let typy = [];
-      //
-      //   for (i=0; buttons.length; i++) {
-      //     if (buttons[i].classList.contains('active')) {
-      //       identifier = [i]*3;
-      //       console.log(array[i]);
-      //       console.log(identifier);
-      //       for (g=0; array.length; g++) {
-      //         typy +=
-      //           `<div class="punktacja">
-      //             <p class="przykladowy-wynik">${array[g][1]}</p>
-      //             <div>
-      //               <p>${array[g][1+identifier]}</p>
-      //               <p>${array[g][2+identifier]}</p>
-      //               <p>${array[g][3+identifier]}</p>
-      //             </div>
-      //           </div>`
-      //         }
-      //        console.log(typy);
-      //        // console.log(buttons[i].getAttribute('id'));
-      //      }
-      //    }
-      //  }
-      //
-
-       // end of custom
 
      var request = gapi.client.sheets.spreadsheets.values.get(params);
        request.then(function(response) {
