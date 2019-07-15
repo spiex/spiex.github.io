@@ -58,7 +58,7 @@
             // console.log(array[i][0]);
             wyniki +=
             `<div class="match-box">
-              <p ${array[i][6] === "A1" ? className="druzyna handicap1" : array[i][6] === "A2" ? className="druzyna handicap2" : className="druzyna"}>${array[i][4]}</p>
+              <p class="druzyna" ${array[i][6] === "A1" ? class="handicap1" : array[i][6] === "A2" ? class="handicap2" : ""}>${array[i][4]}</p>
               <div class="wynik-czas">
                 <div class="wynik">
                   <p>${array[i][7]}</p>
