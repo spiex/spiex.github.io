@@ -67,7 +67,7 @@
                 </div>
                 <p class="czas">${array[i][2]}</p>
               </div>
-              <p class=${array[i][6] === "B1" ? "druzyna " + "handicap1" : array[i][6] === "B2" ? "druzyna " + "handicap2" : "druzyna"}>${array[i][5]}</p>
+              <p class="druzyna + ${array[i][6] === "B1" ? "handicap1" : array[i][6] === "B2" ? "handicap2" : ""}">${array[i][5]}</p>
               <div class="overlay hidden"></div>
             </div>`;
           }
