@@ -71,10 +71,11 @@
                 <p class="druzyna + ${array[i][6] === "B1" ? "handicap1" : array[i][6] === "B2" ? "handicap2" : ""}">${array[i][5]}</p>
                 <div class="overlay hidden"></div>
               </div>`;
+
+              // add hidden content, TODO: run on click only to make the code run more smoothly
               wyniki += `<div class="hidden-content">`
 
               for (h=12; h < array[i].length; h+=6) {
-                console.log(array[i][h]);
                   wyniki += `
                     <div class="hidden-row + ${array[i][h+3] === "wynik" ? "trafiony-wynik" : array[i][h+3] === "rezultat" ? "trafiony-rezultat" : ""}">
                       <div><p>${array[i][h+5]}</p></div>
