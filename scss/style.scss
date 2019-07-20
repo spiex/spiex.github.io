@@ -97,6 +97,10 @@ footer {
   color: $white;
 }
 
+.wrapper {
+  min-height: calc(100vh - 77px - 40px);
+}
+
 // TODO: maybe utilize
 .main-box {
   @include flexy($dir: column, $just: space-around);

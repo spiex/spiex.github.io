@@ -8,37 +8,39 @@
     <link rel="stylesheet" href="./scss/style.min.css">
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">TABELKA</a></li>
-          <li><a href="spiex.html">typowanie</a></li>
-          <li><a href="wyniki.html">wyniki</a></li>
-          <li><a href="#" class="selected">punktacja</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">TABELKA</a></li>
+            <li><a href="spiex.html">typowanie</a></li>
+            <li><a href="wyniki.html">wyniki</a></li>
+            <li><a href="#" class="selected">punktacja</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <div class="jumbo">
-      <div class="foto-box">
-        <img src="https://www.thesportsdb.com/images/media/league/badge/dtp1dl1534767233.png">
-      </div>
-      <div class="title-box">
-        <div>
-          <h1>Tabelka LM</h1>
-          <p>punktacja</p>
+      <div class="jumbo">
+        <div class="foto-box">
+          <img src="https://www.thesportsdb.com/images/media/league/badge/dtp1dl1534767233.png">
+        </div>
+        <div class="title-box">
+          <div>
+            <h1>Tabelka LM</h1>
+            <p>punktacja</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pojemnik-punktacja">
-      <div class="button-box-wide">
-        <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
-        <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
-        <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
+      <div class="pojemnik-punktacja">
+        <div class="button-box-wide">
+          <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
+          <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
+          <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
+        </div>
+        <div id="boksNaTypy"></div>
       </div>
-      <div id="boksNaTypy"></div>
-    </div>
+    </div> <!-- end of wrapper -->
 
     <footer>
       <p>copyright by śpiex, <script>document.write(new Date().getFullYear())</script></p>

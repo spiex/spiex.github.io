@@ -8,582 +8,346 @@
     <link rel="stylesheet" href="./scss/style.min.css">
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#" class="selected">TABELKA</a></li>
-          <li><a href="spiex.html">typowanie</a></li>
-          <li><a href="wyniki.html">wyniki</a></li>
-          <li><a href="punktacja.html">punktacja</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#" class="selected">TABELKA</a></li>
+            <li><a href="spiex.html">typowanie</a></li>
+            <li><a href="wyniki.html">wyniki</a></li>
+            <li><a href="punktacja.html">punktacja</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <div class="jumbo">
-      <div class="foto-box">
-        <img src="https://www.thesportsdb.com/images/media/league/badge/dtp1dl1534767233.png">
-      </div>
-      <div class="title-box">
-        <div>
-          <h1>Tabelka LM</h1>
-          <p>sezon 2019/2020</p>
+      <div class="jumbo">
+        <div class="foto-box">
+          <img src="https://www.thesportsdb.com/images/media/league/badge/dtp1dl1534767233.png">
         </div>
-      </div>
-    </div>
-
-    <div class="button-box-wide" id="tabelka-toggles">
-      <input type="radio" name="tabela" value="0" id="tabela-1" checked>
-      <label for="tabela-1" id="toggle-tabelka">TABELKA</label>
-      <input type="radio" name="tabela" value="1" id="tabela-2">
-      <label for="tabela-2" id="toggle-wykres">WYKRES</label>
-    </div>
-
-    <div id="statystyka">
-      <div class="pojemnik-wykres" id="pojemnik-wykres">
-        <div class="box-wykres">
-          <div class="change"></div>
-          <div class="box-name">śpiexinho</div>
-          <div class="wykres">
-            <div class="punkty-stare" id="punkty-stare-1"><p>47.0</p><span>+3.0</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-1"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change">▲2</div>
-          <div class="box-name">śpiex <span>★</span></div>
-          <div class="wykres">
-            <div class="punkty-stare" id="punkty-stare-2"><p>45.5</p><span>+12.5</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-2"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change">▼1</div>
-          <div class="box-name">trybul</div>
-          <div class="wykres">
-            <div class="punkty-stare round" id="punkty-stare-3"><p>39.0</p><span>+0.0</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-3"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change">▲2</div>
-          <div class="box-name">mareczek</div>
-          <div class="wykres">
-            <div class="punkty-stare" id="punkty-stare-4"><p>39.0</p><span>+7.5</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-4"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change">▲2</div>
-          <div class="box-name">hetman <span>★★</span></div>
-          <div class="wykres">
-            <div class="punkty-stare" id="punkty-stare-5"><p>36.0</p><span>+7.5</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-5"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change">▼1</div>
-          <div class="box-name">śliw <span>★★</span></div>
-          <div class="wykres">
-            <div class="punkty-stare" id="punkty-stare-6"><p>35.5</p><span>+3.0</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-6"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change">▼4</div>
-          <div class="box-name">mati</div>
-          <div class="wykres">
-            <div class="punkty-stare round" id="punkty-stare-7"><p>34.0</p><span>+0.0</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-7"></div>
-          </div>
-        </div>
-        <div class="box-wykres">
-          <div class="change"></div>
-          <div class="box-name">bartez</div>
-          <div class="wykres">
-            <div class="punkty-stare" id="punkty-stare-8"><p>22.5</p><span>+7.5</span></div>
-            <div class="punkty-nowe" id="punkty-nowe-8"></div>
-          </div>
-        </div>
-      </div> <!-- koniec pojemnika wykresu -->
-
-      <div class="new-table" id="pojemnik-tabelka">
-        <div class="new-row">
-          <p></p>
-          <p></p>
-          <p class="small">pkt</p>
-          <p></p>
-          <p>1x2</p>
-          <p></p>
-          <p>x2</p>
-        </div>
-        <div class="new-row">
-          <p>1</p>
-          <p>śpiexinho</p>
-          <p>47.0</p>
-          <p>|</p>
-          <p>8</p>
-          <p>|</p>
-          <p>12</p>
-        </div>
-        <div class="new-row">
-          <p>2</p>
-          <p>śpiex ★</p>
-          <p>45.5</p>
-          <p>|</p>
-          <p>7</p>
-          <p>|</p>
-          <p>11</p>
-        </div>
-        <div class="new-row">
-          <p>3</p>
-          <p>trybul</p>
-          <p>39.0</p>
-          <p>|</p>
-          <p>8</p>
-          <p>|</p>
-          <p>16</p>
-        </div>
-        <div class="new-row">
-          <p>4</p>
-          <p>mareczek</p>
-          <p>39.0</p>
-          <p>|</p>
-          <p>6</p>
-          <p>|</p>
-          <p>12</p>
-        </div>
-        <div class="new-row">
-          <p>5</p>
-          <p>hetman ★★</p>
-          <p>36.0</p>
-          <p>|</p>
-          <p>5</p>
-          <p>|</p>
-          <p>9</p>
-        </div>
-        <div class="new-row">
-          <p>6</p>
-          <p>śliw ★★</p>
-          <p>35.5</p>
-          <p>|</p>
-          <p>6</p>
-          <p>|</p>
-          <p>14</p>
-        </div>
-        <div class="new-row">
-          <p>7</p>
-          <p>mati</p>
-          <p>34.0</p>
-          <p>|</p>
-          <p>4</p>
-          <p>|</p>
-          <p>12</p>
-        </div>
-        <div class="new-row">
-          <p>8</p>
-          <p>bartez</p>
-          <p>22.5</p>
-          <p>|</p>
-          <p>3</p>
-          <p>|</p>
-          <p>12</p>
-        </div>
-
-      </div> <!-- koniec pojemnika tabelki -->
-
-      <div class="progress-bar">
-        <div class="progress-slider" id="pozostale-mecze"></div>
-      </div>
-
-    </div>
-
-
-
-    <div class="pojemnik-wyniki">
-      <div class="matches" id="current-matches-box">
-        <div class="match-box">
-          <p class="druzyna">TOTTENHAM HOTSPUR</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>4</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <p class="czas">90'+5</p>
-          </div>
-          <p class="druzyna handicap1">SCHALKE 04 GESELKIRCHEN</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-          <div class="hidden-row trafiony-wynik">
-            <div><p>hetman ★★</p></div>
-            <div>
-              <p>4</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+18.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>śpiex ★</p></div>
-            <div>
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+11.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>śliw ★★</p></div>
-            <div class="typy-wynik">
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+5.5</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>trybul</p></div>
-            <div class="typy-wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>mareczek</p></div>
-            <div class="typy-wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>2</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>mati</p></div>
-            <div class="typy-wynik">
-              <p>1</p>
-              <p>:</p>
-              <p>2</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-        </div>
-        <div class="match-box">
-          <p class="druzyna">REAL MADRID</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <p class="czas">56'</p>
-          </div>
-          <p class="druzyna">BORUSSIA DORTMUND</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-        <div class="hidden-row trafiony-rezultat">
-          <div><p>śpiexinho</p></div>
+        <div class="title-box">
           <div>
-            <p>2</p>
-            <p>:</p>
-            <p>2</p>
+            <h1>Tabelka LM</h1>
+            <p>sezon 2019/2020</p>
           </div>
-          <div>
-            <p>+12.0</p>
+        </div>
+      </div>
+
+      <div class="button-box-wide" id="tabelka-toggles">
+        <input type="radio" name="tabela" value="0" id="tabela-1" checked>
+        <label for="tabela-1" id="toggle-tabelka">TABELKA</label>
+        <input type="radio" name="tabela" value="1" id="tabela-2">
+        <label for="tabela-2" id="toggle-wykres">WYKRES</label>
+      </div>
+
+      <div id="statystyka">
+        <div class="pojemnik-wykres" id="pojemnik-wykres">
+          <div class="box-wykres">
+            <div class="change"></div>
+            <div class="box-name">śpiexinho</div>
+            <div class="wykres">
+              <div class="punkty-stare" id="punkty-stare-1"><p>47.0</p><span>+3.0</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-1"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change">▲2</div>
+            <div class="box-name">śpiex <span>★</span></div>
+            <div class="wykres">
+              <div class="punkty-stare" id="punkty-stare-2"><p>45.5</p><span>+12.5</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-2"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change">▼1</div>
+            <div class="box-name">trybul</div>
+            <div class="wykres">
+              <div class="punkty-stare round" id="punkty-stare-3"><p>39.0</p><span>+0.0</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-3"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change">▲2</div>
+            <div class="box-name">mareczek</div>
+            <div class="wykres">
+              <div class="punkty-stare" id="punkty-stare-4"><p>39.0</p><span>+7.5</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-4"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change">▲2</div>
+            <div class="box-name">hetman <span>★★</span></div>
+            <div class="wykres">
+              <div class="punkty-stare" id="punkty-stare-5"><p>36.0</p><span>+7.5</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-5"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change">▼1</div>
+            <div class="box-name">śliw <span>★★</span></div>
+            <div class="wykres">
+              <div class="punkty-stare" id="punkty-stare-6"><p>35.5</p><span>+3.0</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-6"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change">▼4</div>
+            <div class="box-name">mati</div>
+            <div class="wykres">
+              <div class="punkty-stare round" id="punkty-stare-7"><p>34.0</p><span>+0.0</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-7"></div>
+            </div>
+          </div>
+          <div class="box-wykres">
+            <div class="change"></div>
+            <div class="box-name">bartez</div>
+            <div class="wykres">
+              <div class="punkty-stare" id="punkty-stare-8"><p>22.5</p><span>+7.5</span></div>
+              <div class="punkty-nowe" id="punkty-nowe-8"></div>
+            </div>
+          </div>
+        </div> <!-- koniec pojemnika wykresu -->
+
+        <div class="new-table" id="pojemnik-tabelka">
+          <div class="new-row">
+            <p></p>
+            <p></p>
+            <p class="small">pkt</p>
+            <p></p>
+            <p>1x2</p>
+            <p></p>
             <p>x2</p>
           </div>
-        </div>
-        <div class="hidden-row trafiony-wynik">
-          <div><p>śpiex</p></div>
-          <div>
-            <p>0</p>
-            <p>:</p>
-            <p>0</p>
-          </div>
-          <div>
-            <p>+8.0</p>
-            <p></p>
-          </div>
-        </div>
-        <div class="hidden-row trafiony-wynik">
-          <div><p>mareczek</p></div>
-          <div>
-            <p>0</p>
-            <p>:</p>
-            <p>0</p>
-          </div>
-          <div>
-            <p>+8.0</p>
-            <p></p>
-          </div>
-        </div>
-        <div class="hidden-row trafiony-rezultat">
-          <div><p>hetman</p></div>
-          <div>
+          <div class="new-row">
             <p>1</p>
-            <p>:</p>
-            <p>1</p>
+            <p>śpiexinho</p>
+            <p>47.0</p>
+            <p>|</p>
+            <p>8</p>
+            <p>|</p>
+            <p>12</p>
           </div>
-          <div>
-            <p>+6.0</p>
-            <p></p>
+          <div class="new-row">
+            <p>2</p>
+            <p>śpiex ★</p>
+            <p>45.5</p>
+            <p>|</p>
+            <p>7</p>
+            <p>|</p>
+            <p>11</p>
           </div>
-        </div>
-        <div class="hidden-row">
-          <div><p>śliw</p></div>
-          <div class="typy-wynik">
+          <div class="new-row">
             <p>3</p>
-            <p>:</p>
-            <p>1</p>
+            <p>trybul</p>
+            <p>39.0</p>
+            <p>|</p>
+            <p>8</p>
+            <p>|</p>
+            <p>16</p>
           </div>
-          <div>
-            <p>+0.0</p>
-            <p>x2</p>
+          <div class="new-row">
+            <p>4</p>
+            <p>mareczek</p>
+            <p>39.0</p>
+            <p>|</p>
+            <p>6</p>
+            <p>|</p>
+            <p>12</p>
           </div>
+          <div class="new-row">
+            <p>5</p>
+            <p>hetman ★★</p>
+            <p>36.0</p>
+            <p>|</p>
+            <p>5</p>
+            <p>|</p>
+            <p>9</p>
+          </div>
+          <div class="new-row">
+            <p>6</p>
+            <p>śliw ★★</p>
+            <p>35.5</p>
+            <p>|</p>
+            <p>6</p>
+            <p>|</p>
+            <p>14</p>
+          </div>
+          <div class="new-row">
+            <p>7</p>
+            <p>mati</p>
+            <p>34.0</p>
+            <p>|</p>
+            <p>4</p>
+            <p>|</p>
+            <p>12</p>
+          </div>
+          <div class="new-row">
+            <p>8</p>
+            <p>bartez</p>
+            <p>22.5</p>
+            <p>|</p>
+            <p>3</p>
+            <p>|</p>
+            <p>12</p>
+          </div>
+
+        </div> <!-- koniec pojemnika tabelki -->
+
+        <div class="progress-bar">
+          <div class="progress-slider" id="pozostale-mecze"></div>
         </div>
-        <div class="hidden-row">
-          <div><p>trybul</p></div>
-          <div class="typy-wynik">
-            <p>0</p>
-            <p>:</p>
-            <p>1</p>
-          </div>
-          <div>
-            <p>+0.0</p>
-            <p></p>
-          </div>
-        </div>
+
       </div>
-        <div class="match-box">
-          <p class="druzyna handicap2">LEGIA WARSZAWA</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>3</p>
+
+
+
+      <div class="pojemnik-wyniki">
+        <div class="matches" id="current-matches-box">
+          <div class="match-box">
+            <p class="druzyna">TOTTENHAM HOTSPUR</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>4</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <p class="czas">90'+5</p>
             </div>
-            <p class="czas">FT</p>
+            <p class="druzyna handicap1">SCHALKE 04 GESELKIRCHEN</p>
+            <div class="overlay hidden"></div>
           </div>
-          <p class="druzyna">JUVENTUS</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>hetman</p></div>
-            <div>
-              <p>1</p>
-              <p>:</p>
-              <p>2</p>
+          <div class="hidden-content">
+            <div class="hidden-row trafiony-wynik">
+              <div><p>hetman ★★</p></div>
+              <div>
+                <p>4</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+18.0</p>
+                <p>x2</p>
+              </div>
             </div>
-            <div>
-              <p>+10.0</p>
-              <p>x2</p>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>śpiex ★</p></div>
+              <div>
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+11.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>śliw ★★</p></div>
+              <div class="typy-wynik">
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+5.5</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>mareczek</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>2</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>mati</p></div>
+              <div class="typy-wynik">
+                <p>1</p>
+                <p>:</p>
+                <p>2</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p>x2</p>
+              </div>
             </div>
           </div>
-          <div class="hidden-row trafiony-wynik">
-            <div><p>śliw</p></div>
-            <div>
-              <p>2</p>
-              <p>:</p>
-              <p>3</p>
+          <div class="match-box">
+            <p class="druzyna">REAL MADRID</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <p class="czas">56'</p>
             </div>
-            <div>
-              <p>+9.0</p>
-              <p></p>
-            </div>
+            <p class="druzyna">BORUSSIA DORTMUND</p>
+            <div class="overlay hidden"></div>
           </div>
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>trybul</p></div>
-            <div class="typy-wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>3</p>
-            </div>
-            <div>
-              <p>+6.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>śpiex</p></div>
-            <div class="typy-wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>4</p>
-            </div>
-            <div>
-              <p>+6.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>mareczek</p></div>
-            <div class="typy-wynik">
-              <p>1</p>
-              <p>:</p>
-              <p>4</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
+          <div class="hidden-content">
           <div class="hidden-row trafiony-rezultat">
             <div><p>śpiexinho</p></div>
-            <div class="typy-wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>2</p>
-            </div>
             <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>mati</p></div>
-            <div class="typy-wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-        </div>
-        <div class="match-box">
-          <p class="druzyna">MANCHESTER UNITED</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>2</p>
-            </div>
-            <p class="czas">FT</p>
-          </div>
-          <p class="druzyna">FC BARCELONA</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-          <div class="hidden-row">
-            <div><p>hetman</p></div>
-            <div>
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śpiex</p></div>
-            <div>
-              <p>1</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śliw</p></div>
-            <div class="typy-wynik">
-              <p>3</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>trybul</p></div>
-            <div class="typy-wynik">
               <p>2</p>
               <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>mati</p></div>
-            <div class="typy-wynik">
-              <p>0</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+0.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-        </div>
-        <div class="match-box">
-          <p class="druzyna">INTER MILAN</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>-</p>
-              <p>:</p>
-              <p>-</p>
-            </div>
-            <p class="czas">14/06</p>
-          </div>
-          <p class="druzyna handicap2">PSV EINDHOVEN</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>hetman</p></div>
-            <div>
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
+              <p>2</p>
             </div>
             <div>
               <p>+12.0</p>
               <p>x2</p>
             </div>
           </div>
-          <div class="hidden-row">
+          <div class="hidden-row trafiony-wynik">
             <div><p>śpiex</p></div>
             <div>
               <p>0</p>
               <p>:</p>
+              <p>0</p>
+            </div>
+            <div>
+              <p>+8.0</p>
+              <p></p>
+            </div>
+          </div>
+          <div class="hidden-row trafiony-wynik">
+            <div><p>mareczek</p></div>
+            <div>
+              <p>0</p>
+              <p>:</p>
+              <p>0</p>
+            </div>
+            <div>
+              <p>+8.0</p>
+              <p></p>
+            </div>
+          </div>
+          <div class="hidden-row trafiony-rezultat">
+            <div><p>hetman</p></div>
+            <div>
+              <p>1</p>
+              <p>:</p>
               <p>1</p>
             </div>
             <div>
-              <p>+3.0</p>
+              <p>+6.0</p>
               <p></p>
             </div>
           </div>
@@ -595,214 +359,452 @@
               <p>1</p>
             </div>
             <div>
-              <p>+5.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-wynik">
-            <div><p>trybul</p></div>
-            <div class="typy-wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-        </div>
-        <div class="match-box">
-          <p class="druzyna">FC Napoli</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>-</p>
-              <p>:</p>
-              <p>-</p>
-            </div>
-            <p class="czas">14/06</p>
-          </div>
-          <p class="druzyna">Ajax</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>hetman</p></div>
-            <div>
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+12.0</p>
+              <p>+0.0</p>
               <p>x2</p>
             </div>
           </div>
           <div class="hidden-row">
-            <div><p>śpiex</p></div>
-            <div>
-              <p>0</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śliw</p></div>
-            <div class="typy-wynik">
-              <p>3</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+5.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-wynik">
             <div><p>trybul</p></div>
             <div class="typy-wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-        </div>
-        <div class="match-box">
-          <p class="druzyna">Liverpool FC</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>-</p>
-              <p>:</p>
-              <p>-</p>
-            </div>
-            <p class="czas">15/06</p>
-          </div>
-          <p class="druzyna">Manchester City</p>
-          <div class="overlay hidden"></div>
-        </div>
-        <div class="hidden-content">
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>hetman</p></div>
-            <div>
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+12.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śpiex</p></div>
-            <div>
               <p>0</p>
               <p>:</p>
               <p>1</p>
             </div>
             <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śliw</p></div>
-            <div class="typy-wynik">
-              <p>3</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+5.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-wynik">
-            <div><p>trybul</p></div>
-            <div class="typy-wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
+              <p>+0.0</p>
               <p></p>
             </div>
           </div>
         </div>
-        <div class="match-box">
-          <p class="druzyna">Paris Saint-Germain</p>
-          <div class="wynik-czas">
-            <div class="wynik">
-              <p>-</p>
-              <p>:</p>
-              <p>-</p>
+          <div class="match-box">
+            <p class="druzyna handicap2">LEGIA WARSZAWA</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>3</p>
+              </div>
+              <p class="czas">FT</p>
             </div>
-            <p class="czas">15/06</p>
+            <p class="druzyna">JUVENTUS</p>
+            <div class="overlay hidden"></div>
           </div>
-          <p class="druzyna">CHELSEA LONDON</p>
-          <div class="overlay hidden"></div>
+          <div class="hidden-content">
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>hetman</p></div>
+              <div>
+                <p>1</p>
+                <p>:</p>
+                <p>2</p>
+              </div>
+              <div>
+                <p>+10.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-wynik">
+              <div><p>śliw</p></div>
+              <div>
+                <p>2</p>
+                <p>:</p>
+                <p>3</p>
+              </div>
+              <div>
+                <p>+9.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>3</p>
+              </div>
+              <div>
+                <p>+6.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>śpiex</p></div>
+              <div class="typy-wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>4</p>
+              </div>
+              <div>
+                <p>+6.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>mareczek</p></div>
+              <div class="typy-wynik">
+                <p>1</p>
+                <p>:</p>
+                <p>4</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>śpiexinho</p></div>
+              <div class="typy-wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>2</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>mati</p></div>
+              <div class="typy-wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+          </div>
+          <div class="match-box">
+            <p class="druzyna">MANCHESTER UNITED</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>2</p>
+              </div>
+              <p class="czas">FT</p>
+            </div>
+            <p class="druzyna">FC BARCELONA</p>
+            <div class="overlay hidden"></div>
+          </div>
+          <div class="hidden-content">
+            <div class="hidden-row">
+              <div><p>hetman</p></div>
+              <div>
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śpiex</p></div>
+              <div>
+                <p>1</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śliw</p></div>
+              <div class="typy-wynik">
+                <p>3</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>mati</p></div>
+              <div class="typy-wynik">
+                <p>0</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+0.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+          </div>
+          <div class="match-box">
+            <p class="druzyna">INTER MILAN</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>-</p>
+                <p>:</p>
+                <p>-</p>
+              </div>
+              <p class="czas">14/06</p>
+            </div>
+            <p class="druzyna handicap2">PSV EINDHOVEN</p>
+            <div class="overlay hidden"></div>
+          </div>
+          <div class="hidden-content">
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>hetman</p></div>
+              <div>
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+12.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śpiex</p></div>
+              <div>
+                <p>0</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śliw</p></div>
+              <div class="typy-wynik">
+                <p>3</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+5.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-wynik">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="match-box">
+            <p class="druzyna">FC Napoli</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>-</p>
+                <p>:</p>
+                <p>-</p>
+              </div>
+              <p class="czas">14/06</p>
+            </div>
+            <p class="druzyna">Ajax</p>
+            <div class="overlay hidden"></div>
+          </div>
+          <div class="hidden-content">
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>hetman</p></div>
+              <div>
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+12.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śpiex</p></div>
+              <div>
+                <p>0</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śliw</p></div>
+              <div class="typy-wynik">
+                <p>3</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+5.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-wynik">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="match-box">
+            <p class="druzyna">Liverpool FC</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>-</p>
+                <p>:</p>
+                <p>-</p>
+              </div>
+              <p class="czas">15/06</p>
+            </div>
+            <p class="druzyna">Manchester City</p>
+            <div class="overlay hidden"></div>
+          </div>
+          <div class="hidden-content">
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>hetman</p></div>
+              <div>
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+12.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śpiex</p></div>
+              <div>
+                <p>0</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śliw</p></div>
+              <div class="typy-wynik">
+                <p>3</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+5.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-wynik">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="match-box">
+            <p class="druzyna">Paris Saint-Germain</p>
+            <div class="wynik-czas">
+              <div class="wynik">
+                <p>-</p>
+                <p>:</p>
+                <p>-</p>
+              </div>
+              <p class="czas">15/06</p>
+            </div>
+            <p class="druzyna">CHELSEA LONDON</p>
+            <div class="overlay hidden"></div>
+          </div>
+          <div class="hidden-content">
+            <div class="hidden-row trafiony-rezultat">
+              <div><p>hetman</p></div>
+              <div>
+                <p>3</p>
+                <p>:</p>
+                <p>0</p>
+              </div>
+              <div>
+                <p>+12.0</p>
+                <p>x2</p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śpiex</p></div>
+              <div>
+                <p>0</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row">
+              <div><p>śliw</p></div>
+              <div class="typy-wynik">
+                <p>3</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+5.0</p>
+                <p></p>
+              </div>
+            </div>
+            <div class="hidden-row trafiony-wynik">
+              <div><p>trybul</p></div>
+              <div class="typy-wynik">
+                <p>2</p>
+                <p>:</p>
+                <p>1</p>
+              </div>
+              <div>
+                <p>+3.0</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="hidden-content">
-          <div class="hidden-row trafiony-rezultat">
-            <div><p>hetman</p></div>
-            <div>
-              <p>3</p>
-              <p>:</p>
-              <p>0</p>
-            </div>
-            <div>
-              <p>+12.0</p>
-              <p>x2</p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śpiex</p></div>
-            <div>
-              <p>0</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row">
-            <div><p>śliw</p></div>
-            <div class="typy-wynik">
-              <p>3</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+5.0</p>
-              <p></p>
-            </div>
-          </div>
-          <div class="hidden-row trafiony-wynik">
-            <div><p>trybul</p></div>
-            <div class="typy-wynik">
-              <p>2</p>
-              <p>:</p>
-              <p>1</p>
-            </div>
-            <div>
-              <p>+3.0</p>
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- koniec pojemnika wyniki -->
+      </div> <!-- koniec pojemnika wyniki -->
+    </div> <!-- end of wrapper -->
     <footer>
       <p>copyright by śpiex, <script>document.write(new Date().getFullYear())</script></p>
       <p>marcin.spiewakowski@gmail.com</p>
