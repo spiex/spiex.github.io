@@ -95,9 +95,10 @@
 
               wyniki += `</div>`; // end of hidden content
             } else {
-              print(wyniki,"#boksNaWyniki");
+              break;
             }
           }
+          print(wyniki,"#boksNaWyniki");
         }
 
         var request = gapi.client.sheets.spreadsheets.values.get(params);
