@@ -76,7 +76,7 @@
               for (h=12; h < array[i].length; h+=6) {
                 console.log(array[i][h]);
                   wyniki += `
-                    <div class="hidden-row + ${array[i][h+3] === "wynik" ? "trafiony-wynik" : array[i][h+3] === "rezultat" ? "trafiony-rezultat" : ""}>
+                    <div class="hidden-row + ${array[i][h+3] === "wynik" ? "trafiony-wynik" : array[i][h+3] === "rezultat" ? "trafiony-rezultat" : ""}">
                       <div><p>${array[i][h+5]}</p></div>
                       <div>
                         <p>${array[i][h]}</p>
