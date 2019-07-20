@@ -73,11 +73,11 @@
               </div>`;
               wyniki += `<div class="hidden-content">`
 
-              for (h=12; h < array[i].length; h+=4) {
+              for (h=12; h < array[i].length; h+=6) {
                 console.log(array[i][h]);
                   wyniki += `
-                    <div class="hidden-row">
-                      <div><p>hetman ★★</p></div>
+                    <div class="hidden-row + ${array[i][h+3] === "wynik" ? "trafiony-wynik" : array[i][h+3] === "rezultat" ? "trafiony-rezultat" : ""}>
+                      <div><p>${array[i][h+5]}</p></div>
                       <div>
                         <p>${array[i][h]}</p>
                         <p>:</p>
@@ -85,7 +85,7 @@
                       </div>
                       <div>
                         <p>${array[i][h+2]}</p>
-                        <p>${array[i][h+3] === "TRUE" ? "x2" : ""}</p>
+                        <p>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
                       </div>
                     </div>
                   `
