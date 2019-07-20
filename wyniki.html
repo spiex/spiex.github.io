@@ -77,7 +77,6 @@
 
               for (h=12; h < array[i].length; h+=6) {
 
-                if (array[i][8] !== "") {
                   wyniki += `
                     <div class="hidden-row + ${array[i][h+3] === "wynik" ? "trafiony-wynik" : array[i][h+3] === "rezultat" ? "trafiony-rezultat" : ""}">
                       <div><p>${array[i][h+5]}</p></div>
@@ -92,15 +91,14 @@
                       </div>
                     </div>
                   `
-                } else {
-              wyniki += `</div>`; // end of hidden content
               }
+
+              wyniki += `</div>`; // end of hidden content
+            } else {
+              print(wyniki,"#boksNaWyniki");
             }
-          } else {
-            print(wyniki,"#boksNaWyniki");
           }
         }
-      }
 
         var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
@@ -109,7 +107,7 @@
           }, function(reason) {
             console.error('error: ' + reason.result.error.message);
           });
-
+       }
 
 
        function initClient() {
