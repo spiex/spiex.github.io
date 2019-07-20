@@ -125,7 +125,11 @@ nav {
     @include flexy($dir: row, $just: space-around);
   }
   li, a {
-    flex: 1;
+    &:first-child {
+      flex: 3;
+      height: 40px;
+    }
+    flex: 2;
     height: 40px;
   }
   a {
