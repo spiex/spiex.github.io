@@ -40,6 +40,7 @@
       </div>
 
       <div id="statystyka">
+        <!--
         <div class="pojemnik-wykres" id="pojemnik-wykres">
           <div class="box-wykres">
             <div class="change"></div>
@@ -105,7 +106,8 @@
               <div class="punkty-nowe" id="punkty-nowe-8"></div>
             </div>
           </div>
-        </div> <!-- koniec pojemnika wykresu -->
+        </div>
+        -->
 
         <div class="new-table" id="pojemnik-tabelka">
           <div class="new-row">
@@ -809,6 +811,74 @@
       <p>copyright by śpiex, <script>document.write(new Date().getFullYear())</script></p>
       <p>marcin.spiewakowski@gmail.com</p>
     </footer>
+
+    <script>
+       function makeApiCall() {
+         var params = {
+           spreadsheetId: '1cK-0glAn4xyDOE1CQLhzy0Mx_8l0wFH-KW06rTKLg_E',
+           range: "playersstats",
+         };
+
+        // custom functions
+        function print(message, location) {
+          let div = document.querySelector(location);
+          div.innerHTML = message;
+        }
+
+        function createWykres(array) {
+
+          let wykres = [];
+          wykres += `<div class="pojemnik-wykres" id="pojemnik-wykres">`;
+
+            for (i=1; i < array.length; i++) {
+              wykres += `
+                <div class="box-wykres">
+                  <div class="change"></div>
+                  <div class="box-name">${array[i][1]} ${array[i][2]}</div>
+                  <div class="wykres">
+                    <div class="punkty-stare" style="width: ${array[i][14]};"><p>${array[i][3]}</p><span>+${array[i][5]}</span></div>
+                    <div class="punkty-nowe" style="width: ${array[i][15]};"></div>
+                  </div>
+                </div>
+              `
+            }
+
+          wykres += `</div>`;
+          print(wykres,"#statystyka");
+        }
+
+        var request = gapi.client.sheets.spreadsheets.values.get(params);
+          request.then(function(response) {
+            console.log(response.result);
+            createWykres(response.result.values);
+          }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+          });
+       } // end of makeApiCall
+
+
+       function initClient() {
+         var API_KEY = 'AIzaSyDteHMNEiCdA0XHbEPUM3plvjQzRw-rVVU';
+         var CLIENT_ID = '896208609852-0d4hqobmliea0uq34uoho0lekhs2tch4.apps.googleusercontent.com';
+         var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+         gapi.client.init({
+           'apiKey': API_KEY,
+           'clientId': CLIENT_ID,
+           'scope': SCOPE,
+           'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+         }).then(function() {
+           gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+           updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+         });
+       }
+
+       function handleClientLoad() {gapi.load('client:auth2', initClient);}
+       function updateSignInStatus(isSignedIn) {
+           makeApiCall();
+       }
+     </script>
+     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
   <script src="script/main.js"></script>
 
