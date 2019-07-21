@@ -350,14 +350,14 @@ html {
 }
 
 #pojemnik-wykres {
-  transform: translateX(200%);
+  transform: translateX(0%);
   position: absolute;
   //opacity: 0;
   top: 22px;
 }
 
 #pojemnik-tabelka {
-  transform: translateX(0%);
+  transform: translateX(200%);
   //opacity: 1;
 }
 
