@@ -34,9 +34,9 @@
 
       <div class="button-box-wide" id="tabelka-toggles">
         <input type="radio" name="tabela" value="0" id="tabela-1" checked>
-        <label for="tabela-1" id="toggle-tabelka">TABELKA</label>
+        <label for="tabela-1" id="toggle-tabelka">WYKRES</label>
         <input type="radio" name="tabela" value="1" id="tabela-2">
-        <label for="tabela-2" id="toggle-wykres">WYKRES</label>
+        <label for="tabela-2" id="toggle-wykres">TABELKA</label>
       </div>
 
       <div id="statystyka">
@@ -830,7 +830,19 @@
         function createWykres(array) {
 
           let wykres = [];
-          let tabelka =[];
+          let tabelka = [];
+
+          tabelka += `
+            <div class="new-row">
+              <p></p>
+              <p></p>
+              <p class="small">pkt</p>
+              <p></p>
+              <p>1x2</p>
+              <p></p>
+              <p>x2</p>
+            </div>
+          `
 
           for (i=1; i < array.length; i++) {
             wykres += `
