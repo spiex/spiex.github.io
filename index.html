@@ -112,7 +112,7 @@
 
 
         <div class="new-table" id="pojemnik-tabelka">
-          <div class="new-row">
+          <!-- <div class="new-row">
             <p></p>
             <p></p>
             <p class="small">pkt</p>
@@ -191,7 +191,7 @@
             <p>|</p>
             <p>3</p>
             <p>|</p>
-            <p>12</p>
+            <p>12</p> -->
           </div>
 
         </div> <!-- koniec pojemnika tabelki -->
@@ -830,6 +830,7 @@
         function createWykres(array) {
 
           let wykres = [];
+          let tabelka =[];
 
           for (i=1; i < array.length; i++) {
             wykres += `
@@ -842,9 +843,21 @@
                 </div>
               </div>
             `
+            tabelka += `
+              <div class="new-row">
+                <p>${[i]}</p>
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][3]}</p>
+                <p>|</p>
+                <p>${array[i][8]}</p>
+                <p>|</p>
+                <p>${array[i][11]}</p>
+              </div>
+            `
           }
 
           print(wykres,"#pojemnik-wykres");
+          print(tabelka,"#pojemnik-tabelka");
         }
 
         var request = gapi.client.sheets.spreadsheets.values.get(params);
