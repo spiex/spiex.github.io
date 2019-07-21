@@ -828,105 +828,21 @@
         function createWykres(array) {
 
           let wykres = [];
-          wykres += `<div class="pojemnik-wykres" id="pojemnik-wykres">`;
 
-            for (i=1; i < array.length; i++) {
-              wykres += `
-                <div class="box-wykres">
-                  <div class="change">${array[i][13]-array[i][12] > "0" ? "▲" : array[i][13]-array[i][12] < "0" ? "▼" : ""}</div>
-                  <div class="box-name">${array[i][1]} ${array[i][2]}</div>
-                  <div class="wykres">
-                    <div class="punkty-stare + ${array[i][5] === "0.0" ? "round" : ""}" style="width: ${array[i][14]};"><p>${array[i][3]}</p><span>+${array[i][5]}</span></div>
-                    <div class="punkty-nowe" style="width: ${array[i][15]};"></div>
-                  </div>
+          for (i=1; i < array.length; i++) {
+            wykres += `
+              <div class="box-wykres">
+                <div class="change">${array[i][13]-array[i][12] > "0" ? "▲" : array[i][13]-array[i][12] < "0" ? "▼" : ""}</div>
+                <div class="box-name">${array[i][1]} ${array[i][2]}</div>
+                <div class="wykres">
+                  <div class="punkty-stare + ${array[i][5] === "0.0" ? "round" : ""}" style="width: ${array[i][14]};"><p>${array[i][3]}</p><span>+${array[i][5]}</span></div>
+                  <div class="punkty-nowe" style="width: ${array[i][15]};"></div>
                 </div>
-              `
-            }
+              </div>
+            `
+          }
 
-          wykres += `</div>`;
-          wykres += `<div class="new-table" id="pojemnik-tabelka">
-            <div class="new-row">
-              <p></p>
-              <p></p>
-              <p class="small">pkt</p>
-              <p></p>
-              <p>1x2</p>
-              <p></p>
-              <p>x2</p>
-            </div>
-            <div class="new-row">
-              <p>1</p>
-              <p>śpiexinho</p>
-              <p>47.0</p>
-              <p>|</p>
-              <p>8</p>
-              <p>|</p>
-              <p>12</p>
-            </div>
-            <div class="new-row">
-              <p>2</p>
-              <p>śpiex ★</p>
-              <p>45.5</p>
-              <p>|</p>
-              <p>7</p>
-              <p>|</p>
-              <p>11</p>
-            </div>
-            <div class="new-row">
-              <p>3</p>
-              <p>trybul</p>
-              <p>39.0</p>
-              <p>|</p>
-              <p>8</p>
-              <p>|</p>
-              <p>16</p>
-            </div>
-            <div class="new-row">
-              <p>4</p>
-              <p>mareczek</p>
-              <p>39.0</p>
-              <p>|</p>
-              <p>6</p>
-              <p>|</p>
-              <p>12</p>
-            </div>
-            <div class="new-row">
-              <p>5</p>
-              <p>hetman ★★</p>
-              <p>36.0</p>
-              <p>|</p>
-              <p>5</p>
-              <p>|</p>
-              <p>9</p>
-            </div>
-            <div class="new-row">
-              <p>6</p>
-              <p>śliw ★★</p>
-              <p>35.5</p>
-              <p>|</p>
-              <p>6</p>
-              <p>|</p>
-              <p>14</p>
-            </div>
-            <div class="new-row">
-              <p>7</p>
-              <p>mati</p>
-              <p>34.0</p>
-              <p>|</p>
-              <p>4</p>
-              <p>|</p>
-              <p>12</p>
-            </div>
-            <div class="new-row">
-              <p>8</p>
-              <p>bartez</p>
-              <p>22.5</p>
-              <p>|</p>
-              <p>3</p>
-              <p>|</p>
-              <p>12</p>
-            </div>`
-          print(wykres,"#statystyka");
+          print(wykres,"#pojemnik-wykres");
         }
 
         var request = gapi.client.sheets.spreadsheets.values.get(params);
