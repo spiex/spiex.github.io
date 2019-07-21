@@ -29,18 +29,18 @@ const pojemnikTabelka = document.querySelector("#pojemnik-tabelka");
 toggleWykres.addEventListener('click',()=>{
 
   //pojemnikTabelka.style.opacity = 0;
-  pojemnikTabelka.style.transform = 'translateX(-200%)';
+  pojemnikTabelka.style.transform = 'translateX(0)';
   //pojemnikWykres.style.opacity = 1;
-  pojemnikWykres.style.transform = 'translateX(0)';
+  pojemnikWykres.style.transform = 'translateX(-200%)';
   // console.log(document.querySelector('input[name="tabela"]:checked').value);
 });
 
 toggleTabelka.addEventListener('click',()=>{
 
   //pojemnikTabelka.style.opacity = 1;
-  pojemnikTabelka.style.transform = 'translateX(0)';
+  pojemnikTabelka.style.transform = 'translateX(200%)';
   //pojemnikWykres.style.opacity = 0;
-  pojemnikWykres.style.transform = 'translateX(200%)';
+  pojemnikWykres.style.transform = 'translateX(0)';
 
   // console.log(document.querySelector('input[name="tabela"]:checked').value);
 });
