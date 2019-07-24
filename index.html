@@ -90,7 +90,13 @@
           for (i=1; i < array.length; i++) {
             wykres += `
               <div class="box-wykres">
-                <div class="change">${array[i][13]-array[i][12] > "0" ? "▲" : array[i][13]-array[i][12] < "0" ? "▼" : ""}</div>
+                <div class="change">`
+                if (array[i][13]-array[i][12] > 0) {
+                      wykres += `▲ ${array[i][13]-array[i][12]}</div>`;
+                    } else if (array[i][13]-array[i][12] < 0) {
+                      wykres += `▼ ${array[i][12]-array[i][13]}</div>`;
+                    };
+            wykres += `
                 <div class="box-name">${array[i][1]} ${array[i][2]}</div>
                 <div class="wykres">
                   <div class="punkty-stare + ${array[i][5] === "0.0" ? "round" : ""}" style="width: ${array[i][14]};"><p>${array[i][3]}</p><span>+${array[i][5]}</span></div>
