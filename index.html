@@ -90,11 +90,13 @@
           for (i=1; i < array.length; i++) {
             function sprawdzProgres() {
               if (array[i][13]-array[i][12] > 0) {
-                  wykres += `▲ ${array[i][13]-array[i][12]}`;
+                  return `▲ ${array[i][13]-array[i][12]}`;
                 } else if (array[i][13]-array[i][12] < 0) {
-                  wykres += `▼ ${array[i][12]-array[i][13]}`;
+                  return `▼ ${array[i][12]-array[i][13]}`;
+              } else {
+                return ``;
               };
-            }
+            };
             wykres += `
               <div class="box-wykres">
                 <div class="change">${sprawdzProgres()}</div>
