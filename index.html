@@ -88,7 +88,7 @@
           `
 
           for (i=1; i < array.length; i++) {
-            function sprawdzProgres() {
+            function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
               if (array[i][13]-array[i][12] > 0) {
                   return `▲ ${array[i][13]-array[i][12]}`;
                 } else if (array[i][13]-array[i][12] < 0) {
