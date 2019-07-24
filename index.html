@@ -90,12 +90,12 @@
           for (i=1; i < array.length; i++) {
             wykres += `
               <div class="box-wykres">
-                <div class="change">`
+                <div class="change">` +
                 if (array[i][13]-array[i][12] > 0) {
                       wykres += `▲ ${array[i][13]-array[i][12]}</div>`;
                     } else if (array[i][13]-array[i][12] < 0) {
                       wykres += `▼ ${array[i][12]-array[i][13]}</div>`;
-                    };
+                    }; +
             wykres += `
                 <div class="box-name">${array[i][1]} ${array[i][2]}</div>
                 <div class="wykres">
