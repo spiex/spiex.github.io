@@ -90,16 +90,16 @@
           for (i=1; i < array.length; i++) {
             function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
               if (array[i][13]-array[i][12] > 0) {
-                  return `▲ ${array[i][13]-array[i][12]}`;
+                  return `<div class="change up">▲ ${array[i][13]-array[i][12]}</div>`;
                 } else if (array[i][13]-array[i][12] < 0) {
-                  return `▼ ${array[i][12]-array[i][13]}`;
+                  return `<div class="change down">▼ ${array[i][12]-array[i][13]}</div>`;
               } else {
                 return ``;
               };
             };
             wykres += `
               <div class="box-wykres">
-                <div class="change">${sprawdzProgres()}</div>
+                ${sprawdzProgres()}
                 <div class="box-name">${array[i][1]} ${array[i][2]}</div>
                 <div class="wykres">
                   <div class="punkty-stare + ${array[i][5] === "0.0" ? "round" : ""}" style="width: ${array[i][14]};"><p>${array[i][3]}</p><span>+${array[i][5]}</span></div>

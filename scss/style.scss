@@ -44,6 +44,8 @@ p {
 }
 
 
+
+
 // specific boxes and other
 .jumbo {
   box-shadow: 0 2px 4px rgba($black,.8);
@@ -235,6 +237,14 @@ html {
 
 .handicap2 {
   color: $handicap-2;
+}
+
+.up {
+  color: $green;
+}
+
+.down {
+  color: $red;
 }
 
 .btn-primary {
