@@ -175,7 +175,7 @@
 
               for (h=12; h < array[i].length; h+=6) {
 
-                if (array[i][h+5] == null) {
+                if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
                   break;
                 } else {
 
