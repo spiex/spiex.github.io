@@ -25,7 +25,11 @@ body {
   font-weight: 400;
   background-color: $white;
   margin: 0;
+}
+
+body, header {
   max-width: 450px;
+  margin: auto;
 }
 
 .bold {
