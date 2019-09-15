@@ -124,6 +124,7 @@ nav {
   background-color: rgba($black,1);
   box-shadow: 0 2px 2px rgba(black,.8);
   width: 100%;
+  max-width: 450px; // hardcoded maxwith for header and body
   height: 40px;
   position: fixed;
   transition: .4s;
