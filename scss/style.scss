@@ -199,11 +199,21 @@ html {
 }
 
 // === KOLORY WYKRESU Z PUNKTAMI
+// .punkty-stare { // KOLOR STARYCH PUNKTÓW NA WYKRESIE
+//   background: $main-color;
+//   color: $contrast-color;
+//   span { // KOLOR LICZBY PUNKTÓW W NOWEJ KOLEJCE
+//     color: $dark-background-text;
+//   }
+// }
+
+// === powyżej ciemniejsze, poniżej bardziej czytelne
+
 .punkty-stare { // KOLOR STARYCH PUNKTÓW NA WYKRESIE
-  background: $main-color;
-  color: $contrast-color;
+  background: $complementary-gray;
+  color: $main-color;
   span { // KOLOR LICZBY PUNKTÓW W NOWEJ KOLEJCE
-    color: $dark-background-text;
+    color: $black;
   }
 }
 
