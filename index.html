@@ -44,7 +44,8 @@
         <div class="pojemnik-wykres" id="pojemnik-wykres"></div>
         <div class="new-table" id="pojemnik-tabelka"></div>
 
-        <div class="progress-bar" id="progress-bar-mecze"></div>
+      <div id="progress-bar-mecze"></div>>
+
 
       </div>
 
@@ -150,7 +151,7 @@
 
           let progres = [];
 
-          progres += `<div class="progress-slider" id="pozostale-mecze" style="width: ${array[0][3]};">rozegrane mecze: ${array[0][0]}/${array[0][2]} (${array[0][3]})</div>`
+          progres += `<div class="progress-bar">rozegrane mecze: ${array[0][0]}/${array[0][2]} (${array[0][3]})<div class="progress-slider" id="pozostale-mecze" style="width: ${array[0][3]};"></div></div>`
 
           for (i=1; i < array.length; i++) {
             // console.log(array[i]);

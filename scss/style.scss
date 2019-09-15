@@ -274,7 +274,7 @@ html {
 // ==== POCZĄTEK TABELKI
 .progress-bar {
   margin: 8px auto;
-  padding: 1px 2px;
+  // padding: 1px 2px;
   height: 29px;
   border-radius: 8px;
   position: relative;
@@ -282,12 +282,14 @@ html {
   height: auto;
   max-width: 450px;
   min-width: 290px;
+  font-size: .85em;
+  padding: 2px 4px;
 }
 
 #pozostale-mecze {
   width: 0%;
-  font-size: .85em;
-  padding: 2px 4px;
+  
+
   // &::before {
   //   content: "rozegrane mecze: 66/75";
   //   position: absolute;
