@@ -282,13 +282,17 @@ html {
   height: auto;
   max-width: 450px;
   min-width: 290px;
-  font-size: .85em;
-  padding: 2px 4px;
+  p {
+    font-size: .85em;
+    padding: 2px 4px;
+    position: absolute;
+    left: 2px;
+  }
 }
 
 #pozostale-mecze {
   width: 0%;
-  
+
 
   // &::before {
   //   content: "rozegrane mecze: 66/75";
