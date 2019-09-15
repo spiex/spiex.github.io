@@ -286,22 +286,22 @@ html {
 
 #pozostale-mecze {
   width: 0%;
-  &::before {
-    content: "rozegrane mecze: 66/75";
-    position: absolute;
-    left: 5%;
-    right: 2px;
-    text-align: right;
-    font-size: .85em;
-    padding: 2px 4px;
-  }
-  &::after {
-    content: "87%";
-    position: absolute;
-    left: 10px;
-    top: 3px;
-    color: $black;
-  }
+  // &::before {
+  //   content: "rozegrane mecze: 66/75";
+  //   position: absolute;
+  //   left: 5%;
+  //   right: 2px;
+  //   text-align: right;
+  //   font-size: .85em;
+  //   padding: 2px 4px;
+  // }
+  // &::after {
+  //   content: "87%";
+  //   position: absolute;
+  //   left: 10px;
+  //   top: 3px;
+  //   color: $black;
+  // }
 }
 
 #pozostale-kapitany {
