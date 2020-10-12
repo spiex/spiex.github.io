@@ -865,7 +865,7 @@ button {
   margin: auto;
   @include flexy($dir: row, $just: space-between);
   margin-bottom: 4px;
-  margin-top: 48px;
+  margin-top: 96px;
   // position: fixed;
   input[type="radio"] {
       display:none;
