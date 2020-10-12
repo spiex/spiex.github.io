@@ -385,10 +385,6 @@ html {
   margin-top: 10px;
 }
 
-.button-box-wide {
-  margin-top: 48px;
-}
-
 #statystyka {
   // display: flex;
   justify-content: center;
@@ -869,6 +865,7 @@ button {
   margin: auto;
   @include flexy($dir: row, $just: space-between);
   margin-bottom: 4px;
+  margin-top: 48px;
   // position: fixed;
   input[type="radio"] {
       display:none;
