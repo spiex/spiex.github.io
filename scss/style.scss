@@ -902,10 +902,10 @@ button {
 #tabelka-toggles {
   @include flexy($dir: row);
   label:first-child {
-    flex: 2;
+    flex: 1;
   }
   label:last-child {
-    flex: 2;
+    flex: 1;
   }
 }
 
