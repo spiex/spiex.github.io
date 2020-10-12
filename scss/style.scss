@@ -114,6 +114,7 @@ footer {
 
 .wrapper {
   min-height: calc(100vh - 48px);
+  margin-bottom: 24px;
 }
 
 .wrapper-general {
@@ -382,6 +383,10 @@ html {
 
 .pojemnik-wyniki {
   margin-top: 10px;
+}
+
+.button-box-wide {
+  margin-top: 48px;
 }
 
 #statystyka {
