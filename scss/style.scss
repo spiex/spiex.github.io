@@ -40,6 +40,10 @@ body, header {
   margin: auto;
 }
 
+header {
+  margin-bottom: 52px;
+}
+
 .bold {
   font-weight: 700;
 }
@@ -865,7 +869,7 @@ button {
   margin: auto;
   @include flexy($dir: row, $just: space-between);
   margin-bottom: 4px;
-  margin-top: 96px;
+  //margin-top: 96px;
   // position: fixed;
   input[type="radio"] {
       display:none;
