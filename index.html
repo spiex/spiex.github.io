@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tabelka LM 2019/2020</title>
+    <title>Tabelka LM 2020/2021</title>
     <link rel="stylesheet" href="./scss/style.min.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -20,25 +20,12 @@
       <header>
         <nav>
           <ul>
-            <li><a href="#" class="selected">WYNIKI</a></li>
-            <li><a href="#" class="blocked">typy</a></li>
+            <li><a href="#" class="selected logo-navbar"><img src="img/logo-transparent.png"></a></li>
             <li><a href="wyniki.html">archiwum</a></li>
             <li><a href="punktacja.html">punktacja</a></li>
           </ul>
         </nav>
       </header>
-
-      <div class="jumbo">
-        <div class="foto-box">
-          <img src="https://www.thesportsdb.com/images/media/league/badge/dtp1dl1534767233.png">
-        </div>
-        <div class="title-box">
-          <div>
-            <h1>Tabelka LM</h1>
-            <p>sezon 2019/2020</p>
-          </div>
-        </div>
-      </div>
 
       <div class="button-box-wide" id="tabelka-toggles">
         <input type="radio" name="tabela" value="0" id="tabela-1" checked>
@@ -61,10 +48,6 @@
         <div class="matches" id="current-matches-box"></div>
       </div> <!-- koniec pojemnika wyniki -->
     </div> <!-- end of wrapper -->
-    <footer>
-      <p>wersja 15/09/2019</p>
-      <p>bez odświeżania, sortowania i typowania</p>
-    </footer>
 
     <script>
        function makeApiCall() {
