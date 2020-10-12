@@ -157,7 +157,7 @@ nav {
   }
   li, a {
     &:first-child {
-      flex: 3;
+      flex: 4;
       height: 48px;
     }
     flex: 2;
@@ -902,7 +902,7 @@ button {
 #tabelka-toggles {
   @include flexy($dir: row);
   label:first-child {
-    flex: 1;
+    flex: 2;
   }
   label:last-child {
     flex: 2;
