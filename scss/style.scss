@@ -169,7 +169,7 @@ nav {
     @include flexy($dir: column, $just: center);
     color: $white;
     &:hover {
-      background: $main-gradient-reverse;
+      background: $champions-league-blue;
     }
   }
 }
@@ -258,7 +258,7 @@ html {
 
 // === KOLORY BOKSU Z WYNIKAMI MECZÓW I TYPAMI
 .match-box { // BOKS Z AKTUALNYMI WYNIKAMI MECZÓW
-  background: $main-color;
+  background: $champions-league-blue;
   color: $dark-background-text;
 }
 
@@ -530,6 +530,7 @@ html {
 .druzyna {
   font-weight: 700;
   text-transform: uppercase;
+  font-size: .85em;
   flex: 2;
   margin: 2px;
   padding: 0 2px;
@@ -894,7 +895,6 @@ button {
     cursor: pointer;
     transition: .2s;
     margin: 4px 0;
-    margin-top: 2px;
     padding: 2px 0;
     &:nth-child(4) {
       margin: 4px 2px;
