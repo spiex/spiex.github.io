@@ -30,8 +30,7 @@
       <div class="pojemnik-punktacja">
         <div class="button-box-wide">
           <button class="btn-secondary active" id="punktacja-1">NORMALNA</button>
-          <button class="btn-secondary" id="punktacja-2">HANDICAP 1</button>
-          <button class="btn-secondary" id="punktacja-3">HANDICAP 2</button>
+          <button class="btn-secondary" id="punktacja-2">HANDICAP</button>
         </div>
         <div id="boksNaTypy"></div>
       </div>
@@ -55,7 +54,6 @@
 
       const button1 = document.querySelector("#punktacja-1");
       const button2 = document.querySelector("#punktacja-2");
-      const button3 = document.querySelector("#punktacja-3");
 
       function printPoints(array) {
         let typy = [];
@@ -103,7 +101,6 @@
       button1.addEventListener('click',()=>{
         button1.classList.add('active');
         button2.classList.remove('active');
-        button3.classList.remove('active');
         var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
             console.log(response.result);
@@ -115,20 +112,6 @@
 
       button2.addEventListener('click',()=>{
         button2.classList.add('active');
-        button1.classList.remove('active');
-        button3.classList.remove('active');
-        var request = gapi.client.sheets.spreadsheets.values.get(params);
-          request.then(function(response) {
-            console.log(response.result);
-            printPoints(response.result.values);
-          }, function(reason) {
-            console.error('error: ' + reason.result.error.message);
-          });
-      });
-
-      button3.addEventListener('click',()=>{
-        button3.classList.add('active');
-        button2.classList.remove('active');
         button1.classList.remove('active');
         var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
