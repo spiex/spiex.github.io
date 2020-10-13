@@ -535,6 +535,7 @@ html {
   margin: 2px;
   padding: 0 2px;
   text-align: center;
+  @include flexy($dir: column, $just: center);
 }
 
 .hidden-content {
