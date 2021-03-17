@@ -1,0 +1,35 @@
+// colors
+$main-color: #34495e;
+$complementary-gray: #EAEAEA;
+$contrast-color: #FFF275;
+$accent-color: #FFF275;
+$handicap-1: #FFF275;
+$handicap-2: #46A1DE;
+
+$champions-league-blue: #162E58;
+$main-gradient: linear-gradient($champions-league-blue,$main-color);
+$main-gradient-reverse: linear-gradient($main-color,$champions-league-blue);
+
+$white: #f9f9f9;
+$black: #333;
+$dark-background-text: #f9f9f9;
+$bright-background-text: #333;
+
+$red: #92140C;
+$green: #00A878;
+
+// measurements
+$max-width: 90%;
+$jumbo-height: 140px;
+
+// MIXINS
+@mixin flexy(
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
