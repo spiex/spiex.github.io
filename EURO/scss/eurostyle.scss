@@ -1,0 +1,915 @@
+// import partials
+@import 'partials/eurovariables';
+
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+
+html {
+  //background: rgba(0,0,0,.075);
+  background: $white;
+}
+
+* {
+  box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+body {
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+p {
+  margin: 4px auto;
+}
+
+h1 {
+  color: $green;
+  margin-top: 12px;
+}
+
+h3 {
+  text-align: center;
+  color: $main;
+  margin: 4px;
+  font-size: 1.2em;
+}
+
+// h2 {
+//   font-size: $font-big;
+//   color: $main;
+//   text-align: center;
+// }
+
+// NAVBAR
+.main-wrapper {
+	width: 95%;
+	margin: calc(#{$navbar-height} + 8px) auto 16px;
+	min-height: calc(100vh - 8px - 16px - #{$navbar-height});
+	@include flexy ($dir: column, $just: start);
+  > * {
+    width: 100%;
+  }
+}
+
+
+
+nav {
+	text-align: center;
+	@include flexy ($just: center, $dir: column);
+	height: $navbar-height;
+	width: 100%;
+	max-width: $max-width;
+	position: fixed;
+  top: 0;
+	z-index: 10;
+	//background: $white;
+
+  .logotyp-tabelki {
+    min-height: 72px;
+    min-width: 100%;
+    background: $main;
+    @include flexy;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+    z-index: 15;
+    div {
+      flex: 6;
+      @include flexy;
+      img {
+        //max-height: 70%;
+        max-width: 45%;
+      }
+    }
+    a {
+      flex: 1;
+    }
+  }
+	ul {
+		padding: 0;
+		list-style-type: none;
+		width: calc(100% - 8px);
+		@include flexy;
+		margin: 0 4px;
+		li {
+			@include flexy;
+			flex: 2;
+      &:last-child {
+        flex: 1;
+      }
+		}
+	}
+	a, li {
+		height: 30px;
+	}
+	a {
+		@include flexy ($dir: row, $just: center);
+    text-decoration: none;
+    // @include accent-white-text;
+    background: $secondary-white-text;
+    color: white;
+    //font-variant: small-caps;
+		font-weight: bold;
+    font-size: .85em;
+		flex: 1;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    .bx {
+      font-size: 1.7em;
+      margin: 0 4px;
+    }
+		&:hover {
+      background: $main;
+      color: $white;
+		}
+	}
+  li:last-child a {
+    background: $gold;
+    color: $black;
+    &:hover {
+			//color: $gray;
+      background: $main;
+      color: $white;
+    }
+  }
+}
+
+.selected {
+  background: $main;
+  color: $white;
+}
+
+.infolink {
+  //min-width: 60px;
+  min-height: 40px;
+  margin-right: 4px;
+  background: $main;
+  font-size: $font-bigger;
+  box-shadow: none;
+  border-radius: 0;
+  transition: transform .3s;
+  @include flexy($dir: column);
+  &:hover {
+    .bx {
+      transform: rotate(360deg) scale(1.2);
+      transition: transform .3s;
+    }
+    // .infotekst {
+    //   transform: scale(1.2);
+    //   transition: transform .3s;
+    // }
+  }
+
+}
+.infotekst {
+  font-size: .6em;
+}
+
+
+footer {
+  width: 100%;
+	height: $footer-height;
+	@include flexy;
+	background: $main;
+  color: $white;
+  text-align: center;
+  p {
+    margin: 0;
+    flex: 1;
+    @include flexy;
+    height: $footer-height;
+    a {
+  		@include flexy ($dir: column, $just: center);
+      text-decoration: none;
+      color: $white;
+  		font-weight: bold;
+      font-size: $font-small;
+      height: $footer-height;
+  		flex: 1;
+  		.bx {
+  			font-size: 1.5rem;
+  			color: $white;
+  			padding-bottom: 2px;
+  		}
+  		&:hover {
+  			color: $gray;
+  			.bx {
+  				color: $gray;
+  			}
+  		}
+  	}
+  }
+}
+
+
+// =================== KALENDARZ MECZOWY ================
+.harmonogram-text {
+   text-align: center;
+   border-bottom: 1px dashed $gray;
+   line-height: 0.05em;
+   margin-bottom: 0;
+   span {
+     background: $white;
+     color: rgba(0,0,0,.6);
+     font-size: $font-small;
+     padding: 0 10px;
+   }
+}
+
+.progress-blocks-box {
+  @include flexy($just: center, $wrap: wrap);
+  padding: 8px 0;
+  border-bottom: 1px dashed $gray;
+  margin: 0 auto 20px;
+  .progress-block {
+    flex: 1;
+    height: 100%;
+    background: $secondary-black-text;
+    margin: 2px;
+    border-radius: 2px;
+    max-width: 9.5%;
+    min-width: 9.5%;
+    height: 20px;
+    font-size: $font-small;
+    text-align: center;
+    padding: 4px 0;
+  }
+  .filled {
+    background: $green;
+    color: $white;
+    padding: 3px 0;
+    .bx {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+}
+// ============= KONIEC KALENDARZA MECZOWEGO ================
+
+// ============= MECZE + TYPY =============
+#mecze {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.match-box {
+  margin: 0 auto;
+  @include flexy;
+  position: relative;
+}
+
+.match-box,
+.bets-box {
+  width: 95%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.bets-box {
+  border-radius: 0 0 8px 8px;
+  margin: 0 auto;
+  height: auto;
+  max-height: 0;
+  transition: .25s ease-out;
+  overflow: hidden;
+  margin: 0 auto 8px;
+  padding-right: 1px;
+}
+
+.bets-box-final {
+  max-height: 100%;
+  overflow: visible;
+}
+
+.empty {
+  min-height: 8px;
+}
+
+.typowanie-info {
+  p:first-child,
+  p:nth-child(2) {
+    color: $main;
+    font-weight: bold;
+    text-align: center;
+  }
+  margin: 12px auto;
+  width: 100%;
+}
+
+.result-wrapper, .bet {
+  display: flex;
+  justify-content: space-around;
+  background: $white;
+  box-shadow: 0 2px 2px rgba(0,0,0,.25);
+  p {
+    margin: 4px 0;
+  }
+}
+
+.result-wrapper {
+  border-radius: 8px;
+  width: 100%;
+  @include accent-black-text;
+}
+
+.rolldown {
+
+}
+
+.btn-box {
+  @include flexy;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.results, .player-results {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 8px;
+  p {
+    flex: 1;
+  }
+}
+
+.player-results {
+  flex: 1;
+  text-align: center;
+  p:first-child {
+    text-align: right;
+    font-size: $font-small;
+    color: $green;
+  }
+}
+
+.results {
+  input {
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+    text-align: center;
+    &[type=checkbox] {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.time {
+  @include flexy;
+}
+
+
+.teams, .details {
+  flex: 6;
+}
+
+.details {
+  padding-left: 8px;
+}
+
+.time, .results {
+  text-align: center;
+  flex: 1;
+}
+
+.time {
+  padding: 10px 0;
+  font-size: .75em;
+}
+
+
+
+.open {
+  border-radius: 8px 8px 0 0;
+  background: $main;
+  color: $white;
+}
+
+.bet {
+  display: flex;
+  justify-content: space-around;
+  height: 24px;
+  font-size: $font-small;
+  margin-left: 8px;
+  > * {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+    &:first-child {
+      border-bottom: none;
+    }
+  }
+  &:first-child {
+    height: 36px;
+    padding-top: 12px;
+    margin-top: -10px;
+  }
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    > * {
+      border-bottom: none;
+    }
+  }
+}
+
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  > p {
+    flex: 3;
+  }
+  > div {
+    flex: 2;
+  }
+}
+
+.captain {
+  font-size: .85em;
+  font-weight: bold;
+  color: $main; //#008EAA;
+}
+
+
+.teams {
+  @include flexy($just: space-between);
+  .team {
+    flex: 1;
+    &:first-child {
+      text-align: right;
+    }
+    &:last-child {
+      text-align: left;
+    }
+  }
+  .divider {
+    max-width: 24px;
+    min-width: 24px;
+    text-align: center;
+  }
+}
+
+// ================ KONIEC MECZE + TYPY =================
+
+
+// ================ TABELE GRUPOWE ======================
+
+
+.tabela-grupowa {
+  @include flexy($dir: column);
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+.invisible-decimal {
+  color: $white;
+}
+
+
+
+
+
+
+.tabela-row {
+  width: 100%;
+  height: 24px;
+  @include flexy;
+  .invisible-decimal {
+    font: inherit;
+  }
+  //border-bottom: 1px dashed $gray;
+
+  &:nth-child(2) {
+    background: $gold;
+    color: $black;
+    border-bottom: none;
+  }
+  p {
+    flex: 1;
+    text-align: center;
+    font-size: $font-small;
+    margin: 4px 0;
+  }
+  p:nth-child(3) {
+    font-weight: 700;
+    font-size: 1em;
+    flex: 2;
+  }
+
+  p:nth-child(3),
+  p:nth-child(4),
+  p:nth-child(6) {
+    text-align: right;
+    padding-right: 8px;
+  }
+
+  p:nth-child(4),
+  p:nth-child(6) {
+    flex: 1;
+  }
+
+  p:nth-child(2) {
+    flex: 4;
+    text-align: left;
+    font-size: 1em;
+  }
+  .tabela-divider {
+    max-width: 4px;
+    font-size: $font-bigger;
+    padding-bottom: 2px;
+  }
+  &:nth-child(1) {
+    border-bottom: 2px solid $main;
+    p {
+      font-size: $font-small;
+      text-align: center;
+      font-weight: 500;
+      &:nth-child(2) {
+        text-align: left;
+        font-size: .9em;
+        font-weight: 700;
+      }
+      &:nth-child(6) {
+        text-align: center;
+        font-size: .7em;
+        padding-right: 4px;
+        padding-left: 4px;
+      }
+      &:nth-child(3) {
+        font-size: .7em;
+        text-align: right;
+        font-weight: 500;
+      }
+      // &:nth-child(4) {
+      //   padding-right: 0;
+      // }
+    }
+  }
+}
+
+
+
+.grupowy {
+  @include accent-black-text;
+  .invisible-decimal {
+    color: $secondary-black-text;
+  }
+}
+
+
+.trophy {
+  .bx {
+    font-size: 1.5em;
+  }
+}
+// .up {
+//   color: #5C8001;
+// }
+//
+// .down {
+//   color: #EF5B5B;
+// }
+
+
+
+// .ranking-row {
+//   width: 100%;
+//   @include flexy;
+//   &:nth-child(2) {
+//     background: $main;
+//     color: $white;
+//     border-radius: 8px;
+//   }
+//   p {
+//     flex: 1;
+//     text-align: center;
+//     font-size: $font-small;
+//   }
+//   p:nth-child(3),
+//   p:nth-child(5) {
+//     text-align: right;
+//     font-weight: 700;
+//     font-size: 1em;
+//   }
+//   p:nth-child(3),
+//   p:nth-child(5) {
+//     flex: 2;
+//   }
+//   p:nth-child(5) {
+//     text-align: center;
+//   }
+//   p:nth-child(2) {
+//     flex: 6;
+//     text-align: left;
+//     font-size: 1em;
+//   }
+//   &:nth-child(1) {
+//     p {
+//       font-size: $font-small;
+//       text-align: center;
+//       font-weight: 500;
+//       &:nth-child(2) {
+//         text-align: left;
+//         font-size: .9em;
+//         font-weight: 700;
+//       }
+//       &:nth-child(3) {
+//         text-align: right;
+//       }
+//     }
+//   }
+// }
+//
+// .finalista {
+//   background: $main;
+//   color: $white;
+//   border-radius: 8px;
+//   margin-top: 1px;
+// }
+//
+// .grupowy {
+//   @include accent-black-text;
+//   border-radius: 8px;
+//   margin-top: 1px;
+// }
+
+
+.tabela-ranking {
+  @include flexy($dir: column);
+  margin-top: 16px;
+  width: 95%;
+  .tabela-header,
+  .ranking-row {
+    width: 100%;
+    @include flexy;
+    p {
+      flex: 2;
+      text-align: center;
+    }
+    p:first-child {
+      flex: 1;
+      font-size: $font-small;
+    }
+    p:nth-child(2) {
+      flex: 6;
+      text-align: left;
+    }
+    p:nth-child(3) {
+      text-align: right;
+    }
+    p:nth-child(3),
+    p:nth-child(5) {
+      font-weight: 700;
+    }
+    p:nth-child(4),
+    p:nth-child(6) {
+      font-size: $font-small;
+    }
+    p:nth-child(6) {
+      flex: 2;
+    }
+  }
+  .tabela-header {
+    background: $main;
+    color: $white;
+    height: 30px;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid $secondary-white-text;
+    p {
+      font-size: $font-small;
+      font-weight: 700;
+    }
+  }
+  .ranking-row {
+    border-top: 1px dashed $gray;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.small {
+  font-size: $font-small;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.green {
+  color: $green;
+}
+
+.progress-bar { // ZEWNĘTRZNA CZĘŚĆ PASKA PROGRESU
+  border: 1px solid $gray;
+  background: $secondary-black-text;
+}
+
+.progress-slider { // KOLOROWE WYPEŁNIENIE PASKA PROGRESU
+  background: $white;
+}
+
+.progress-bar {
+  margin: 8px auto;
+  padding-right: 2px;
+  padding-top: 0;
+  height: 26px;
+  border-radius: 8px;
+  position: relative;
+  width: 88%;
+  height: auto;
+  max-width: 450px;
+  min-width: 290px;
+  p {
+    font-size: $font-small;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    position: absolute;
+    left: 2px;
+  }
+}
+
+.progress-slider {
+  height: 20px;
+  border-radius: 6px;
+  margin: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+.gold {
+  color: $gold;
+}
+
+
+.punktacja-box,
+.przyciski-box {
+  width: 95%;
+  margin: 8px auto;
+}
+
+.przyciski-box {
+  @include flexy;
+}
+
+.button {
+  text-decoration: none;
+  color: $white;
+  font-size: $font-small;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 700;
+  width: 45%;
+  height: 36px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: $secondary-white-text;
+  &:hover {
+    background: $green;
+  }
+}
+
+.punktacja-box {
+  width: 95%;
+}
+.punktacja-row {
+  @include flexy;
+  border-bottom: 1px dashed $gray;
+  p {
+    flex: 1;
+    text-align: center;
+    font-weight: 700;
+    &:first-child {
+      font-size: $font-big;
+      font-weight: 700;
+    }
+    &:nth-child(2) {
+      font-weight: 500;
+      flex: 2;
+    }
+  }
+  &:first-child {
+    border-bottom: 2px solid $black;
+    font-weight: 700;
+    background: $green;
+    min-height: 44px;
+    border-radius: 8px 8px 0 0;
+    color: $white;
+    p {
+      font-size: $font-small;
+    }
+  }
+}
+
+.points-example p {
+  font-size: $font-small;
+  color: $green;
+  font-weight: 700;
+}
+
+.no-border {
+  border: none;
+}
+
+
+.akapit {
+  margin-top: 16px;
+}
+
+.mini-headline {
+  margin: 24px 0 12px;
+}
+
+.faza-1,
+.grupa-row {
+  @include flexy($just: space-between);
+}
+
+.faza-2 {
+  @include flexy;
+}
+
+.faza-1,
+.faza-2 {
+  margin-top: 8px;
+}
+
+
+.grupa {
+  @include flexy($dir: column);
+  width: 48%;
+}
+
+.grupa-2 {
+  @include flexy($dir: column);
+  width: 60%;
+}
+
+.grupa-row {
+  width: 100%;
+  p {
+    padding: 4px;
+    margin: 0;
+    text-align: right;
+    flex: 1;
+  }
+  p:first-child {
+    flex: 3;
+    text-align: left;
+  }
+}
+
+.header-instrukcja {
+  font-size: $font-small;
+  font-weight: 700;
+  color: $main;
+  margin-top: 8px;
+}
+
+.awans {
+  background: $gold;
+}
+
+.awans-zwyciezca {
+  background: $main;
+  color: $white;
+  p span {
+    color: $gold;
+  }
+}
+
+.center {
+  text-align: center;
+  margin: 0;
+  font-size: .9em;
+  .bx {
+    font-size: 2em;
+    color: $main;
+    margin: 16px 0;
+  }
+}

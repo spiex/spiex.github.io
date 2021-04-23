@@ -1,0 +1,440 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabelka Euro 2021</title>
+
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ^ BOXICONS -->
+    <link rel="stylesheet" type="text/css" href="./scss/eurostyle.min.css">
+  </head>
+  <body>
+
+  <nav>
+    <div class='logotyp-tabelki'><div><img src='img/logoEURwhite.png'></div><a href="punktacja.html" class='infolink'><i class='bx bx-info-circle' ></i><span class='infotekst'>INFO</span></a></div>
+
+    <ul>
+      <li><a href="faza1.html">BARAŻE</a></li>
+      <li><a href="faza2.html" class='selected'>FAZA GRUPOWA</a></li>
+      <li><a href="faza3.html"><i class='bx bxs-trophy'></i>FINAŁ</a></li>
+      <li><a href="statystyki.html"><i class='bx bxs-bar-chart-alt-2' ></i></a></li>
+    </ul>
+  </nav>
+  <div class="main-wrapper">
+
+
+<h2 class='harmonogram-text'><span>HARMONOGRAM MECZÓW</span></h2>
+<div class='progress-blocks-box'>
+  <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+  <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+  <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+  <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+  <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+  <div class="progress-block">28.06</div>
+  <div class="progress-block">29.06</div>
+  <div class="progress-block">29.06</div>
+  <div class="progress-block">2.07</div>
+  <div class="progress-block">2.07</div>
+  <div class="progress-block">3.07</div>
+  <div class="progress-block">3.07</div>
+</div>
+
+<div class='tabela-grupowa'>
+  <div class='tabela-row'>
+    <p></p>
+    <p>GRUPA C</p>
+    <p>PUNKTY</p>
+    <p></p>
+    <p class='tabela-divider'></p>
+    <p>TIE<br>BREAKER</p>
+    <p class='tabela-divider'></p>
+    <p>(c)</p>
+  </div>
+  <div class='tabela-row'>
+    <p></p>
+    <p>śpiex ★</p>
+    <p>37.0</p>
+    <p>+6.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>102.5</p>
+    <p class='tabela-divider'>|</p>
+    <p>7</p>
+  </div>
+  <div class='tabela-row'>
+    <p>▲1</p>
+    <p>mareczek</p>
+    <p>34.0</p>
+    <p>+8.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>88.5</p>
+    <p class='tabela-divider'>|</p>
+    <p>10</p>
+  </div>
+  <div class='tabela-row'>
+    <p>▼1</p>
+    <p>trybul</p>
+    <p>32.0</p>
+    <p>+3.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>92.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>9</p>
+  </div>
+
+</div>
+
+<div class='tabela-grupowa'>
+  <div class='tabela-row'>
+    <p></p>
+    <p>GRUPA D</p>
+    <p>PUNKTY</p>
+    <p></p>
+    <p class='tabela-divider'></p>
+    <p>TIE<br>BREAKER</p>
+    <p class='tabela-divider'></p>
+    <p>(c)</p>
+  </div>
+  <div class='tabela-row'>
+    <p>▲2</p>
+    <p>śliw ★★</p>
+
+    <p>45.5</p>
+    <p>+12.5</p>
+    <p class='tabela-divider'>|</p>
+    <p>100.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>6</p>
+  </div>
+  <div class='tabela-row'>
+    <p>▼1</p>
+    <p>bartez</p>
+
+    <p>37.0</p>
+    <p>+0.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>75.5</p>
+    <p class='tabela-divider'>|</p>
+    <p>10</p>
+  </div>
+  <div class='tabela-row'>
+    <p>▼1</p>
+    <p>śpiexinho</p>
+
+    <p>37.0</p>
+    <p>+3.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>82.0</p>
+    <p class='tabela-divider'>|</p>
+    <p>9</p>
+  </div>
+
+</div>
+
+<h2 class='harmonogram-text'><span>AKTUALNA KOLEJKA</span></h2>
+<div id='mecze'>
+
+  <div class='match-box'>
+    <div class='result-wrapper'>
+      <p class='time'>74'</p>
+      <div class='teams'>
+        <p class='team'>Poland</p>
+        <p class='divider'>-</p>
+        <p class='team'>Sweden</p>
+      </div>
+      <div class='results'>
+        <p class='result'>3</p>
+        <p class='result'>-</p>
+        <p class='result'>2</p>
+      </div>
+    </div>
+    <div class='overlay hidden'></div>
+  </div>
+  <div class='bets-box'>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śpiex</p>
+        <div class='player-results'>
+          <p class='bold'>+ 6.0</p>
+          <p class='captain'>x2</p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>2</p>
+        <p>-</p>
+        <p>4</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>mareczek</p>
+        <div class='player-results'>
+          <p class='bold'>+ 0.0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>3</p>
+        <p>-</p>
+        <p>1</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śliw</p>
+        <div class='player-results'>
+          <p class='bold'>+ 0.5</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>1</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>hetman</p>
+        <div class='player-results'>
+          <p class='bold'>+ 5.0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>2</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>trybul</p>
+        <div class='player-results'>
+          <p class='bold'>+ 4.0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>3</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śpiexinho</p>
+        <div class='player-results'>
+          <p class='bold'>+ 8.0</p>
+          <p class='captain'>x2</p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>3</p>
+      </div>
+    </div>
+  </div>
+
+  <div class='match-box'>
+    <div class='result-wrapper'>
+      <p class='time'>FT</p>
+      <div class='teams'>
+        <p class='team'>Turkey</p>
+        <p class='divider'>-</p>
+        <p class='team'>Italy</p>
+      </div>
+      <div class='results'>
+        <p class='result'>1</p>
+        <p class='result'>-</p>
+        <p class='result'>2</p>
+      </div>
+    </div>
+    <div class='overlay hidden'></div>
+  </div>
+  <div class='bets-box'>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śpiex</p>
+        <div class='player-results'>
+          <p class='bold'>6</p>
+          <p class='captain'>x2</p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>2</p>
+        <p>-</p>
+        <p>4</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>mareczek</p>
+        <div class='player-results'>
+          <p class='bold'>0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>3</p>
+        <p>-</p>
+        <p>1</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śliw</p>
+        <div class='player-results'>
+          <p class='bold'>0.5</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>1</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>hetman</p>
+        <div class='player-results'>
+          <p class='bold'>5</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>2</p>
+      </div>
+    </div>
+  </div>
+
+  <div class='match-box'>
+    <div class='result-wrapper'>
+      <p class='time'>FT</p>
+      <div class='teams'>
+        <p class='team'>Germany</p>
+        <p class='divider'>-</p>
+        <p class='team'>Spain</p>
+      </div>
+      <div class='results'>
+        <p class='result'>3</p>
+        <p class='result'>-</p>
+        <p class='result'>0</p>
+      </div>
+    </div>
+    <div class='overlay hidden'></div>
+  </div>
+  <div class='bets-box'>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śpiex</p>
+        <div class='player-results'>
+          <p class='bold'>+ 6.0</p>
+          <p class='captain'>x2</p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>2</p>
+        <p>-</p>
+        <p>4</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>mareczek</p>
+        <div class='player-results'>
+          <p class='bold'>+ 0.0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>3</p>
+        <p>-</p>
+        <p>1</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śliw</p>
+        <div class='player-results'>
+          <p class='bold'>+ 0.5</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>1</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>hetman</p>
+        <div class='player-results'>
+          <p class='bold'>+ 5.0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>2</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>trybul</p>
+        <div class='player-results'>
+          <p class='bold'>+ 4.0</p>
+          <p class='captain'></p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>3</p>
+      </div>
+    </div>
+    <div class='bet'>
+      <p class='time'></p>
+      <div class='details'>
+        <p>śpiexinho</p>
+        <div class='player-results'>
+          <p class='bold'>+ 8.0</p>
+          <p class='captain'>x2</p>
+        </div>
+      </div>
+      <div class='results'>
+        <p>1</p>
+        <p>-</p>
+        <p>3</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<script src="script/main.js"></script>
+</body>
+</html>
