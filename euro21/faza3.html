@@ -84,23 +84,48 @@
           </div>
       `;
 
-      for (i=1; i < array.length; i++) {
-        if (array[i][5] === "E") { // sprawdź czy grupa E
+      if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
 
-          grupaE += `
-            <div class='tabela-row'>
-              ${sprawdzProgres()}
-              <p>${array[i][1]} ${array[i][2]}</p>
-              <p>${array[i][6]}</p>
-              <p>+${array[i][7]}</p>
-              <p class='tabela-divider'>|</p>
-              <p>${array[i][8]}</p>
-              <p class='tabela-divider'>|</p>
-              <p>${array[i][13]}</p>
-            </div>
-          `
-        } else {
-          // nie rób nic
+        grupaE += `<div class='tabela-row'>
+            <p></p>
+            <p>-zwycięzca tabelki-</p>
+            <p>0.0</p>
+            <p></p>
+            <p class='tabela-divider'>|</p>
+            <p>0.0</p>
+            <p class='tabela-divider'>|</p>
+            <p></p>
+          </div>`;
+        grupaD += `<div class='tabela-row'>
+            <p></p>
+            <p>-drugie miejsce, smuteczek-</p>
+            <p>0.0</p>
+            <p></p>
+            <p class='tabela-divider'>|</p>
+            <p>0.0</p>
+            <p class='tabela-divider'>|</p>
+            <p></p>
+          </div>`;
+      } else {
+
+        for (i=1; i < array.length; i++) {
+          if (array[i][5] === "E") { // sprawdź czy grupa E
+
+            grupaE += `
+              <div class='tabela-row'>
+                ${sprawdzProgres()}
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][6]}</p>
+                <p>+${array[i][7]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][8]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][13]}</p>
+              </div>
+            `
+          } else {
+            // nie rób nic
+          }
         }
       }
 
