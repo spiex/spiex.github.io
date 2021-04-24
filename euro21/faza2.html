@@ -511,9 +511,6 @@
             mecze += `</div>`; // end of bets-box
 
 
-          } else if (array[0][0] > koniecKolejki) {
-            mecze += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
-            break;
           } else {
             // do nothing
           }
@@ -564,7 +561,7 @@
      function updateSignInStatus(isSignedIn) {
 
          makeApiCallRanking();
-         //\makeApiCallMecze();
+         makeApiCallMecze();
      }
    </script>
    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
