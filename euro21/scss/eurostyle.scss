@@ -467,12 +467,6 @@ footer {
   flex: 1;
 }
 
-.invisible-decimal {
-  color: $white;
-}
-
-
-
 
 
 
@@ -551,6 +545,14 @@ footer {
       //   padding-right: 0;
       // }
     }
+  }
+}
+
+.row-white {
+  &:nth-child(3),
+  &:nth-child(4) {
+    background: $white;
+    color: $black;
   }
 }
 

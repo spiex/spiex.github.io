@@ -117,7 +117,7 @@
               </div>`;
 
           for (g=0; g < 2; g++) {
-            grupaC += `<div class='tabela-row'>
+            grupaC += `<div class='tabela-row row-white'>
                 <p></p>
                 <p>odpada</p>
                 <p>0.0</p>
@@ -127,7 +127,7 @@
                 <p class='tabela-divider'>|</p>
                 <p></p>
               </div>`;
-            grupaD += `<div class='tabela-row'>
+            grupaD += `<div class='tabela-row row-white'>
                 <p></p>
                 <p>odpada</p>
                 <p>0.0</p>
@@ -144,7 +144,7 @@
             if (array[i][4] === "C") { // sprawdź czy grupa C
 
               grupaC += `
-                <div class='tabela-row'>
+                <div class='tabela-row row-white'>
                   ${sprawdzProgres()}
                   <p>${array[i][1]} ${array[i][2]}</p>
                   <p>${array[i][6]}</p>
@@ -157,7 +157,7 @@
               `
             } if (array[i][4] === "D") { // sprawdź czy grupa D
               grupaD += `
-                <div class='tabela-row'>
+                <div class='tabela-row row-white'>
                   ${sprawdzProgres()}
                   <p>${array[i][1]} ${array[i][2]}</p>
                   <p>${array[i][6]}</p>
