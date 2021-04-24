@@ -78,7 +78,7 @@
               <p class='tabela-divider'></p>
               <p>(c)</p>
             </div>
-        `
+        `;
         grupaD += `
           <div class='tabela-grupowa'>
             <div class='tabela-row'>
@@ -91,40 +91,69 @@
               <p class='tabela-divider'></p>
               <p>(c)</p>
             </div>
-        `
+        `;
 
-        for (i=1; i < array.length; i++) {
-          if (array[i][4] === "C") { // sprawdź czy grupa C
+        if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
+          grupaC += `<div class='tabela-grupowa'>`;
+          grupaD += `<div class='tabela-grupowa'>`;
 
-            grupaC += `
-              <div class='tabela-row'>
-                ${sprawdzProgres()}
-                <p>${array[i][1]} ${array[i][2]}</p>
-                <p>${array[i][6]}</p>
-                <p>+${array[i][7]}</p>
-                <p class='tabela-divider'>|</p>
-                <p>${array[i][8]}</p>
-                <p class='tabela-divider'>|</p>
-                <p>${array[i][13]}</p>
-              </div>
-            `
-          } if (array[i][4] === "D") { // sprawdź czy grupa D
-            grupaD += `
-              <div class='tabela-row'>
-                ${sprawdzProgres()}
-                <p>${array[i][1]} ${array[i][2]}</p>
-                <p>${array[i][6]}</p>
-                <p>+${array[i][7]}</p>
-                <p class='tabela-divider'>|</p>
-                <p>${array[i][8]}</p>
-                <p class='tabela-divider'>|</p>
-                <p>${array[i][13]}</p>
-              </div>
-            `
-          } else { // ani grupa C, ani grupa D - puste pole w tabeli
-            // nie rób nic
+          for (g=0, g < 3, g++) {
+            grupaC += `<div class='tabela-row'>
+                <p></p>
+                <p>--</p>
+                <p>0.0</p>
+                <p></p>
+                <p class='tabela-divider'></p>
+                <p>0.0</p>
+                <p class='tabela-divider'></p>
+                <p></p>
+              </div>`;
+              grupaD += `<div class='tabela-row'>
+                  <p></p>
+                  <p>--</p>
+                  <p>0.0</p>
+                  <p></p>
+                  <p class='tabela-divider'></p>
+                  <p>0.0</p>
+                  <p class='tabela-divider'></p>
+                  <p></p>
+                </div>`;
+              }
+        } else {
+
+          for (i=1; i < array.length; i++) {
+            if (array[i][4] === "C") { // sprawdź czy grupa C
+
+              grupaC += `
+                <div class='tabela-row'>
+                  ${sprawdzProgres()}
+                  <p>${array[i][1]} ${array[i][2]}</p>
+                  <p>${array[i][6]}</p>
+                  <p>+${array[i][7]}</p>
+                  <p class='tabela-divider'>|</p>
+                  <p>${array[i][8]}</p>
+                  <p class='tabela-divider'>|</p>
+                  <p>${array[i][13]}</p>
+                </div>
+              `
+            } if (array[i][4] === "D") { // sprawdź czy grupa D
+              grupaD += `
+                <div class='tabela-row'>
+                  ${sprawdzProgres()}
+                  <p>${array[i][1]} ${array[i][2]}</p>
+                  <p>${array[i][6]}</p>
+                  <p>+${array[i][7]}</p>
+                  <p class='tabela-divider'>|</p>
+                  <p>${array[i][8]}</p>
+                  <p class='tabela-divider'>|</p>
+                  <p>${array[i][13]}</p>
+                </div>
+              `
+            } else { // ani grupa C, ani grupa D - puste pole w tabeli
+              // nie rób nic
+            }
           }
-        }
+        } // koniec sprawdzania czy grupa jest odpalona
 
         grupaC += `</div>`; // zamknij div "tabela grupowa"
         grupaD += `</div>`; // zamknij div "tabela grupowa"
