@@ -559,7 +559,7 @@
               <p>${array[i][13]}</p>
             </div>
           `
-        } if (array[i][3] === "B") {
+        } if (array[i][3] === "B") { // sprawdź czy grupa A
           grupaB += `
             <div class='tabela-row'>
               <p></p>
@@ -572,7 +572,7 @@
               <p>${array[i][13]}</p>
             </div>
           `
-        } else {
+        } else { // ani grupa A, ani grupa B - puste pole w tabeli
           // nie rób nic
         }
       }
