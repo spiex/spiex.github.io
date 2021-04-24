@@ -444,7 +444,7 @@
 
 
 
-     function makeApiCallMecze() {
+     function makeApiCallMecze2() {
        var params = {
          spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
          range: "schedule",
@@ -456,11 +456,11 @@
         div.innerHTML = message;
       }
 
-      function createHarmonogram(array) {
-        let harmonogram = [];
-        let mecze = [];
-        let poczatekKolejki = 37;
-        let koniecKolejki = 48;//array[0][12];
+      function createHarmonogram2(array) {
+        let harmonogram2 = [];
+        let mecze2 = [];
+        let poczatekKolejki2 = 37;
+        let koniecKolejki2 = 48;//array[0][12];
 
         for (i=1; i < array.length; i++) {
           // ====== CREATE MECZE
@@ -512,32 +512,32 @@
 
 
           } else if (array[0][0] > koniecKolejki) {
-            mecze += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
+            mecze2 += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
             break;
           } else {
             // do nothing
           }
 
           // ====== CREATE HARMONOGRAM
-          if(array[i][0] <= koniecKolejki && array[i][0] >= poczatekKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
+          if(array[i][0] <= koniecKolejki2 && array[i][0] >= poczatekKolejki2) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
             if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
-              harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
+              harmonogram2 += `<div class="progress-block">${array[i][2]}</div>`;
             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
-              harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+              harmonogram2 += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
             }
           } else {
             break;
           }
         }
 
-        print(harmonogram,'#progress-blocks-box');
-        print(mecze,'#mecze');
+        print(harmonogram2,'#progress-blocks-box');
+        print(mecze2,'#mecze');
       }
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
         request.then(function(response) {
           console.log(response.result);
-          createHarmonogram(response.result.values);
+          createHarmonogram2(response.result.values);
         }, function(reason) {
           console.error('error: ' + reason.result.error.message);
         });
@@ -564,7 +564,7 @@
      function updateSignInStatus(isSignedIn) {
 
          makeApiCallRanking();
-         makeApiCallMecze();
+         makeApiCallMecze2();
      }
    </script>
    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
