@@ -463,11 +463,17 @@ footer {
 
 // ================ TABELE GRUPOWE ======================
 
+#box-tabele {
+  width: 95%;
+  @include flexy($dir: column);
+}
 
 .tabela-grupowa {
   @include flexy($dir: column);
   margin-bottom: 20px;
-  width: 95%;
+  //width: 95%;
+  width: 100%;
+  flex: 1;
 }
 
 .invisible-decimal {
