@@ -391,6 +391,16 @@
       let grupaA = [];
       let grupaB = [];
 
+      function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
+        if (array[i][15]-array[i][14] > 0) {
+            return `<p>▲ ${array[i][15]-array[i][14]}</p>`;
+          } else if (array[i][15]-array[i][14] < 0) {
+            return `<p>▼ ${array[i][14]-array[i][15]}</p`;
+        } else {
+          return `<p></p>`;
+        };
+      };
+
       grupaA += `
         <div class='tabela-grupowa'>
           <div class='tabela-row'>
@@ -423,7 +433,7 @@
 
           grupaA += `
             <div class='tabela-row'>
-              <p></p>
+              ${sprawdzProgres()}
               <p>${array[i][1]} ${array[i][2]}</p>
               <p>${array[i][6]}</p>
               <p>+${array[i][7]}</p>
@@ -436,7 +446,7 @@
         } if (array[i][3] === "B") { // sprawdź czy grupa A
           grupaB += `
             <div class='tabela-row'>
-              <p></p>
+              ${sprawdzProgres()}
               <p>${array[i][1]} ${array[i][2]}</p>
               <p>${array[i][6]}</p>
               <p>+${array[i][7]}</p>
