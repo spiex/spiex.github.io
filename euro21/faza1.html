@@ -514,9 +514,10 @@
 
     function createWykres(array) {
 
-      let tabelka = [];
+      let grupaA = [];
+      let grupaB = [];
 
-      tabelka += `
+      grupaA += `
         <div class='tabela-grupowa'>
           <div class='tabela-row'>
             <p></p>
@@ -529,36 +530,61 @@
             <p>(c)</p>
           </div>
       `
-
-      for (i=1; i < array.length; i++) {
-        function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
-          if (array[i][13]-array[i][12] > 0) {
-              return `<div class="change up">▲ ${array[i][13]-array[i][12]}</div>`;
-            } else if (array[i][13]-array[i][12] < 0) {
-              return `<div class="change down">▼ ${array[i][12]-array[i][13]}</div>`;
-          } else {
-            return `<div class="change"></div>`;
-          };
-        };
-
-
-        tabelka += `
+      grupaB += `
+        <div class='tabela-grupowa'>
           <div class='tabela-row'>
             <p></p>
-            <p>${array[i][1]} ${array[i][2]}</p>
-            <p>${array[i][6]}</p>
-            <p>+ ${array[i][7]}</p>
-            <p class='tabela-divider'>|</p>
-            <p>${array[i][8]}</p>
-            <p class='tabela-divider'>|</p>
-            <p>${array[i][13]}</p>
+            <p>GRUPA B</p>
+            <p>PUNKTY</p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p>TIE<br>BREAKER</p>
+            <p class='tabela-divider'></p>
+            <p>(c)</p>
           </div>
-        `
+      `
+
+      for (i=1; i < array.length; i++) {
+        if (array[i][0] === "A") { // sprawdź czy grupa A
+
+          grupaA += `
+            <div class='tabela-row'>
+              <p></p>
+              <p>${array[i][1]} ${array[i][2]}</p>
+              <p>${array[i][6]}</p>
+              <p>+${array[i][7]}</p>
+              <p class='tabela-divider'>|</p>
+              <p>${array[i][8]}</p>
+              <p class='tabela-divider'>|</p>
+              <p>${array[i][13]}</p>
+            </div>
+          `
+        } if (array[i][0] === "B") {
+          grupaB += `
+            <div class='tabela-row'>
+              <p></p>
+              <p>${array[i][1]} ${array[i][2]}</p>
+              <p>${array[i][6]}</p>
+              <p>+${array[i][7]}</p>
+              <p class='tabela-divider'>|</p>
+              <p>${array[i][8]}</p>
+              <p class='tabela-divider'>|</p>
+              <p>${array[i][13]}</p>
+            </div>
+          `
+        } else {
+          // nie rób nic
+        }
       }
 
-      tabelka += `</div>`; // zamknij div "tabela grupowa"
+      grupaA += `</div>`; // zamknij div "tabela grupowa"
+      grupaB += `</div>`; // zamknij div "tabela grupowa"
 
-      print(tabelka,"#box-tabele");
+      let grupy = [];
+      grupy += grupaA;
+      grupy += grupaB;
+
+      print(grupy,"#box-tabele");
     }
 
     var request = gapi.client.sheets.spreadsheets.values.get(params);
