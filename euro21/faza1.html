@@ -166,10 +166,11 @@
       let harmonogram = [];
       let mecze = [];
       let koniecKolejki = 36;//array[0][12];
+      let counter = 0;
 
       for (i=1; i < array.length; i++) {
         // ====== CREATE MECZE
-        let counter = 0;
+
         if (array[i][1] === array[0][1]) { // jeśli numer kolejki meczu = numer aktualnej kolejki
           mecze += `<div class='match-box'>
             <div class='result-wrapper'>
