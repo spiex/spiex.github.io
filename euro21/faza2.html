@@ -25,7 +25,7 @@
 
 
   <h2 class='harmonogram-text'><span>HARMONOGRAM MECZÓW</span></h2>
-  <div id='progress-blocks-box'>
+  <div id='progress-blocks-box2'>
     <p class='loading-even'>...ładowanie harmonogramu...</p>
   </div>
 
@@ -34,7 +34,7 @@
   </div>
 
   <h2 class='harmonogram-text'><span>AKTUALNA KOLEJKA</span></h2>
-  <div id='mecze'>
+  <div id='mecze2'>
 
     <div class='match-box'>
       <div class='result-wrapper'>
@@ -530,8 +530,8 @@
           }
         }
 
-        print(harmonogram2,'#progress-blocks-box');
-        print(mecze2,'#mecze');
+        print(harmonogram2,'#progress-blocks-box2');
+        print(mecze2,'#mecze2');
       }
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
