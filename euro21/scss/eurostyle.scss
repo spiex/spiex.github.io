@@ -554,10 +554,17 @@ footer {
   }
 }
 
-.loading {
+.loading, .loading-even {
   font-size: $font-small;
   text-align: center;
+}
+
+.loading {
   margin: 14px auto 24px;
+}
+
+.loading-even {
+  margin: 24px auto;
 }
 
 .trophy {
