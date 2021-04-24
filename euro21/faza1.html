@@ -463,7 +463,7 @@
       let harmonogram = [];
 
       for (i=1; i < array.length; i++) {
-        if(array[i][0] <= array[0][12]) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu
+        if(array[i][0] <= 36) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
           harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
         } else {
           // a jeśli nie, to koniec
