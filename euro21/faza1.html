@@ -459,16 +459,27 @@
       div.innerHTML = message;
     }
 
-    let harmonogram = [];
+    function createHarmonogram() {
+      let harmonogram = [];
 
-      // <div class="progress-block filled"><i class='bx bx-check' ></i></div>
-      // <div class="progress-block">13.06</div>
+      for (i=1; i < array.length; i++) {
+        if(array[i][0] <= array[0][12]) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu
+          harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
+        } else {
+          // a jeśli nie, to koniec
+        }
+      }
 
+        // <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+        // <div class="progress-block">13.06</div>
+
+      print(harmonogram,'#progress-blocks-box');
+    }
 
     var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         console.log(response.result);
-        // funkcja
+        createHarmonogram(response.result.values);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
