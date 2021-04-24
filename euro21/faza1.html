@@ -239,18 +239,7 @@
       let koniecKolejki = 36;//array[0][12];
 
       for (i=1; i < array.length; i++) {
-        // ====== CREATE HARMONOGRAM
 
-          if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
-            if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
-              harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
-            } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
-              harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
-            }
-          } else {
-            break;
-          }
-        }
 
         // ====== CREATE MECZE
 
@@ -304,7 +293,18 @@
           // do nothing
         }
 
+        // ====== CREATE HARMONOGRAM
 
+          if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
+            if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
+              harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
+            } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
+              harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+            }
+          } else {
+            break;
+          }
+        }
 
       print(harmonogram,'#progress-blocks-box');
       print(mecze,'#mecze');
