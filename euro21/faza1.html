@@ -462,6 +462,7 @@
     function createHarmonogram(array) {
       let harmonogram = [];
       let koniecKolejki = array[0][12];
+      console.log(koniecKolejki);
 
       for (i=1; i < array.length; i++) {
         if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
