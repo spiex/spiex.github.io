@@ -211,7 +211,7 @@
 
           for (h=8; h < array[i].length; h+=6) {
 
-            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
+            if (array[i][h+5] == null || array[i][h+5] === "" || array[i][h] == null || array[i][h] === "") { // jeśli dany gracz nie ma wpisanego imienia lub typu, pomijaj jego typy
               break;
             } else {
 
