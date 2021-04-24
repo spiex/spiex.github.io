@@ -60,8 +60,14 @@
           if (array[i][0] === "" || array[i][0] === null) { // pomiń puste rubryki
           } else {
 
+            if (array[i][5] === "1") {
+              ranking += `<div class='ranking-row'>`;
+            } else if (array[i][5] === "2") {
+              ranking += `<div class='ranking-row faza-grupowa'>`;
+            } else {
+              ranking += `<div class='ranking-row finalista'>`;
+            }
             ranking += `
-            <div class='ranking-row + ${if(array[i][5] === "2") { "faza-grupowa" } else if (array[i][5] === "3") { "finalista" } else {""}'>
               <p>${counter}</p>
               <p>${array[i][0]}</p>
               <p>${array[i][1]}</p>
