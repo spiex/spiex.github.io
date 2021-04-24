@@ -374,7 +374,7 @@
 <div class='empty'></div>
 
 <script>
-   function makeApiCall() {
+   function makeApiCallRanking() {
      var params = {
        spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
        range: "faza1",
@@ -478,8 +478,40 @@
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
-   } // end of makeApiCall
+   } // end of makeApiCallRanking
 
+
+
+   function makeApiCallMecze() {
+     var params = {
+       spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
+       range: "schedule",
+     };
+
+    // custom functions
+    function print(message, location) {
+      let div = document.querySelector(location);
+      div.innerHTML = message;
+    }
+
+    let harmonogram = [];
+    harmonogram += `<h2 class='harmonogram-text'><span>HARMONOGRAM MECZÓW</span></h2>
+    <div class='progress-blocks-box'>`;
+
+      // <div class="progress-block filled"><i class='bx bx-check' ></i></div>
+      // <div class="progress-block">13.06</div>
+
+    harmonogram += `</div>`; // zamknij div progress-blocks-box
+
+    var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        console.log(response.result);
+        createWykres(response.result.values);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+
+   } // end of makeApiCallMecze
 
    function initClient() {
      var API_KEY = 'AIzaSyDFTXEtRhcjBgugoU-aPzpdjo4d9Xdc6yU';
@@ -500,7 +532,8 @@
    function handleClientLoad() {gapi.load('client:auth2', initClient);}
    function updateSignInStatus(isSignedIn) {
 
-       makeApiCall();
+       makeApiCallRanking();
+       makeApiCallMecze();
    }
  </script>
  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
