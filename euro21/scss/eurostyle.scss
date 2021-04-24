@@ -584,7 +584,7 @@ footer {
 
 
 
-.tabela-ranking {
+#tabela-ranking {
   @include flexy($dir: column);
   margin-top: 16px;
   width: 95%;
@@ -637,9 +637,13 @@ footer {
 
 
 
+.finalista {
+  background: $gold;
+}
 
-
-
+.faza-grupowa {
+  @include accent-black-text;
+}
 
 
 

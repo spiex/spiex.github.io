@@ -23,100 +23,112 @@
   </nav>
   <div class="main-wrapper">
 
-<div class='tabela-ranking'>
-  <div class='tabela-header'>
-    <p></p>
-    <p>KLASYFIKACJA KOŃCOWA</p>
-    <p>punkty</p>
-    <p>śr.</p>
-    <p>1x2</p>
-    <p>%</p>
-  </div>
-  <div class='ranking-row finalista'>
-    <p>1</p>
-    <p>śpiex ★<span class='gold'>★</span></p>
-    <p>144.0</p>
-    <p>2.82</p>
-    <p>26</p>
-    <p>51.0%</p>
-  </div>
-  <div class='ranking-row finalista'>
-    <p>2</p>
-    <p>mareczek</p>
-    <p>157.5</p>
-    <p>3.09</p>
-    <p>28</p>
-    <p>54.9%</p>
-  </div>
-  <div class='ranking-row grupowy'>
-    <p>3</p>
-    <p>śliw ★★</p>
-    <p>141.5</p>
-    <p>2.95</p>
-    <p>25</p>
-    <p>52.1%</p>
-  </div>
-  <div class='ranking-row grupowy'>
-    <p>4</p>
-    <p>hetman ★★</p>
-    <p>131.5</p>
-    <p>2.74</p>
-    <p>24</p>
-    <p>50.0%</p>
-  </div>
-  <div class='ranking-row grupowy'>
-    <p>5</p>
-    <p>trybul</p>
-    <p>118.0</p>
-    <p>2.46</p>
-    <p>24</p>
-    <p>50.0%</p>
-  </div>
-  <div class='ranking-row grupowy'>
-    <p>6</p>
-    <p>mati</p>
-    <p>115.0</p>
-    <p>2.40</p>
-    <p>27</p>
-    <p>56.3%</p>
-  </div>
-  <div class='ranking-row'>
-    <p>7</p>
-    <p>bartez ★</p>
-    <p>94.5</p>
-    <p>2.63</p>
-    <p>20</p>
-    <p>55.6%</p>
-  </div>
-  <div class='ranking-row'>
-    <p>8</p>
-    <p>chris</p>
-    <p>79.0</p>
-    <p>2.19</p>
-    <p>20</p>
-    <p>55.6%</p>
-  </div>
-  <div class='ranking-row'>
-    <p>9</p>
-    <p>śpiexinho</p>
-    <p>79.0</p>
-    <p>2.19</p>
-    <p>19</p>
-    <p>52.8%</p>
-  </div>
-  <div class='ranking-row'>
-    <p>10</p>
-    <p>ciekot</p>
-    <p>77.0</p>
-    <p>2.14</p>
-    <p>18</p>
-    <p>50.0%</p>
-  </div>
-
+<div id='tabela-ranking'>
+  <p class='loading-even'>...ładowanie tabeli końcowej...</p>
 </div>
 
 
+<!--
+<div class='ranking-row finalista'>
+  <p>1</p>
+  <p>śpiex ★<span class='gold'>★</span></p>
+  <p>144.0</p>
+  <p>2.82</p>
+  <p>26</p>
+  <p>51.0%</p>
+</div> -->
 
-<?php
-  include 'includes/eurofooter.php';
- ?>
+<script>
+   function makeApiCallRanking() {
+     var params = {
+       spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
+       range: "ranking",
+     };
+
+    // custom functions
+    function print(message, location) {
+      let div = document.querySelector(location);
+      div.innerHTML = message;
+    }
+
+    function createRanking(array) {
+
+      let ranking = [];
+
+      ranking += `<div class='tabela-header'>
+        <p></p>
+        <p>KLASYFIKACJA KOŃCOWA</p>
+        <p>punkty</p>
+        <p>śr.</p>
+        <p>1x2</p>
+        <p>%</p>
+      </div>
+      `;
+
+        for (i=1; i < array.length; i++) {
+          if (array[i][3] === "A") { // sprawdź czy grupa A
+
+            grupaA += `
+              <div class='tabela-row'>
+                ${sprawdzProgres()}
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][6]}</p>
+                <p>+${array[i][7]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][8]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][13]}</p>
+              </div>
+            `
+          } if (array[i][3] === "B") { // sprawdź czy grupa A
+            grupaB += `
+              <div class='tabela-row'>
+                ${sprawdzProgres()}
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][6]}</p>
+                <p>+${array[i][7]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][8]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][13]}</p>
+              </div>
+            `
+          } else { // ani grupa A, ani grupa B - puste pole w tabeli
+            // nie rób nic
+          }
+        }
+
+      print(ranking,"#tabela-ranking");
+    }
+
+    var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        console.log(response.result);
+        createWykres(response.result.values);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+   } // end of makeApiCallRanking
+   function initClient() {
+     var API_KEY = 'AIzaSyDFTXEtRhcjBgugoU-aPzpdjo4d9Xdc6yU';
+     var CLIENT_ID = '896208609852-0d4hqobmliea0uq34uoho0lekhs2tch4.apps.googleusercontent.com';
+     var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+     gapi.client.init({
+       'apiKey': API_KEY,
+       'clientId': CLIENT_ID,
+       'scope': SCOPE,
+       'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+     }).then(function() {
+       gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+       updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+     });
+   }
+
+   function handleClientLoad() {gapi.load('client:auth2', initClient);}
+   function updateSignInStatus(isSignedIn) {
+
+       makeApiCallRanking();
+   }
+   </script>
+   <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
