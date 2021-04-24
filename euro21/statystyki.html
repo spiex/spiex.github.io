@@ -77,7 +77,7 @@
     var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         console.log(response.result);
-        createWykres(response.result.values);
+        createRanking(response.result.values);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
