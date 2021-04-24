@@ -36,6 +36,7 @@
 
     <h2 class='harmonogram-text'><span>AKTUALNA KOLEJKA</span></h2>
     <div id='mecze'>
+      <p class='loading-even'>...ładowanie otatnich meczów...</p>
 
       <div class='match-box'>
         <div class='result-wrapper'>
@@ -461,13 +462,37 @@
 
     function createHarmonogram(array) {
       let harmonogram = [];
+      let mecze = [];
       let koniecKolejki = 36;//array[0][12];
 
       for (i=1; i < array.length; i++) {
+        // ====== CREATE MECZE
+        if (array[i][1] === array[0][1]) { // jeśli numer kolejki meczu = numer aktualnej kolejki
+          mecze += `<div class='match-box'>
+            <div class='result-wrapper'>
+              <p class='time'>${array[i][3]}</p>
+              <div class='teams'>
+                <p class='team'>${array[i][4]}</p>
+                <p class='divider'>-</p>
+                <p class='team'>${array[i][5]}</p>
+              </div>
+              <div class='results'>
+                <p class='result'>${array[i][6]}</p>
+                <p class='result'>-</p>
+                <p class='result'>${array[i][7]}</p>
+              </div>
+            </div>
+            <div class='overlay hidden'></div>
+          </div>`;
+        } else {
+          // do nothing
+        }
+
+        // ====== CREATE HARMONOGRAM
         if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
-          if(array[i][6] === "" || array[i][6] === "?") {
+          if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
             harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
-          } else {
+          } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
             harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
           }
         } else {
@@ -475,10 +500,8 @@
         }
       }
 
-        // <div class="progress-block filled"><i class='bx bx-check' ></i></div>
-        // <div class="progress-block">13.06</div>
-
       print(harmonogram,'#progress-blocks-box');
+      print(mecze,'#mecze');
     }
 
     var request = gapi.client.sheets.spreadsheets.values.get(params);
