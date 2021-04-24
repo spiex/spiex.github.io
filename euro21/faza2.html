@@ -466,7 +466,7 @@
           // ====== CREATE MECZE
 
           if (array[i][1] === array[0][1]) { // jeśli numer kolejki meczu = numer aktualnej kolejki
-            mecze += `<div class='match-box'>
+            mecze2 += `<div class='match-box'>
               <div class='result-wrapper'>
                 <p class='time'>${array[i][3]}</p>
                 <div class='teams'>
@@ -482,7 +482,7 @@
               </div>
               <div class='overlay hidden'></div>
             </div>`;
-            mecze += `<div class='bets-box'>`;
+            mecze2 += `<div class='bets-box'>`;
 
 
             for (h=8; h < array[i].length; h+=6) {
@@ -491,7 +491,7 @@
                 break;
               } else {
 
-                mecze += `<div class='bet'>
+                mecze2 += `<div class='bet'>
                     <p class='time'></p>
                     <div class='details'>
                       <p>${array[i][h+5]}</p>
@@ -508,10 +508,10 @@
                   </div>`;
               }
             }
-            mecze += `</div>`; // end of bets-box
+            mecze2 += `</div>`; // end of bets-box
 
 
-          } else if (array[0][0] > koniecKolejki) {
+          } else if (array[0][0] > koniecKolejki2) {
             mecze2 += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
             break;
           } else {
