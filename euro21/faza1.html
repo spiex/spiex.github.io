@@ -545,7 +545,7 @@
       `
 
       for (i=1; i < array.length; i++) {
-        if (array[i][0] === "A") { // sprawdź czy grupa A
+        if (array[i][3] === "A") { // sprawdź czy grupa A
 
           grupaA += `
             <div class='tabela-row'>
@@ -559,7 +559,7 @@
               <p>${array[i][13]}</p>
             </div>
           `
-        } if (array[i][0] === "B") {
+        } if (array[i][3] === "B") {
           grupaB += `
             <div class='tabela-row'>
               <p></p>
