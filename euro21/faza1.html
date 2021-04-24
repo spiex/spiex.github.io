@@ -465,8 +465,11 @@
 
       for (i=1; i < array.length; i++) {
         if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
-          harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
-          console.log(array[i][0]);
+          if(isNaN(array[i][6]) {
+            harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
+          } else {
+            harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+          }
         } else {
           break;
         }
