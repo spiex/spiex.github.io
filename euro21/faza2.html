@@ -402,7 +402,7 @@
         `
 
         for (i=1; i < array.length; i++) {
-          if (array[i][3] === "A") { // sprawdź czy grupa C
+          if (array[i][4] === "C") { // sprawdź czy grupa C
 
             grupaC += `
               <div class='tabela-row'>
@@ -416,7 +416,7 @@
                 <p>${array[i][13]}</p>
               </div>
             `
-          } if (array[i][3] === "B") { // sprawdź czy grupa D
+          } if (array[i][4] === "D") { // sprawdź czy grupa D
             grupaD += `
               <div class='tabela-row'>
                 ${sprawdzProgres()}
