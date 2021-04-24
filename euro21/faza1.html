@@ -541,20 +541,22 @@
           };
         };
 
+
         tabelka += `
-          <div class="new-row">
-            <p>${[i]}</p>
+          <div class='tabela-row'>
+            <p></p>
             <p>${array[i][1]} ${array[i][2]}</p>
-            <p>${array[i][3]}</p>
-            <p>|</p>
+            <p>${array[i][6]}</p>
+            <p>+ ${array[i][7]}</p>
+            <p class='tabela-divider'>|</p>
             <p>${array[i][8]}</p>
-            <p>|</p>
-            <p>${array[i][11]}</p>
+            <p class='tabela-divider'>|</p>
+            <p>${array[i][13]}</p>
           </div>
         `
       }
 
-      tabelka += `</div>`;
+      tabelka += `</div>`; // zamknij div "tabela grupowa"
 
       print(tabelka,"#box-tabele");
     }
