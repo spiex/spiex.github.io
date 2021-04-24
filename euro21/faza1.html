@@ -517,15 +517,17 @@
       let tabelka = [];
 
       tabelka += `
-        <div class="new-row">
-          <p></p>
-          <p></p>
-          <p class="small">pkt</p>
-          <p></p>
-          <p>1x2</p>
-          <p></p>
-          <p>x2</p>
-        </div>
+        <div class='tabela-grupowa'>
+          <div class='tabela-row'>
+            <p></p>
+            <p>GRUPA A</p>
+            <p>PUNKTY</p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p>TIE<br>BREAKER</p>
+            <p class='tabela-divider'></p>
+            <p>(c)</p>
+          </div>
       `
 
       for (i=1; i < array.length; i++) {
@@ -551,6 +553,8 @@
           </div>
         `
       }
+
+      tabelka += `</div>`;
 
       print(tabelka,"#box-tabele");
     }
