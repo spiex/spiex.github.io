@@ -220,7 +220,7 @@
 
         // ====== CREATE MECZE
 
-        if (array[i][1] === array[0][1]) { // jeśli numer kolejki meczu = numer aktualnej kolejki
+        if (array[i][1] === array[0][1] && array[i][0] >= poczatekKolejki && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki
           mecze += `<div class='match-box'>
             <div class='result-wrapper'>
               <p class='time'>${array[i][3]}</p>
