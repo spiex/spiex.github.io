@@ -44,6 +44,7 @@
     function createRanking(array) {
 
       let ranking = [];
+      let counter = 1;
 
       ranking += `<div class='tabela-header'>
         <p></p>
@@ -61,7 +62,7 @@
 
             ranking += `
             <div class='ranking-row'>
-              <p>${[i]}</p>
+              <p>${counter}</p>
               <p>${array[i][0]}</p>
               <p>${array[i][1]}</p>
               <p>${array[i][2]}</p>
@@ -69,6 +70,7 @@
               <p>${array[i][4]}</p>
             </div>`;
         }
+        counter += 1;
       }
 
       print(ranking,"#tabela-ranking");
