@@ -522,8 +522,10 @@
             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
               harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
             }
+          } else if (array[i][0] >= koniecKolejki) {
+            break; // ends loop, do not search for matches if kolejka is over
           } else {
-            //break;
+
           }
         }
 
