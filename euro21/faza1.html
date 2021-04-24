@@ -166,7 +166,6 @@
       let harmonogram = [];
       let mecze = [];
       let koniecKolejki = 36;//array[0][12];
-      let counter = 0;
 
       for (i=1; i < array.length; i++) {
         // ====== CREATE MECZE
@@ -196,7 +195,6 @@
             if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
               break;
             } else {
-              counter += 1;
 
               mecze += `<div class='bet'>
                   <p class='time'></p>
@@ -220,12 +218,6 @@
 
         } else {
           // do nothing
-        }
-
-        if (counter === 0) {
-          mecze += `<p class='loading-even'>faza dobiegła końca</p>`;
-        } else {
-          //nic
         }
 
         // ====== CREATE HARMONOGRAM
