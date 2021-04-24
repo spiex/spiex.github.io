@@ -516,9 +516,6 @@
           }
 
           // ====== CREATE HARMONOGRAM
-          console.log(array[i][0]);
-          console.log(poczatekKolejki);
-          console.log(koniecKolejki);
           if(array[i][0] <= koniecKolejki && array[i][0] >= poczatekKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
             if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
               harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
