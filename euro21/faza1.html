@@ -81,7 +81,7 @@
             <p class='tabela-divider'></p>
             <p>(c)</p>
           </div>
-      `
+      `;
       grupaB += `
         <div class='tabela-grupowa'>
           <div class='tabela-row'>
@@ -94,38 +94,109 @@
             <p class='tabela-divider'></p>
             <p>(c)</p>
           </div>
-      `
+      `;
 
-      for (i=1; i < array.length; i++) {
-        if (array[i][3] === "A") { // sprawdź czy grupa A
+      if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
 
-          grupaA += `
-            <div class='tabela-row'>
-              ${sprawdzProgres()}
-              <p>${array[i][1]} ${array[i][2]}</p>
-              <p>${array[i][6]}</p>
-              <p>+${array[i][7]}</p>
+        grupaA += `<div class='tabela-row'>
+            <p></p>
+            <p>-rozstawiony awans do fazy grupowej-</p>
+            <p>0.0</p>
+            <p></p>
+            <p class='tabela-divider'>|</p>
+            <p>0.0</p>
+            <p class='tabela-divider'>|</p>
+            <p></p>
+          </div>`;
+          grupaB += `<div class='tabela-row'>
+              <p></p>
+              <p>-rozstawiony awans do fazy grupowej-</p>
+              <p>0.0</p>
+              <p></p>
               <p class='tabela-divider'>|</p>
-              <p>${array[i][8]}</p>
+              <p>0.0</p>
               <p class='tabela-divider'>|</p>
-              <p>${array[i][13]}</p>
-            </div>
-          `
-        } if (array[i][3] === "B") { // sprawdź czy grupa A
-          grupaB += `
-            <div class='tabela-row'>
-              ${sprawdzProgres()}
-              <p>${array[i][1]} ${array[i][2]}</p>
-              <p>${array[i][6]}</p>
-              <p>+${array[i][7]}</p>
+              <p></p>
+            </div>`;
+
+        for (g=0; g < 2; g++) {
+          grupaA += `<div class='tabela-row'>
+              <p></p>
+              <p>-awans do fazy grupowej-</p>
+              <p>0.0</p>
+              <p></p>
               <p class='tabela-divider'>|</p>
-              <p>${array[i][8]}</p>
+              <p>0.0</p>
               <p class='tabela-divider'>|</p>
-              <p>${array[i][13]}</p>
-            </div>
-          `
-        } else { // ani grupa A, ani grupa B - puste pole w tabeli
-          // nie rób nic
+              <p></p>
+            </div>`;
+            grupaB += `<div class='tabela-row'>
+                <p></p>
+                <p>-awans do fazy grupowej-</p>
+                <p>0.0</p>
+                <p></p>
+                <p class='tabela-divider'>|</p>
+                <p>0.0</p>
+                <p class='tabela-divider'>|</p>
+                <p></p>
+              </div>`;
+            }
+
+          for (g=0; g < 2; g++) {
+            grupaA += `<div class='tabela-row'>
+                <p></p>
+                <p>-odpada-</p>
+                <p>0.0</p>
+                <p></p>
+                <p class='tabela-divider'>|</p>
+                <p>0.0</p>
+                <p class='tabela-divider'>|</p>
+                <p></p>
+              </div>`;
+              grupaB += `<div class='tabela-row'>
+                  <p></p>
+                  <p>-odpada-</p>
+                  <p>0.0</p>
+                  <p></p>
+                  <p class='tabela-divider'>|</p>
+                  <p>0.0</p>
+                  <p class='tabela-divider'>|</p>
+                  <p></p>
+                </div>`;
+              }
+      } else {
+
+        for (i=1; i < array.length; i++) {
+          if (array[i][3] === "A") { // sprawdź czy grupa A
+
+            grupaA += `
+              <div class='tabela-row'>
+                ${sprawdzProgres()}
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][6]}</p>
+                <p>+${array[i][7]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][8]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][13]}</p>
+              </div>
+            `
+          } if (array[i][3] === "B") { // sprawdź czy grupa A
+            grupaB += `
+              <div class='tabela-row'>
+                ${sprawdzProgres()}
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][6]}</p>
+                <p>+${array[i][7]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][8]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][13]}</p>
+              </div>
+            `
+          } else { // ani grupa A, ani grupa B - puste pole w tabeli
+            // nie rób nic
+          }
         }
       }
 
