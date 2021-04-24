@@ -188,11 +188,14 @@
           </div>`;
           mecze += `<div class='bets-box'>`;
 
+          let counter = 0;
+
           for (h=8; h < array[i].length; h+=6) {
 
             if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
               break;
             } else {
+              counter += 1;
 
               mecze += `<div class='bet'>
                   <p class='time'></p>
@@ -216,6 +219,12 @@
 
         } else {
           // do nothing
+        }
+
+        if (counter === 0) {
+          mecze += `<p class='loading-even'>faza dobiegła końca</p>`;
+        } else {
+          //nic
         }
 
         // ====== CREATE HARMONOGRAM
