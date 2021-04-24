@@ -206,10 +206,11 @@
 
           for (h=8; h < array[i].length; h+=6) {
 
-            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
+            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, zakończ
               break;
-            } else {
+            } else if (array[i][h] == null || array[i][h] === "") { // nie ma typu? pomiń
 
+            } else {
               mecze += `<div class='bet'>
                   <p class='time'></p>
                   <div class='details'>
