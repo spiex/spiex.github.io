@@ -470,7 +470,8 @@
       function createHarmonogram(array) {
         let harmonogram = [];
         let mecze = [];
-        let koniecKolejki = 36;//array[0][12];
+        let poczatekKolejki = 37;
+        let koniecKolejki = 48;//array[0][12];
 
         for (i=1; i < array.length; i++) {
           // ====== CREATE MECZE
@@ -529,7 +530,7 @@
           }
 
           // ====== CREATE HARMONOGRAM
-          if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
+          if(array[i][0] <= koniecKolejki && array[i][0] >= poczatekKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
             if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
               harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
