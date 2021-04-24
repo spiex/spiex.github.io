@@ -95,25 +95,46 @@
 
         if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
 
-          for (g=0; g < 3; g++) {
+          grupaC += `<div class='tabela-row'>
+              <p></p>
+              <p>-awans do finału-</p>
+              <p>0.0</p>
+              <p></p>
+              <p class='tabela-divider'>|</p>
+              <p>0.0</p>
+              <p class='tabela-divider'>|</p>
+              <p></p>
+            </div>`;
+            grupaD += `<div class='tabela-row'>
+                <p></p>
+                <p>-awans do finału-</p>
+                <p>0.0</p>
+                <p></p>
+                <p class='tabela-divider'>|</p>
+                <p>0.0</p>
+                <p class='tabela-divider'>|</p>
+                <p></p>
+              </div>`;
+
+          for (g=0; g < 2; g++) {
             grupaC += `<div class='tabela-row'>
                 <p></p>
-                <p>--</p>
+                <p>-odpada-</p>
                 <p>0.0</p>
                 <p></p>
-                <p class='tabela-divider'></p>
+                <p class='tabela-divider'>|</p>
                 <p>0.0</p>
-                <p class='tabela-divider'></p>
+                <p class='tabela-divider'>|</p>
                 <p></p>
               </div>`;
               grupaD += `<div class='tabela-row'>
                   <p></p>
-                  <p>--</p>
+                  <p>-odpada-</p>
                   <p>0.0</p>
                   <p></p>
-                  <p class='tabela-divider'></p>
+                  <p class='tabela-divider'>|</p>
                   <p>0.0</p>
-                  <p class='tabela-divider'></p>
+                  <p class='tabela-divider'>|</p>
                   <p></p>
                 </div>`;
               }
