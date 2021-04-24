@@ -216,8 +216,7 @@ footer {
    }
 }
 
-#progress-blocks-box,
-#progress-blocks-box2 {
+#progress-blocks-box {
   @include flexy($just: center, $wrap: wrap);
   padding: 8px 0;
   border-bottom: 1px dashed $gray;
@@ -248,7 +247,7 @@ footer {
 // ============= KONIEC KALENDARZA MECZOWEGO ================
 
 // ============= MECZE + TYPY =============
-#mecze, #mecze2 {
+#mecze {
   margin-top: 12px;
   margin-bottom: 20px;
 }

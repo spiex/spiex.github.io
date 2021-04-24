@@ -25,7 +25,7 @@
 
 
   <h2 class='harmonogram-text'><span>HARMONOGRAM MECZÓW</span></h2>
-  <div id='progress-blocks-box2'>
+  <div id='progress-blocks-box'>
     <p class='loading-even'>...ładowanie harmonogramu...</p>
   </div>
 
@@ -34,7 +34,7 @@
   </div>
 
   <h2 class='harmonogram-text'><span>AKTUALNA KOLEJKA</span></h2>
-  <div id='mecze2'>
+  <div id='mecze'>
 
     <div class='match-box'>
       <div class='result-wrapper'>
@@ -444,7 +444,7 @@
 
 
 
-     function makeApiCallMecze2() {
+     function makeApiCallMecze() {
        var params = {
          spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
          range: "schedule",
@@ -456,17 +456,17 @@
         div.innerHTML = message;
       }
 
-      function createHarmonogram2(array) {
-        let harmonogram2 = [];
-        let mecze2 = [];
-        let poczatekKolejki2 = 37;
-        let koniecKolejki2 = 48;//array[0][12];
+      function createHarmonogram(array) {
+        let harmonogram = [];
+        let mecze = [];
+        let poczatekKolejki = 37;
+        let koniecKolejki = 48;//array[0][12];
 
         for (i=1; i < array.length; i++) {
           // ====== CREATE MECZE
 
           if (array[i][1] === array[0][1]) { // jeśli numer kolejki meczu = numer aktualnej kolejki
-            mecze2 += `<div class='match-box'>
+            mecze += `<div class='match-box'>
               <div class='result-wrapper'>
                 <p class='time'>${array[i][3]}</p>
                 <div class='teams'>
@@ -482,7 +482,7 @@
               </div>
               <div class='overlay hidden'></div>
             </div>`;
-            mecze2 += `<div class='bets-box'>`;
+            mecze += `<div class='bets-box'>`;
 
 
             for (h=8; h < array[i].length; h+=6) {
@@ -491,7 +491,7 @@
                 break;
               } else {
 
-                mecze2 += `<div class='bet'>
+                mecze += `<div class='bet'>
                     <p class='time'></p>
                     <div class='details'>
                       <p>${array[i][h+5]}</p>
@@ -508,36 +508,36 @@
                   </div>`;
               }
             }
-            mecze2 += `</div>`; // end of bets-box
+            mecze += `</div>`; // end of bets-box
 
 
-          } else if (array[0][0] > koniecKolejki2) {
-            mecze2 += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
+          } else if (array[0][0] > koniecKolejki) {
+            mecze += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
             break;
           } else {
             // do nothing
           }
 
           // ====== CREATE HARMONOGRAM
-          if(array[i][0] <= koniecKolejki2 && array[i][0] >= poczatekKolejki2) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
+          if(array[i][0] <= koniecKolejki && array[i][0] >= poczatekKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
             if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
-              harmonogram2 += `<div class="progress-block">${array[i][2]}</div>`;
+              harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
-              harmonogram2 += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+              harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
             }
           } else {
             break;
           }
         }
 
-        print(harmonogram2,'#progress-blocks-box2');
-        print(mecze2,'#mecze2');
+        print(harmonogram,'#progress-blocks-box');
+        print(mecze,'#mecze');
       }
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
         request.then(function(response) {
           console.log(response.result);
-          createHarmonogram2(response.result.values);
+          createHarmonogram(response.result.values);
         }, function(reason) {
           console.error('error: ' + reason.result.error.message);
         });
@@ -564,7 +564,7 @@
      function updateSignInStatus(isSignedIn) {
 
          makeApiCallRanking();
-         makeApiCallMecze2();
+         //\makeApiCallMecze();
      }
    </script>
    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
