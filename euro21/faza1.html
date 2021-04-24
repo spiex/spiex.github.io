@@ -216,17 +216,13 @@
           mecze += `</div>`; // end of bets-box
 
 
-        } else if (array[0][0] > koniecKolejki) {
-          // mecze += `<p class='loading-even'>pierwsza faza dobiegła końca</p>`;
-          // break;
         } else {
           // do nothing
         }
 
         // ====== CREATE HARMONOGRAM
-        console.log(array[1][0]);
+
         if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
-          console.log(array[i][0]);
           if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
             harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
           } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
