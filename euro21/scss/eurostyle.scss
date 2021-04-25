@@ -720,28 +720,37 @@ footer {
 .punktacja-row {
   @include flexy;
   border-bottom: 1px dashed $gray;
+  height: 25px;
   p {
-    flex: 1;
+    flex: 3;
     text-align: center;
-    font-weight: 700;
+    margin: 0;
+    padding: 4px;
+    min-height: 100%;
     &:first-child {
       font-size: $font-big;
       font-weight: 700;
+      color: $main;
     }
     &:nth-child(2) {
-      font-weight: 500;
-      flex: 2;
+      flex: 5;
+      @include accent-black-text;
     }
   }
   &:first-child {
     border-bottom: 2px solid $black;
     font-weight: 700;
-    @include accent-white-text;
-    min-height: 44px;
-    //border-radius: 8px 8px 0 0;
-    //color: $white;
+    background: $gold;
+    min-height: 36px;
     p {
       font-size: $font-small;
+      padding: 10px 4px;
+      &:nth-child(2) {
+        font-weight: 500;
+        flex: 5;
+        @include accent-black-text;
+        padding: 4px;
+      }
     }
   }
 }
