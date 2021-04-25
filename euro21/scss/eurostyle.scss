@@ -688,7 +688,8 @@ footer {
 // ================ PUNKTACJA I INFO ======================
 
 .punktacja-box,
-.przyciski-box {
+.przyciski-box,
+.punktacja-example-box {
   width: 95%;
   margin: 8px auto;
 }
@@ -715,9 +716,7 @@ footer {
   }
 }
 
-.punktacja-box {
-  width: 95%;
-}
+
 .punktacja-row {
   @include flexy;
   border-bottom: 1px dashed $gray;
@@ -737,12 +736,37 @@ footer {
   &:first-child {
     border-bottom: 2px solid $black;
     font-weight: 700;
-    background: $green;
+    @include accent-white-text;
     min-height: 44px;
-    border-radius: 8px 8px 0 0;
-    color: $white;
+    //border-radius: 8px 8px 0 0;
+    //color: $white;
     p {
       font-size: $font-small;
+    }
+  }
+}
+
+.punktacja-example-box {
+  .punktacja-row {
+    @include flexy;
+    border-bottom: 1px dashed $gray;
+    p {
+      flex: 1;
+      text-align: center;
+      font-weight: 700;
+      &:first-child {
+        font-size: $font-big;
+        font-weight: 700;
+      }
+    }
+    &:first-child {
+      border-bottom: 2px solid $black;
+      background: $white;
+      color: $black;
+      min-height: auto;
+      p {
+        font-size: $font-small;
+      }
     }
   }
 }
