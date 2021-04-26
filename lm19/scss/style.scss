@@ -1,0 +1,901 @@
+// import partials
+@import 'partials/variables';
+
+// import fonts
+@import url('https://fonts.googleapis.com/css?family=Coda|Titillium+Web:400,700&display=swap&subset=latin-ext');
+
+// general
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font: 1.6em/2 'Coda', cursive; //'Lalezar', cursive;
+  text-align: center;
+}
+
+h2 {
+  font: 1.4em/2 'Coda', cursive;
+  text-align: left;
+  margin: 4px auto;
+}
+
+body {
+  font: 1em/1.5 'Titillium Web', sans-serif;
+  font-weight: 400;
+  background-color: $white;
+  margin: 0;
+}
+
+body, header {
+  max-width: 450px;
+  margin: auto;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+p {
+  margin: 4px 0;
+}
+
+.handicap1 {
+  color: $handicap-1;
+}
+
+.handicap2 {
+  color: $handicap-2;
+}
+
+
+
+
+// specific boxes and other
+.jumbo {
+  box-shadow: 0 2px 4px rgba($black,.8);
+  width: 100%;
+  margin: 0;
+  margin-top: 40px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  p {
+    margin: 2px 0;
+    font-size: .85em;
+    text-align: center;
+  }
+  h1 {
+    margin: 4px 0;
+  }
+}
+
+.foto-box {
+  // position: absolute;
+  flex: 1;
+  margin-left: 20px;
+  margin-top: 8px;
+  max-width: 100%;
+  max-height: 100%;
+  img {
+    max-width: 100%;
+    max-height: 90px;
+  }
+}
+
+.title-box {
+  flex: 3;
+  text-align: center;
+}
+
+footer,
+.text-small {
+  text-align: center;
+  font-size: .75em;
+}
+
+footer {
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid $complementary-gray;
+  background: $main-color;
+  color: $white;
+}
+
+.wrapper {
+  min-height: calc(100vh - 77px - 40px);
+}
+
+// TODO: maybe utilize
+.main-box {
+  @include flexy($dir: column, $just: space-around);
+}
+
+
+.info-text {
+  text-align: justify;
+  margin-top: 15px;
+}
+
+
+nav {
+  background-color: rgba($black,1);
+  box-shadow: 0 2px 2px rgba(black,.8);
+  width: 100%;
+  max-width: 450px; // hardcoded maxwith for header and body
+  height: 40px;
+  position: fixed;
+  transition: .4s;
+  top: 0;
+  z-index: 10;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @include flexy($dir: row, $just: space-around);
+  }
+  li, a {
+    &:first-child {
+      flex: 3;
+      height: 40px;
+    }
+    flex: 2;
+    height: 40px;
+  }
+  a {
+    text-decoration: none;
+    text-align: center;
+    @include flexy($dir: column, $just: center);
+    color: $white;
+    &:hover {
+      background: $main-gradient-reverse;
+    }
+  }
+}
+
+// class selected
+.selected {
+  background: $main-gradient-reverse;
+}
+
+.blocked {
+  background: $red;
+}
+
+// ============= IMPORTED FROM CODEPEN
+
+// =========================== KOLORY =====================
+html {
+  background: $white;
+  color: $black;
+}
+
+.jumbo {
+  background: $main-gradient;
+  color: $white;
+}
+
+.progress-bar { // ZEWNĘTRZNA CZĘŚĆ PASKA PROGRESU
+  border: 1px solid $complementary-gray;
+  background: $white;
+}
+
+.progress-slider { // KOLOROWE WYPEŁNIENIE PASKA PROGRESU
+  background: $accent-color;
+}
+
+// === KOLORY TABELKI Z PUNKTAMI
+.new-row {
+  background: $white;
+  color: $black;
+  &:nth-child(2) {
+    background: $main-color;
+    color: $white;
+    p:nth-child(3) {
+      color: $accent-color;
+    }
+  }
+  &:nth-child(3),
+  &:nth-child(4) {
+    background: $complementary-gray;
+  }
+}
+
+// === KOLORY WYKRESU Z PUNKTAMI
+// .punkty-stare { // KOLOR STARYCH PUNKTÓW NA WYKRESIE
+//   background: $main-color;
+//   color: $contrast-color;
+//   span { // KOLOR LICZBY PUNKTÓW W NOWEJ KOLEJCE
+//     color: $dark-background-text;
+//   }
+// }
+
+// === powyżej ciemniejsze, poniżej bardziej czytelne
+
+.punkty-stare { // KOLOR STARYCH PUNKTÓW NA WYKRESIE
+  background: $complementary-gray;
+  color: $main-color;
+  span { // KOLOR LICZBY PUNKTÓW W NOWEJ KOLEJCE
+    color: $black;
+  }
+}
+
+.punkty-nowe {
+  background: $contrast-color;
+}
+
+.change { // ZNACZNIK ZMIANY POZYCJI NA WYKRESIE
+  color: $main-color;
+}
+
+.zero {
+  color: $main-color;
+  span {
+    color: $main-color;
+  }
+}
+
+// === KOLORY BOKSU Z WYNIKAMI MECZÓW I TYPAMI
+.match-box { // BOKS Z AKTUALNYMI WYNIKAMI MECZÓW
+  background: $main-color;
+  color: $dark-background-text;
+}
+
+.trafiony-wynik {
+  background: $accent-color;
+}
+
+.trafiony-rezultat {
+  background: $complementary-gray;
+}
+
+.handicap1 {
+  color: $handicap-1;
+}
+
+.handicap2 {
+  color: $handicap-2;
+}
+
+.up {
+  color: $green;
+}
+
+.down {
+  color: $red;
+}
+
+.btn-primary {
+  color: $main-color;
+  background: $contrast-color;
+}
+
+// =========================== KONIEC KOLORÓW =====================
+
+
+// ==== POCZĄTEK TABELKI
+.progress-bar {
+  margin: 8px auto;
+  // padding: 1px 2px;
+  height: 29px;
+  border-radius: 8px;
+  position: relative;
+  width: 95%;
+  height: auto;
+  max-width: 450px;
+  min-width: 290px;
+  p {
+    font-size: .85em;
+    margin: 0;
+    padding: 4px;
+    position: absolute;
+    left: 2px;
+  }
+}
+
+#pozostale-mecze {
+  width: 0%;
+
+
+  // &::before {
+  //   content: "rozegrane mecze: 66/75";
+  //   position: absolute;
+  //   left: 5%;
+  //   right: 2px;
+  //   text-align: right;
+  //   font-size: .85em;
+  //   padding: 2px 4px;
+  // }
+  // &::after {
+  //   content: "87%";
+  //   position: absolute;
+  //   left: 10px;
+  //   top: 3px;
+  //   color: $black;
+  // }
+}
+
+#pozostale-kapitany {
+  width: 69%;
+  &::before {
+    content: "pozostało kapitanów: 11/16";
+    position: absolute;
+    left: 5%;
+    right: 2px;
+    text-align: right;
+    font-size: .85em;
+    padding: 2px 4px;
+  }
+  &::after {
+    content: "69%";
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    color: $black;
+  }
+}
+
+.progress-slider {
+  height: 23px;
+  border-radius: 6px;
+  margin: 1px;
+}
+
+
+html {
+  font: .85em/1.5 'Titillium Web', sans-serif;
+}
+
+.matches {
+  display: flex;
+  flex-direction: column;
+}
+
+// ======================
+
+.pojemnik-wykres,
+.pojemnik-tabelka,
+.pojemnik-wyniki {
+  @include flexy($dir: column);
+  width: 95%;
+  margin: auto;
+  height: auto;
+  max-width: 450px;
+  min-width: 290px;
+}
+
+.pojemnik-wyniki {
+  margin-top: 10px;
+}
+
+#statystyka {
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 99%;
+  max-width: 450px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  // margin-top: 5px;
+}
+
+#pojemnik-wykres,
+#pojemnik-tabelka {
+  transition: .7s cubic-bezier(.86,-0.32,.34,1.08); //cubic-bezier(.83,-0.5,.34,1.08);
+}
+
+#pojemnik-wykres {
+  transform: translateX(0%);
+  position: absolute;
+  //opacity: 0;
+  top: 22px;
+  left: 2.5%;
+}
+
+#pojemnik-tabelka {
+  transform: translateX(200%);
+  //opacity: 1;
+}
+
+.box-wykres {
+  @include flexy($dir: row);
+  flex: 1;
+}
+
+.box-name {
+  flex: 3;
+  padding: 4px 0;
+}
+
+.change {
+  font-size: .8em;
+  font-weight: 700;
+  flex: 1;
+  padding: 6px 0;
+  text-align: left; //
+}
+
+.wykres {
+  border-radius: 4px;
+  height: 24px;
+  flex: 7;
+  margin: 2px 0;
+  font-weight: 700;
+  font-size: .9em;
+  @include flexy($dir: row, $just: left);
+}
+
+.punkty-stare,
+.punkty-nowe {
+  box-shadow: 0 1px 1px rgba($black, .8); //smaller shadow
+}
+
+
+.punkty-stare {
+  border-radius: 4px 0 0 4px;
+  padding: 3px 0; // 3px 8px;
+  display: flex;
+  z-index: 1; // żeby nowe punkty nie przykryły starych
+  span {
+    // display: none;
+    text-align: right;
+    min-width: 30px;
+    margin-left: -4px;
+    padding: 1px 0;
+    font-size: .9em;
+  }
+  p {
+    min-width: 47px;
+    margin: 0;
+    padding: 0 8px;
+    text-align: right;
+  }
+}
+
+.punkty-nowe {
+  border-radius: 0 4px 4px 0;
+}
+
+.round {
+  border-radius: 4px;
+}
+
+
+.match-box {
+  @include flexy($dir: row, $just: space-between);
+  cursor: pointer;
+  width: 99%;
+  box-shadow: 0 1px 1px rgba($black,.8);
+  border-radius: 4px;
+  margin: 1px 0;
+  min-height: 44px;
+  position: relative;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.wynik-czas {
+  @include flexy($dir: column);
+  flex: 1;
+  text-align: center;
+}
+
+.czas {
+  font-size: .75em;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+
+.wynik {
+  @include flexy($dir: row);
+  font-size: 1.3em;
+  font-weight: 700;
+  p {
+    flex: 1;
+    margin: 0;
+  }
+}
+
+.druzyna {
+  font-weight: 700;
+  text-transform: uppercase;
+  flex: 2;
+  margin: 2px;
+  padding: 0 2px;
+  text-align: center;
+}
+
+.hidden-content {
+  // display: none;
+  height: auto;
+  color: $black;
+  max-height: 0;
+  transition: .4s ease-out;
+  width: 95%;
+  position: relative;
+  margin: -2px auto 4px;
+  // z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba($black,.8);
+  border-radius: 0 0 4px 4px;
+}
+
+.hidden-row {
+  @include flexy($dir: row, $just: space-between);
+  div {
+    &:first-child {
+      text-align: left;
+      text-indent: 20px;
+    }
+    flex: 3;
+    text-align: center;
+    &:nth-child(2),
+    &:nth-child(3) {
+      @include flexy($dir: row);
+    }
+    &:nth-child(2) {
+      flex: 1;
+    }
+    &:nth-child(3) p:first-child {
+      text-align: right;
+      font-weight: 700;
+      font-size: .9em;
+      padding: 1px 0;
+      flex: 2;
+    }
+    p {
+      flex: 1;
+      margin: 4px;
+    }
+  }
+}
+
+.pojemnik-typy {
+  width: 95%;
+  margin: auto;
+}
+
+.match-box-typy {
+  @include flexy($dir: row, $just: space-between);
+  width: 99%;
+  align-items: center;
+  background: $main-color;
+  color: $white;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba($black,.8);
+  margin: 2px 0;
+  label {
+    flex: 1;
+  }
+  p {
+    flex: 2;
+  }
+  div {
+    flex: 1;
+    @include flexy($dir: row, $just: space-between);
+    text-align: center;
+    p {
+      margin: 12px 0;
+    }
+  }
+}
+
+// input
+
+.typ-3 {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 9px 2px;
+  color: $black;
+  &:last-child {
+    margin-right: 5px;
+  }
+  box-shadow: 0 2px 4px rgba($black,.8) inset;
+  &::placeholder {
+    color: rgba($black,.5);
+  }
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  margin: 2px 2px;
+  padding: 1px;
+  flex-grow: 1;
+  min-width: 30px;
+  max-width: 30px;
+}
+
+
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  height: 24px;
+  width: 24px;
+  background-color: $white;
+
+  // x2
+  color: rgba($black,.5);
+  font-size: .5em;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px 0;
+
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba($black,.8) inset;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: $contrast-color; // #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background: $main-color;
+  color: $main-color;
+  box-shadow: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid $contrast-color;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.new-table {
+  width: 95%;
+  margin: auto;
+  @include flexy($dir: column, $just: space-between);
+}
+
+.new-row {
+  &:first-child p:nth-child(3) {
+    font-weight: 400;
+    font-size: .9em;
+  }
+  @include flexy($dir: row, $just: space-between);
+  margin: 1px 0;
+  width: 99%;
+  border-radius: 4px;
+  p {
+    margin: 0;
+    padding: 2px 8px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  p:first-child {
+    max-width: 15px;
+    font-size: .8em;
+  }
+  p:nth-child(2) {
+    flex: 5;
+    justify-content: left;
+    //font-weight: 700;
+  }
+  p:nth-child(3) {
+    font-weight: 700;
+  }
+  p:nth-child(4),
+  p:nth-child(6) {
+    max-width: 5px;
+    padding: 3px 0;
+  }
+  p:nth-child(5),
+  p:nth-child(7) {
+    font-size: .9em;
+  }
+}
+
+
+// ====== style punktacja
+.punktacja {
+  @include flexy($dir: row, $just: space-between);
+  width: 95%;
+  margin: 2px auto;
+  background: $complementary-gray;
+  border-radius: 4px;
+  p {
+    margin: 4px 0;
+  }
+  .przykladowy-wynik {
+    text-align: center;
+    flex: 1;
+    font-weight: 700;
+  }
+  div {
+    @include flexy($dir: row, $just: space-between);
+    flex: 2;
+    p {
+      flex: 1;
+      text-align: center;
+      &:last-child {
+        margin-right: 5%;
+      }
+    }
+  }
+}
+
+.punktacja-legenda {
+  @include flexy($dir: row, $just: space-between);
+  width: 95%;
+  text-align: center;
+  font-size: .9em;
+  margin: 0 auto;
+  p {
+    margin: 2px 0;
+  }
+  p:first-child {
+    flex: 1;
+  }
+  div {
+    @include flexy($dir: row, $just: space-between);
+    flex: 2;
+    p {
+      flex: 1;
+      text-align: center;
+      &:last-child {
+        margin-right: 5%;
+      }
+    }
+  }
+}
+
+// === BUTTONS
+.button-box {
+  @include flexy($dir: row, $just: center);
+  align-items: center;
+  margin: 10px 40px 20px;
+}
+
+button {
+  width: 50%;
+  height: 28px;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+  margin: 4px 2px;
+}
+
+.btn-primary {
+  box-shadow: 0 2px 4px rgba($black,.8);
+  &:active {
+    background: rgba($handicap-1,.4);
+    // transform:translateY(1px);
+  }
+  &:disabled {
+    background-color: $red;
+    color: $white;
+    border: none;
+    }
+}
+
+.btn-secondary {
+  color: $black;
+  background: $white;
+  box-shadow: 0 2px 4px rgba($black,.8);
+  // &:active {
+  //   background: $complementary-gray;
+  // }
+  &:disabled {
+    background-color: $complementary-gray;
+    color: $black;
+    border: none;
+    }
+}
+
+.button-box-wide {
+  width: 99%;
+  margin: auto;
+  @include flexy($dir: row, $just: space-between);
+  margin-bottom: 4px;
+  // position: fixed;
+  input[type="radio"] {
+      display:none;
+  }
+  label {
+    flex: 1;
+    color: $black;
+    background: $white;
+    box-shadow: 0 2px 4px rgba($black,.8);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    margin: 4px 0;
+    padding: 2px 0;
+    &:nth-child(4) {
+      margin: 4px 2px;
+    }
+  }
+}
+
+#tabelka-toggles {
+  @include flexy($dir: row);
+  label:first-child {
+    flex: 1;
+  }
+  label:last-child {
+    flex: 2;
+  }
+}
+
+
+input[type="radio"]:checked + label {
+  background: $main-color;
+  color: $white;
+}
+
+.active {
+  background: $main-color;
+  color: $white;
+}
