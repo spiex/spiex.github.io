@@ -1,0 +1,216 @@
+// import partials
+@import 'partials/variables';
+
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+
+html {
+  //background: rgba(0,0,0,.075);
+  background: $white;
+}
+
+* {
+  box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+body {
+  margin: 0 auto;
+  background: $gray;
+}
+
+p {
+  margin: 4px auto;
+}
+
+.box {
+  @include flexy($dir: column);
+  height: 100vh;
+}
+
+.box-tabelki,
+.box-kontaktu {
+  @include flexy($wrap: wrap);
+  flex: 1;
+  width: 95%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.box-tabelki {
+  max-height: 680px;
+}
+
+.box-kontaktu-kafel {
+  @include flexy($dir: column);
+  width: 33.3%;
+  background: $black;
+  color: $white;
+  i {
+    font-size: 3em;
+    margin-top: 12px;
+  }
+  p {
+    margin: 12px auto;
+  }
+}
+
+.kafel-tabelka-3d {
+  min-width: 280px;
+  max-width: 400px;
+  height: 200px;
+  margin: 12px;
+  background-color: transparent;
+  flex: 1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.kafel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.ribbon-data {
+  border-radius: 0 0 16px 16px;
+}
+
+.kafel-ranking {
+  @include flexy($dir: column);
+  width: 100%;
+}
+
+.kafel-ranking-row {
+  flex: 1;
+  @include flexy;
+  min-width: 90%;
+  margin: 0 auto;
+  &:first-child {
+    p {
+      font-weight: 700;
+    }
+  }
+  p {
+    flex: 1;
+    text-align: center;
+    //font-size: 11px;
+    margin: 2px 0;
+  }
+  p:first-child {
+    flex: 6;
+    text-align: left;
+  }
+  p:nth-child(2) {
+    flex: 2;
+    text-align: right;
+    padding-right: 8px;
+  }
+  p:nth-child(3) {
+    max-width: 4px;
+  }
+}
+
+
+
+.kafel-tabelka-3d:hover .kafel-inner {
+  transform: rotateY(180deg);
+}
+
+// .no-flip:hover .kafel-inner {
+//   transform: rotateY(0deg);
+// }
+
+/* Position the front and back side */
+.kafel-front, .kafel-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+  border-radius: 16px;
+  @include flexy($dir: column)
+}
+
+
+/* Style the back side */
+.kafel-back {
+  //background-color: $lm;
+  color: $white;
+  transform: rotateY(180deg);
+  position: relative;
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+}
+
+// .kafel-front {
+
+// }
+
+
+.ribbon-data {
+  flex: 1;
+  width: 100%;
+  background: $white;
+  color: $lm;
+  @include flexy;
+  p {
+    //font-size: $font-small;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.logo {
+  flex: 7;
+  width: 100%;
+  @include flexy;
+  transition: .5s;
+  img {
+    max-width: 80%;
+  }
+}
+
+.liga-mistrzow {
+  background: $lm;
+}
+
+.reprezentacje {
+  background: $white;
+  color: $black;
+}
+
+.gold {
+  background: $gold;
+  color: $black;
+}
+
+.black {
+  background: $black;
+  color: $white;
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+
+.green {
+  background: $copa;
+  color: $white;
+}
+
+.invisible {
+  color: $white;
+}
