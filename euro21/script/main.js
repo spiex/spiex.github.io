@@ -28,7 +28,7 @@ for (let i = 0; i < wyniki.length; i++) {
 const nastepnewyniki = document.querySelectorAll("#nastepnemecze");
 const nastepnybox = document.querySelectorAll('.bets-box');
 
-for (let i = 0; i < wyniki2.length; i++) {
+for (let i = 0; i < nastepnewyniki.length; i++) {
   nastepnewyniki[i].addEventListener('click', (e) => {
 
     // oblicz liczbę typów w danym boksie i ustaw maksymalną wysokość
