@@ -44,9 +44,9 @@
       <p class='loading-even'>...ładowanie ostatnich meczów...</p>
     </div>
 
-    <h2 class='harmonogram-text'><span>NASTĘPNA KOLEJKA</span></h2>
+    <h2 class='harmonogram-text'><span>NASTĘPNE MECZE</span></h2>
     <div id='nastepnemecze'>
-      <p class='loading-even'>...ładowanie ostatnich meczów...</p>
+      <p class='loading-even'>...ładowanie nadchodzących meczów...</p>
     </div>
 
     <!-- <div class='empty'></div> -->
@@ -249,7 +249,7 @@
       let nastepnemecze = [];
       let koniecKolejki = 36;//array[0][12];
       let obecnaKolejka = array[0][1];
-      let nastepnaKolejka = array[0][1] += parseInt('1');
+      let nastepnaKolejka = parseInt(array[0][1]) += parseInt('1');
 
       for (i=1; i < array.length; i++) {
 
