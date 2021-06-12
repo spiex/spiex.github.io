@@ -44,7 +44,7 @@
       <p class='loading-even'>...ładowanie ostatnich meczów...</p>
     </div>
 
-    <h2 class='harmonogram-text'><span>AKTUALNA KOLEJKA</span></h2>
+    <h2 class='harmonogram-text'><span>NASTĘPNA KOLEJKA</span></h2>
     <div id='nastepnemecze'>
       <p class='loading-even'>...ładowanie ostatnich meczów...</p>
     </div>
@@ -248,6 +248,7 @@
       let mecze = [];
       let nastepnemecze = [];
       let koniecKolejki = 36;//array[0][12];
+      let nastepnaKolejka = array[0][1] + 1;
 
       for (i=1; i < array.length; i++) {
 
@@ -300,7 +301,7 @@
           mecze += `</div>`; // end of bets-box
 
 
-        } else if (array[i][1] === array[0][1]+1 && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
+        } else if (array[i][1] === nastepnaKolejka && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
           nastepnemecze += `<div class='match-box'>
             <div class='result-wrapper'>
               <p class='time'>${array[i][3]}</p>
