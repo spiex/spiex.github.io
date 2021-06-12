@@ -248,6 +248,7 @@
       let mecze = [];
       let nastepnemecze = [];
       let koniecKolejki = 36;//array[0][12];
+      let obecnaKolejka = array[0][1];
       let nastepnaKolejka = array[0][1] += 1;
 
       for (i=1; i < array.length; i++) {
@@ -255,7 +256,7 @@
 
         // ====== CREATE MECZE
 
-        if (array[i][1] === array[0][1] && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki
+        if (array[i][1] === obecnaKolejka && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki
           mecze += `<div class='match-box'>
             <div class='result-wrapper'>
               <p class='time'>${array[i][3]}</p>
