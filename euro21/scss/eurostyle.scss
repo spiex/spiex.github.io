@@ -476,6 +476,11 @@ footer {
   height: 24px;
   @include flexy;
   //border-bottom: 1px dashed $gray;
+  &:last-child {
+    p {
+      font-size: $font-small;
+    }
+  }
 
   &:nth-child(2) {
     background: $gold;
