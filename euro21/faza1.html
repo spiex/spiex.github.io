@@ -68,6 +68,8 @@
 
       let grupaA = [];
       let grupaB = [];
+      let grupaAsuma = [];
+      let grupaBsuma = [];
 
       function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
         if (array[i][15]-array[i][14] > 0) {
@@ -191,6 +193,7 @@
                 <p>${array[i][13]}</p>
               </div>
             `
+            grupaAsuma += array[i][6];
           } if (array[i][3] === "B") { // sprawdź czy grupa A
             grupaB += `
               <div class='tabela-row'>
@@ -204,11 +207,35 @@
                 <p>${array[i][13]}</p>
               </div>
             `
+            grupaBsuma += array[i][6];
           } else { // ani grupa A, ani grupa B - puste pole w tabeli
             // nie rób nic
           }
         }
       }
+      // dodaj podsumowanie punktów w każdej grupie
+
+      grupaA += `<div class='tabela-row'>
+          <p></p>
+          <p>suma punktów:</p>
+          <p>${grupaAsuma}</p>
+          <p></p>
+          <p class='tabela-divider'></p>
+          <p></p>
+          <p class='tabela-divider'></p>
+          <p></p>
+        </div>`;
+      grupaB += `<div class='tabela-row'>
+          <p></p>
+          <p>suma punktów:</p>
+          <p>${grupaBsuma}</p>
+          <p></p>
+          <p class='tabela-divider'></p>
+          <p></p>
+          <p class='tabela-divider'></p>
+          <p></p>
+        </div>`;
+      // koniec podsumowania
 
       grupaA += `</div>`; // zamknij div "tabela grupowa"
       grupaB += `</div>`; // zamknij div "tabela grupowa"
