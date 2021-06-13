@@ -667,6 +667,9 @@ footer {
 
 .suma-punktow {
   border-top: 1px dashed $gray;
+  p {
+    font-size: $font-small;
+  }
 }
 
 .small {
