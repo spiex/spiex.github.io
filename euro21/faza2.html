@@ -60,6 +60,8 @@
 
         let grupaC = [];
         let grupaD = [];
+        let grupaCsuma = 0;
+        let grupaDsuma = 0;
 
         function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
           if (array[i][15]-array[i][14] > 0) {
@@ -160,6 +162,7 @@
                   <p>${array[i][13]}</p>
                 </div>
               `
+              grupaCsuma += parseFloat(array[i][6]);
             } if (array[i][4] === "D") { // sprawdź czy grupa D
               grupaD += `
                 <div class='tabela-row row-white'>
@@ -173,11 +176,37 @@
                   <p>${array[i][13]}</p>
                 </div>
               `
+              grupaDsuma += parseFloat(array[i][6]);
             } else { // ani grupa C, ani grupa D - puste pole w tabeli
               // nie rób nic
             }
           }
         } // koniec sprawdzania czy grupa jest odpalona
+
+        // dodaj podsumowanie punktów w każdej grupie
+        // .toFixed(1) narzuca jedno miejsce dziesiętne
+
+        grupaC += `<div class='tabela-row suma-punktow'>
+            <p></p>
+            <p class='small'>suma punktów:</p>
+            <p class='small'>${grupaCsuma.toFixed(1)}</p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p></p>
+          </div>`;
+        grupaD += `<div class='tabela-row suma-punktow'>
+            <p></p>
+            <p>suma punktów:</p>
+            <p>${grupaDsuma.toFixed(1)}</p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p></p>
+          </div>`;
+        // koniec podsumowania
 
         grupaC += `</div>`; // zamknij div "tabela grupowa"
         grupaD += `</div>`; // zamknij div "tabela grupowa"
