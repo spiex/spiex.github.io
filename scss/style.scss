@@ -88,7 +88,7 @@ p {
   flex: 1;
   @include flexy;
   min-width: 90%;
-  height: 20px;
+  max-height: 18px;
   margin: 0 auto;
   &:first-child {
     p {
