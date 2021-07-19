@@ -206,12 +206,11 @@ footer {
 // =================== KALENDARZ MECZOWY ================
 .harmonogram-text {
    text-align: center;
-   border-bottom: 1px dashed $gray;
+   border-bottom: 1px dashed $white;
    line-height: 0.05em;
    margin-bottom: 0;
    span {
-     background: $white;
-     color: rgba(0,0,0,.6);
+     background: $main;
      font-size: $font-small;
      padding: 0 10px;
    }
