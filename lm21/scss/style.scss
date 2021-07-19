@@ -210,7 +210,8 @@ footer {
    line-height: 0.05em;
    margin-bottom: 0;
    span {
-     background: $main;
+     background: $dark-background;
+     color: $white;
      font-size: $font-small;
      padding: 0 10px;
    }
