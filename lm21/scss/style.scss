@@ -320,7 +320,8 @@ footer {
 .result-wrapper {
   border-radius: 8px;
   width: 100%;
-  @include accent-black-text;
+  background: $main;
+  color: $white;
 }
 
 
