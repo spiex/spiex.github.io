@@ -43,335 +43,143 @@
   <div class='empty'></div>
 
   <script>
-     function makeApiCallRanking() {
-       var params = {
-         spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
-         range: "faza2",
-       };
 
-      // custom functions
-      function print(message, location) {
-        let div = document.querySelector(location);
-        div.innerHTML = message;
-      }
+  function makeApiCallMecze() {
+    var params = {
+      spreadsheetId: '18GyEx8LYEQXl4Dq4_Fso5hRfaWDPA8v0hWbe4g7qbJ8',
+      range: "schedule",
+    };
 
-      function createWykres(array) {
+   // custom functions
+   function print(message, location) {
+     let div = document.querySelector(location);
+     div.innerHTML = message;
+   }
 
-        let grupaC = [];
-        let grupaD = [];
-        let grupaCsuma = 0;
-        let grupaDsuma = 0;
-
-        function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
-          if (array[i][15]-array[i][14] > 0) {
-              return `<p>▲${array[i][15]-array[i][14]}</p>`;
-            } else if (array[i][15]-array[i][14] < 0) {
-              return `<p>▼${array[i][14]-array[i][15]}</p>`;
-          } else {
-            return `<p></p>`;
-          };
-        };
-
-        grupaC += `
-          <div class='tabela-grupowa'>
-            <div class='tabela-row'>
-              <p></p>
-              <p>GRUPA C</p>
-              <p>PUNKTY</p>
-              <p></p>
-              <p class='tabela-divider'></p>
-              <p>TIE<br>BREAKER</p>
-              <p class='tabela-divider'></p>
-              <p>(c)</p>
-            </div>
-        `;
-        grupaD += `
-          <div class='tabela-grupowa'>
-            <div class='tabela-row'>
-              <p></p>
-              <p>GRUPA D</p>
-              <p>PUNKTY</p>
-              <p></p>
-              <p class='tabela-divider'></p>
-              <p>TIE<br>BREAKER</p>
-              <p class='tabela-divider'></p>
-              <p>(c)</p>
-            </div>
-        `;
-
-        if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
-
-          grupaC += `<div class='tabela-row'>
-              <p></p>
-              <p>awans do finału</p>
-              <p>0.0</p>
-              <p></p>
-              <p class='tabela-divider'>|</p>
-              <p>0.0</p>
-              <p class='tabela-divider'>|</p>
-              <p>6?</p>
-            </div>`;
-            grupaD += `<div class='tabela-row'>
-                <p></p>
-                <p>awans do finału</p>
-                <p>0.0</p>
-                <p></p>
-                <p class='tabela-divider'>|</p>
-                <p>0.0</p>
-                <p class='tabela-divider'>|</p>
-                <p>6?</p>
-              </div>`;
-
-          for (g=0; g < 2; g++) {
-            grupaC += `<div class='tabela-row row-white'>
-                <p></p>
-                <p>odpada</p>
-                <p>0.0</p>
-                <p></p>
-                <p class='tabela-divider'>|</p>
-                <p>0.0</p>
-                <p class='tabela-divider'>|</p>
-                <p>6?</p>
-              </div>`;
-            grupaD += `<div class='tabela-row row-white'>
-                <p></p>
-                <p>odpada</p>
-                <p>0.0</p>
-                <p></p>
-                <p class='tabela-divider'>|</p>
-                <p>0.0</p>
-                <p class='tabela-divider'>|</p>
-                <p>6?</p>
-              </div>`;
-            }
-        } else {
-
-          for (i=1; i < array.length; i++) {
-            if (array[i][4] === "C") { // sprawdź czy grupa C
-
-              grupaC += `
-                <div class='tabela-row row-white'>
-                  ${sprawdzProgres()}
-                  <p>${array[i][1]} ${array[i][2]}</p>
-                  <p>${array[i][6]}</p>
-                  <p>+${array[i][7]}</p>
-                  <p class='tabela-divider'>|</p>
-                  <p>${array[i][8]}</p>
-                  <p class='tabela-divider'>|</p>
-                  <p>${array[i][13]}</p>
-                </div>
-              `
-              grupaCsuma += parseFloat(array[i][6]);
-            } if (array[i][4] === "D") { // sprawdź czy grupa D
-              grupaD += `
-                <div class='tabela-row row-white'>
-                  ${sprawdzProgres()}
-                  <p>${array[i][1]} ${array[i][2]}</p>
-                  <p>${array[i][6]}</p>
-                  <p>+${array[i][7]}</p>
-                  <p class='tabela-divider'>|</p>
-                  <p>${array[i][8]}</p>
-                  <p class='tabela-divider'>|</p>
-                  <p>${array[i][13]}</p>
-                </div>
-              `
-              grupaDsuma += parseFloat(array[i][6]);
-            } else { // ani grupa C, ani grupa D - puste pole w tabeli
-              // nie rób nic
-            }
-          }
-        } // koniec sprawdzania czy grupa jest odpalona
-
-        // dodaj podsumowanie punktów w każdej grupie
-        // .toFixed(1) narzuca jedno miejsce dziesiętne
-
-        grupaC += `<div class='tabela-row suma-punktow'>
-            <p></p>
-            <p class='small'>suma punktów:</p>
-            <p class='small'>${grupaCsuma.toFixed(1)}</p>
-            <p></p>
-            <p class='tabela-divider'></p>
-            <p></p>
-            <p class='tabela-divider'></p>
-            <p></p>
-          </div>`;
-        grupaD += `<div class='tabela-row suma-punktow'>
-            <p></p>
-            <p>suma punktów:</p>
-            <p>${grupaDsuma.toFixed(1)}</p>
-            <p></p>
-            <p class='tabela-divider'></p>
-            <p></p>
-            <p class='tabela-divider'></p>
-            <p></p>
-          </div>`;
-        // koniec podsumowania
-
-        grupaC += `</div>`; // zamknij div "tabela grupowa"
-        grupaD += `</div>`; // zamknij div "tabela grupowa"
-
-        let grupy = [];
-        grupy += grupaC;
-        grupy += grupaD;
-
-        print(grupy,"#box-tabele");
-      }
-
-      var request = gapi.client.sheets.spreadsheets.values.get(params);
-        request.then(function(response) {
-          console.log(response.result);
-          createWykres(response.result.values);
-        }, function(reason) {
-          console.error('error: ' + reason.result.error.message);
-        });
-     } // end of makeApiCallRanking
+   function createHarmonogram(array) {
+     let harmonogram = [];
+     let mecze = [];
+     let nastepnemecze = [];
+     let obecnaKolejka = array[0][1];
 
 
+     let nastepnaKolejka = parseInt(array[0][1])+1;
 
-     function makeApiCallMecze() {
-       var params = {
-         spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
-         range: "schedule",
-       };
-
-      // custom functions
-      function print(message, location) {
-        let div = document.querySelector(location);
-        div.innerHTML = message;
-      }
-
-      function createHarmonogram(array) {
-        let harmonogram = [];
-        let mecze = [];
-        let nastepnemecze = [];
-        let poczatekKolejki = 37;
-        let koniecKolejki = 48;//array[0][12];
-
-        let obecnaKolejka = array[0][1];
-        let nastepnaKolejka = parseInt(array[0][1])+1;
-
-        for (i=1; i < array.length; i++) {
+     for (i=1; i < array.length; i++) {
 
 
+       // ====== CREATE MECZE
+
+       if (array[i][1] === obecnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki
+         mecze += `<div class='match-box'>
+           <div class='result-wrapper'>
+             <p class='time'>${array[i][4]}</p>
+             <div class='teams'>
+               <p class='team'>${array[i][5]}</p>
+               <p class='divider'>-</p>
+               <p class='team'>${array[i][6]}</p>
+             </div>
+             <div class='results'>
+               <p class='result'>${array[i][7]}</p>
+               <p class='result'>-</p>
+               <p class='result'>${array[i][8]}</p>
+             </div>
+           </div>
+           <div class='overlay hidden'></div>
+         </div>`;
+         mecze += `<div class='bets-box'>`;
 
 
-        // ====== CREATE MECZE
+         for (h=9; h < array[i].length; h+=6) {
 
-        if (array[i][1] === array[0][1] && array[i][0] >= poczatekKolejki && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki
-          mecze += `<div class='match-box'>
-            <div class='result-wrapper'>
-              <p class='time'>${array[i][3]}</p>
-              <div class='teams'>
-                <p class='team'>${array[i][4]}</p>
-                <p class='divider'>-</p>
-                <p class='team'>${array[i][5]}</p>
-              </div>
-              <div class='results'>
-                <p class='result'>${array[i][6]}</p>
-                <p class='result'>-</p>
-                <p class='result'>${array[i][7]}</p>
-              </div>
-            </div>
-            <div class='overlay hidden'></div>
-          </div>`;
-          mecze += `<div class='bets-box'>`;
+           if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
+             break;
+           } else {
 
-
-          for (h=8; h < array[i].length; h+=6) {
-
-            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, zakończ
-              break;
-            } else if (array[i][h] == null || array[i][h] === "") { // nie ma typu? pomiń
-
-            } else {
-              mecze += `<div class='bet'>
-                  <p class='time'></p>
-                  <div class='details'>
-                    <p>${array[i][h+5]}</p>
-                    <div class='player-results'>
-                      <p class='bold'>+ ${array[i][h+3]}</p>
-                      <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
-                    </div>
-                  </div>
-                  <div class='results'>
-                    <p>${array[i][h]}</p>
-                    <p>-</p>
-                    <p>${array[i][h+1]}</p>
-                  </div>
-                </div>`;
-            }
-          }
-          mecze += `</div>`; // end of bets-box
-
-        } else if (array[i][1] == nastepnaKolejka && array[i][0] >= poczatekKolejki && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
-
-          nastepnemecze += `<div class='match-box'>
-            <div class='result-wrapper'>
-              <p class='time'>${array[i][3]}</p>
-              <div class='teams'>
-                <p class='team'>${array[i][4]}</p>
-                <p class='divider'>-</p>
-                <p class='team'>${array[i][5]}</p>
-              </div>
-              <div class='results'>
-                <p class='result'>${array[i][6]}</p>
-                <p class='result'>-</p>
-                <p class='result'>${array[i][7]}</p>
-              </div>
-            </div>
-            <div class='overlay hidden'></div>
-          </div>`;
-          nastepnemecze += `<div class='bets-box'>`;
+             mecze += `<div class='bet'>
+                 <p class='time'></p>
+                 <div class='details'>
+                   <p>${array[i][h+5]}</p>
+                   <div class='player-results'>
+                     <p class='bold'>+ ${array[i][h+3]}</p>
+                     <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
+                   </div>
+                 </div>
+                 <div class='results'>
+                   <p>${array[i][h]}</p>
+                   <p>-</p>
+                   <p>${array[i][h+1]}</p>
+                 </div>
+               </div>`;
+           }
+         }
+         mecze += `</div>`; // end of bets-box
 
 
-          for (h=8; h < array[i].length; h+=6) {
+       } else if (array[i][1] == nastepnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
 
-            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
-              break;
-            } else if (array[i][h] == null || array[i][h] === "") { // nie ma typu? pomiń
+         nastepnemecze += `<div class='match-box'>
+           <div class='result-wrapper'>
+             <p class='time'>${array[i][4]}</p>
+             <div class='teams'>
+               <p class='team'>${array[i][5]}</p>
+               <p class='divider'>-</p>
+               <p class='team'>${array[i][6]}</p>
+             </div>
+             <div class='results'>
+               <p class='result'>${array[i][7]}</p>
+               <p class='result'>-</p>
+               <p class='result'>${array[i][8]}</p>
+             </div>
+           </div>
+           <div class='overlay hidden'></div>
+         </div>`;
+         nastepnemecze += `<div class='bets-box'>`;
 
-            } else {
 
-              nastepnemecze += `<div class='bet'>
-                  <p class='time'></p>
-                  <div class='details'>
-                    <p>${array[i][h+5]}</p>
-                    <div class='player-results'>
-                      <p class='bold'>+ ${array[i][h+3]}</p>
-                      <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
-                    </div>
-                  </div>
-                  <div class='results'>
-                    <p>${array[i][h]}</p>
-                    <p>-</p>
-                    <p>${array[i][h+1]}</p>
-                  </div>
-                </div>`;
-            }
-          }
-          nastepnemecze += `</div>`; // end of bets-box
+         for (h=9; h < array[i].length; h+=6) {
 
-        } else {
-          // do nothing
-        }
+           if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
+             break;
+           } else {
 
-        // ====== CREATE HARMONOGRAM
-        if(array[i][0] <= koniecKolejki && array[i][0] >= poczatekKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
-          if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
-            harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
-          } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
-            harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
-          }
-        } else if (array[i][0] > koniecKolejki) {
-          break; // ends loop, do not search for matches if kolejka is over
-        } else {
+             nastepnemecze += `<div class='bet'>
+                 <p class='time'></p>
+                 <div class='details'>
+                   <p>${array[i][h+5]}</p>
+                   <div class='player-results'>
+                     <p class='bold'>+ ${array[i][h+3]}</p>
+                     <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
+                   </div>
+                 </div>
+                 <div class='results'>
+                   <p>${array[i][h]}</p>
+                   <p>-</p>
+                   <p>${array[i][h+1]}</p>
+                 </div>
+               </div>`;
+           }
+         }
+         nastepnemecze += `</div>`; // end of bets-box
 
-        }
-      }
+       } else {
+         // do nothing
+       }
 
-        print(harmonogram,'#progress-blocks-box');
-        print(mecze,'#mecze');
-      }
+       // ====== CREATE HARMONOGRAM
+       if (array[i][2] >= 1 ) { // jeśli deadline, to data
+
+           if(array[i][7] === "" || array[i][7] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
+             harmonogram += `<div class="progress-block">${array[i][3]}</div>`;
+           } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
+             harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+           }
+         }
+       }
+
+     print(harmonogram,'#progress-blocks-box');
+     print(mecze,'#mecze');
+   }
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
         request.then(function(response) {
