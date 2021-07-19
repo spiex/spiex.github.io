@@ -139,7 +139,6 @@
       let harmonogram = [];
       let mecze = [];
       let nastepnemecze = [];
-      let koniecKolejki = 36;//array[0][12];
       let obecnaKolejka = array[0][1];
 
 
@@ -150,7 +149,7 @@
 
         // ====== CREATE MECZE
 
-        if (array[i][1] === obecnaKolejka && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki
+        if (array[i][1] === obecnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki
           mecze += `<div class='match-box'>
             <div class='result-wrapper'>
               <p class='time'>${array[i][3]}</p>
@@ -196,7 +195,7 @@
           mecze += `</div>`; // end of bets-box
 
 
-        } else if (array[i][1] == nastepnaKolejka && array[i][0] <= koniecKolejki) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
+        } else if (array[i][1] == nastepnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
 
           nastepnemecze += `<div class='match-box'>
             <div class='result-wrapper'>
@@ -248,14 +247,11 @@
 
         // ====== CREATE HARMONOGRAM
 
-          if(array[i][0] <= koniecKolejki) { // jeśli numer meczu jest mniejszy lub równy od ostatniego meczu pierwszej fazy, dodaj datę do harmonogramu array[0][12]
             if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
               harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
               harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
             }
-          } else {
-            break;
           }
         }
 
