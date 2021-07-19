@@ -53,8 +53,8 @@
 <script>
    function makeApiCallRanking() {
      var params = {
-       spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
-       range: "faza1",
+       spreadsheetId: '18GyEx8LYEQXl4Dq4_Fso5hRfaWDPA8v0hWbe4g7qbJ8',
+       range: "ranking",
      };
 
     // custom functions
@@ -68,10 +68,10 @@
       let grupaA = [];
 
       function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
-        if (array[i][15]-array[i][14] > 0) {
-            return `<p>▲${array[i][15]-array[i][14]}</p>`;
-          } else if (array[i][15]-array[i][14] < 0) {
-            return `<p>▼${array[i][14]-array[i][15]}</p>`;
+        if (array[i][13]-array[i][12] > 0) {
+            return `<p>▲${array[i][13]-array[i][12]}</p>`;
+          } else if (array[i][13]-array[i][12] < 0) {
+            return `<p>▼${array[i][12]-array[i][13]}</p>`;
         } else {
           return `<p></p>`;
         };
@@ -96,13 +96,13 @@
             grupaA += `
               <div class='tabela-row'>
                 ${sprawdzProgres()}
-                <p>${array[i][1]} ${array[i][2]}</p>
-                <p>${array[i][6]}</p>
-                <p>+${array[i][7]}</p>
+                <p>${array[i][0]} ${array[i][1]}<span class='gold'>${array[i][2]}</span></p>
+                <p>${array[i][3]}</p>
+                <p>+${array[i][5]}</p>
                 <p class='tabela-divider'>|</p>
                 <p>${array[i][8]}</p>
                 <p class='tabela-divider'>|</p>
-                <p>${array[i][13]}</p>
+                <p>${array[i][11]}</p>
               </div>
             `
         }
