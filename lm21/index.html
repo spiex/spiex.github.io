@@ -246,7 +246,7 @@
         }
 
         // ====== CREATE HARMONOGRAM
-        if (array[i][0] > 1 ) { // jeśli deadline, to data
+        if (array[i][0] >= 1 ) { // jeśli deadline, to data
 
             if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
               harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
