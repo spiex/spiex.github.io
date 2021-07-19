@@ -484,7 +484,7 @@ footer {
   }
   &:nth-child(3), // drugie i trzecie miejsce w tabeli
   &:nth-child(4) {
-    @include accent-black-text;
+    color: $white;
   }
   p {
     flex: 1;
@@ -524,6 +524,7 @@ footer {
     border-bottom: 2px solid $main;
     p {
       font-size: $font-small;
+      color: $white;
       text-align: center;
       font-weight: 500;
       &:nth-child(2) {
