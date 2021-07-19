@@ -152,16 +152,16 @@
         if (array[i][1] === obecnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki
           mecze += `<div class='match-box'>
             <div class='result-wrapper'>
-              <p class='time'>${array[i][3]}</p>
+              <p class='time'>${array[i][4]}</p>
               <div class='teams'>
-                <p class='team'>${array[i][4]}</p>
-                <p class='divider'>-</p>
                 <p class='team'>${array[i][5]}</p>
+                <p class='divider'>-</p>
+                <p class='team'>${array[i][6]}</p>
               </div>
               <div class='results'>
-                <p class='result'>${array[i][6]}</p>
-                <p class='result'>-</p>
                 <p class='result'>${array[i][7]}</p>
+                <p class='result'>-</p>
+                <p class='result'>${array[i][8]}</p>
               </div>
             </div>
             <div class='overlay hidden'></div>
@@ -169,7 +169,7 @@
           mecze += `<div class='bets-box'>`;
 
 
-          for (h=8; h < array[i].length; h+=6) {
+          for (h=9; h < array[i].length; h+=6) {
 
             if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
               break;
@@ -199,16 +199,16 @@
 
           nastepnemecze += `<div class='match-box'>
             <div class='result-wrapper'>
-              <p class='time'>${array[i][3]}</p>
+              <p class='time'>${array[i][4]}</p>
               <div class='teams'>
-                <p class='team'>${array[i][4]}</p>
-                <p class='divider'>-</p>
                 <p class='team'>${array[i][5]}</p>
+                <p class='divider'>-</p>
+                <p class='team'>${array[i][6]}</p>
               </div>
               <div class='results'>
-                <p class='result'>${array[i][6]}</p>
-                <p class='result'>-</p>
                 <p class='result'>${array[i][7]}</p>
+                <p class='result'>-</p>
+                <p class='result'>${array[i][8]}</p>
               </div>
             </div>
             <div class='overlay hidden'></div>
@@ -216,7 +216,7 @@
           nastepnemecze += `<div class='bets-box'>`;
 
 
-          for (h=8; h < array[i].length; h+=6) {
+          for (h=9; h < array[i].length; h+=6) {
 
             if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
               break;
@@ -246,10 +246,10 @@
         }
 
         // ====== CREATE HARMONOGRAM
-        if (array[i][0] >= 1 ) { // jeśli deadline, to data
+        if (array[i][2] >= 1 ) { // jeśli deadline, to data
 
-            if(array[i][6] === "" || array[i][6] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
-              harmonogram += `<div class="progress-block">${array[i][2]}</div>`;
+            if(array[i][7] === "" || array[i][7] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
+              harmonogram += `<div class="progress-block">${array[i][3]}</div>`;
             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
               harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
             }
