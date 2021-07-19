@@ -81,7 +81,7 @@
         <div class='tabela-grupowa'>
           <div class='tabela-row'>
             <p></p>
-            <p>GRUPA A</p>
+            <p></p>
             <p>PUNKTY</p>
             <p></p>
             <p class='tabela-divider'></p>
@@ -91,48 +91,7 @@
           </div>
       `;
 
-      if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
-
-        grupaA += `<div class='tabela-row'>
-            <p></p>
-            <p>awans (1. koszyk)</p>
-            <p>0.0</p>
-            <p></p>
-            <p class='tabela-divider'>|</p>
-            <p>0.0</p>
-            <p class='tabela-divider'>|</p>
-            <p>12</p>
-          </div>`;
-
-        for (g=0; g < 2; g++) {
-          grupaA += `<div class='tabela-row'>
-              <p></p>
-              <p>awans (2. koszyk)</p>
-              <p>0.0</p>
-              <p></p>
-              <p class='tabela-divider'>|</p>
-              <p>0.0</p>
-              <p class='tabela-divider'>|</p>
-              <p>12</p>
-            </div>`;
-            }
-
-          for (g=0; g < 2; g++) {
-            grupaA += `<div class='tabela-row'>
-                <p></p>
-                <p>odpada</p>
-                <p>0.0</p>
-                <p></p>
-                <p class='tabela-divider'>|</p>
-                <p>0.0</p>
-                <p class='tabela-divider'>|</p>
-                <p>12</p>
-              </div>`;
-              }
-      } else {
-
         for (i=1; i < array.length; i++) {
-          if (array[i][3] === "A") { // sprawdź czy grupa A
 
             grupaA += `
               <div class='tabela-row'>
@@ -146,11 +105,7 @@
                 <p>${array[i][13]}</p>
               </div>
             `
-          } else { // ani grupa A, ani grupa B - puste pole w tabeli
-            // nie rób nic
-          }
         }
-      }
 
       grupaA += `</div>`; // zamknij div "tabela grupowa"
 
