@@ -35,7 +35,7 @@
     </div>
 
     <div id='box-tabele'>
-      <p class='loading'>...ładowanie tabeli grupowych...</p>
+      <p class='loading'>...ładowanie tabeli...</p>
     </div>
 
 
@@ -67,9 +67,6 @@
     function createWykres(array) {
 
       let grupaA = [];
-      let grupaB = [];
-      let grupaAsuma = 0;
-      let grupaBsuma = 0;
 
       function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
         if (array[i][15]-array[i][14] > 0) {
@@ -94,19 +91,6 @@
             <p>(c)</p>
           </div>
       `;
-      grupaB += `
-        <div class='tabela-grupowa'>
-          <div class='tabela-row'>
-            <p></p>
-            <p>GRUPA B</p>
-            <p>PUNKTY</p>
-            <p></p>
-            <p class='tabela-divider'></p>
-            <p>TIE<br>BREAKER</p>
-            <p class='tabela-divider'></p>
-            <p>(c)</p>
-          </div>
-      `;
 
       if (array[0][0] === "FALSE") { // jeśli grupa nie jest odpalona, zapełnij na pusto
 
@@ -120,16 +104,6 @@
             <p class='tabela-divider'>|</p>
             <p>12</p>
           </div>`;
-          grupaB += `<div class='tabela-row'>
-              <p></p>
-              <p>awans (1. koszyk)</p>
-              <p>0.0</p>
-              <p></p>
-              <p class='tabela-divider'>|</p>
-              <p>0.0</p>
-              <p class='tabela-divider'>|</p>
-              <p>12</p>
-            </div>`;
 
         for (g=0; g < 2; g++) {
           grupaA += `<div class='tabela-row'>
@@ -142,16 +116,6 @@
               <p class='tabela-divider'>|</p>
               <p>12</p>
             </div>`;
-            grupaB += `<div class='tabela-row'>
-                <p></p>
-                <p>awans (2. koszyk)</p>
-                <p>0.0</p>
-                <p></p>
-                <p class='tabela-divider'>|</p>
-                <p>0.0</p>
-                <p class='tabela-divider'>|</p>
-                <p>12</p>
-              </div>`;
             }
 
           for (g=0; g < 2; g++) {
@@ -165,16 +129,6 @@
                 <p class='tabela-divider'>|</p>
                 <p>12</p>
               </div>`;
-              grupaB += `<div class='tabela-row'>
-                  <p></p>
-                  <p>odpada</p>
-                  <p>0.0</p>
-                  <p></p>
-                  <p class='tabela-divider'>|</p>
-                  <p>0.0</p>
-                  <p class='tabela-divider'>|</p>
-                  <p>12</p>
-                </div>`;
               }
       } else {
 
@@ -193,21 +147,6 @@
                 <p>${array[i][13]}</p>
               </div>
             `
-            grupaAsuma += parseFloat(array[i][6]);
-          } if (array[i][3] === "B") { // sprawdź czy grupa A
-            grupaB += `
-              <div class='tabela-row'>
-                ${sprawdzProgres()}
-                <p>${array[i][1]} ${array[i][2]}</p>
-                <p>${array[i][6]}</p>
-                <p>+${array[i][7]}</p>
-                <p class='tabela-divider'>|</p>
-                <p>${array[i][8]}</p>
-                <p class='tabela-divider'>|</p>
-                <p>${array[i][13]}</p>
-              </div>
-            `
-            grupaBsuma += parseFloat(array[i][6]);
           } else { // ani grupa A, ani grupa B - puste pole w tabeli
             // nie rób nic
           }
@@ -226,26 +165,11 @@
           <p class='tabela-divider'></p>
           <p></p>
         </div>`;
-      grupaB += `<div class='tabela-row suma-punktow'>
-          <p></p>
-          <p>suma punktów:</p>
-          <p>${grupaBsuma.toFixed(1)}</p>
-          <p></p>
-          <p class='tabela-divider'></p>
-          <p></p>
-          <p class='tabela-divider'></p>
-          <p></p>
-        </div>`;
       // koniec podsumowania
 
       grupaA += `</div>`; // zamknij div "tabela grupowa"
-      grupaB += `</div>`; // zamknij div "tabela grupowa"
 
-      let grupy = [];
-      grupy += grupaA;
-      grupy += grupaB;
-
-      print(grupy,"#box-tabele");
+      print(grupaA,"#box-tabele");
     }
 
     var request = gapi.client.sheets.spreadsheets.values.get(params);
