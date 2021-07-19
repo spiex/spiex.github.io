@@ -482,6 +482,7 @@ footer {
     background: $main;
     color: $black;
     border-bottom: none;
+    border-radius: 4px;
   }
   &:nth-child(3), // drugie i trzecie miejsce w tabeli
   &:nth-child(4) {
@@ -522,7 +523,6 @@ footer {
     padding-bottom: 2px;
   }
   &:nth-child(1) {
-    border-bottom: 2px solid $main;
     p {
       font-size: $font-small;
       color: $white;
