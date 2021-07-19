@@ -285,7 +285,6 @@ footer {
   overflow: hidden;
   margin: 0 auto 8px;
   padding-right: 1px;
-  background: $secondary-white-text;
 }
 
 .bets-box-final {
@@ -395,6 +394,7 @@ footer {
   justify-content: space-around;
   height: 24px;
   font-size: $font-small;
+  background: $secondary-white-text;
   margin-left: 8px;
   > * {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
