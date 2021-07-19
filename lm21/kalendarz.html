@@ -3,26 +3,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tabelka Euro 2021</title>
+    <title>Tabelka LM 2021/22</title>
 
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <!-- ^ BOXICONS -->
-    <link rel="stylesheet" type="text/css" href="./scss/eurostyle.min.css">
+    <link rel="stylesheet" type="text/css" href="./scss/style.min.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/euro21/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/euro21/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/euro21/favicon-16x16.png">
-    <link rel="manifest" href="/euro21/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/lm21/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/lm21/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/lm21/favicon-16x16.png">
+    <link rel="manifest" href="/lm21/site.webmanifest">
   </head>
   <body>
 
   <nav>
-    <div class='logotyp-tabelki'><div><img src='img/logoEURwhite.png'></div><a href="punktacja.html" class='infolink'><i class='bx bx-info-circle' ></i><span class='infotekst'>INFO</span></a></div>
+    <div class='logotyp-tabelki'><div><img src='img/logoLMmegawhite.png'></div><a href="punktacja.html" class='infolink'><i class='bx bx-info-circle' ></i><span class='infotekst'>INFO</span></a></div>
 
     <ul>
-      <li><a href="faza1.html">FAZA GRUPOWA</a></li>
-      <li><a href="faza2.html" class='selected'>FAZA PUCHAROWA</a></li>
-      <li><a href="faza3.html"><i class='bx bxs-trophy'></i>FINAŁ</a></li>
+      <li><a href="index.html" class='selected'>TABELKA</a></li>
+      <li><a href="kalendarz.html"><i class='bx bx-calendar-star'></i>KALENDARZ</a></li>
       <li><a href="statystyki.html"><i class='bx bxs-bar-chart-alt-2' ></i></a></li>
     </ul>
   </nav>
@@ -34,19 +33,12 @@
     <p class='loading-even'>...ładowanie harmonogramu...</p>
   </div>
 
-  <div id='box-tabele'>
-    <p class='loading'>...ładowanie tabeli grupowych...</p>
-  </div>
 
   <h2 class='harmonogram-text'><span>AKTUALNA KOLEJKA</span></h2>
   <div id='mecze'>
     <p class='loading-even'>...ładowanie ostatnich meczów...</p>
   </div>
 
-  <h2 class='harmonogram-text'><span>NASTĘPNE MECZE</span></h2>
-  <div id='nastepnemecze'>
-    <p class='loading-even'>...ładowanie nadchodzących meczów...</p>
-  </div>
 
   <div class='empty'></div>
 
@@ -379,7 +371,6 @@
 
         print(harmonogram,'#progress-blocks-box');
         print(mecze,'#mecze');
-        print(nastepnemecze,'#nastepnemecze');
       }
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
