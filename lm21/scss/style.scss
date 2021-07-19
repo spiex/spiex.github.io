@@ -94,7 +94,7 @@ nav {
 		margin: 0 4px;
 		li {
 			@include flexy;
-			flex: 2;
+			flex: 3;
       &:last-child {
         flex: 1;
       }
