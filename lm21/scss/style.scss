@@ -135,6 +135,11 @@ nav {
   }
 }
 
+.bigger-bx {
+  font-size: 2.2em;
+}
+
+
 .selected {
   background: $main;
   color: $white;
@@ -260,7 +265,6 @@ footer {
   @include flexy;
   position: relative;
 }
-
 
 .match-box,
 .bets-box {
