@@ -119,20 +119,22 @@
            }
          }
          mecze += `</div>`; // end of bets-box
+         
+         // ====== CREATE HARMONOGRAM
+         if (array[i][2] >= 1 ) { // jeśli deadline, to data
+
+             if(array[i][7] === "" || array[i][7] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
+               harmonogram += `<div class="progress-block">${array[i][3]}</div>`;
+             } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
+               harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+             }
+           }
        }
 
-       // ====== CREATE HARMONOGRAM
-     //   if (array[i][2] >= 1 ) { // jeśli deadline, to data
-     //
-     //       if(array[i][7] === "" || array[i][7] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
-     //         harmonogram += `<div class="progress-block">${array[i][3]}</div>`;
-     //       } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
-     //         harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
-     //       }
-     //     }
-     //
-     //
-     // print(harmonogram,'#progress-blocks-box');
+
+
+
+     print(harmonogram,'#progress-blocks-box');
      print(mecze,'#mecze');
    }
 
