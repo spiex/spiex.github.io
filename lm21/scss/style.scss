@@ -749,17 +749,17 @@ footer {
       &:first-child {
         font-size: $font-big;
         font-weight: 700;
-        color: $main;
+        color: $green;
       }
       &:nth-child(2) {
         flex: 5;
-        @include accent-black-text;
+        @include accent-white-text;
       }
     }
     &:first-child {
       border-bottom: 2px solid $black;
       font-weight: 700;
-      background: $gold;
+      background: $main;
       min-height: 36px;
       p {
         font-size: $font-small;
@@ -767,7 +767,7 @@ footer {
         &:nth-child(2) {
           font-weight: 500;
           flex: 5;
-          @include accent-black-text;
+          @include accent-white-text;
           padding: 4px;
         }
       }
