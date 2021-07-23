@@ -67,7 +67,7 @@
           if (array[i][0] === "" || array[i][0] === null) { // pomiń puste rubryki
           } else {
 
-            bonusy += `<p>${array[i][0]} ${array[i][1]}<span class='bold gold'>${array[i][2]}</span></p>`;
+            bonusy += `<div class='tabela-bonusy-row'><p>${array[i][0]} ${array[i][1]}<span class='bold gold'>${array[i][2]}</span></p>`;
             if(array[i][15] === "TRUE") {
               bonusy += `<p class='bold gold'>${array[i][14]}</p>`;
             } if(array[i][16] === "TRUE") {
