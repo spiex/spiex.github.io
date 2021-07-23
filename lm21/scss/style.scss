@@ -899,12 +899,11 @@ footer {
     border-bottom: dashed 1px $gray;
     p {
       height: 28px;
-      flex: 4;
+      flex: 1;
       text-align: center;
       margin: 4px;
       &:first-child {
         text-align: left;
-        flex: 3;
       }
     }
     &:first-child,
