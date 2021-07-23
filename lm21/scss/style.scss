@@ -890,3 +890,42 @@ footer {
     margin: 16px 0;
   }
 }
+
+#tabela-bonusy {
+  width: 95%;
+  margin: 8px auto;
+  .tabela-bonusy-row {
+    @include flexy;
+    border-bottom: dashed 1px $gray;
+    p {
+      height: 28px;
+      flex: 4;
+      text-align: center;
+      margin: 4px;
+      &:first-child {
+        text-align: left;
+        flex: 3;
+      }
+    }
+    &:first-child,
+    &:nth-child(2) {
+      background: $main;
+      font-weight: 700;
+      border-bottom: none;
+      p {
+        font-size: .85em;
+        margin: 0 4px;
+        height: auto;
+      }
+    }
+    &:first-child {
+      padding-top: 8px;
+      border-radius: 8px 8px 0 0;
+    }
+    &:nth-child(2) {
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}

@@ -27,15 +27,15 @@
   </nav>
   <div class="main-wrapper">
 
-<div id='tabela-ranking'>
+<div id='tabela-bonusy'>
   <p class='loading-even'>...ładowanie tabeli...</p>
 </div>
 
 
 <script>
-   function makeApiCallRanking() {
+   function makeApiCallBonusy() {
      var params = {
-       spreadsheetId: '1Pf956EVs8pH12kMT-n7_fGm5CqMU0Luagv_fICr9xso',
+       spreadsheetId: '18GyEx8LYEQXl4Dq4_Fso5hRfaWDPA8v0hWbe4g7qbJ8',
        range: "ranking",
      };
 
@@ -45,17 +45,21 @@
       div.innerHTML = message;
     }
 
-    function createRanking(array) {
+    function createBonusy(array) {
 
-      let ranking = [];
-      let counter = 1;
+      let bonusy = [];
 
-      ranking += `<div class='tabela-header'>
+      ranking += `<div class='tabela-bonusy-row'>
         <p></p>
-        <p>KLASYFIKACJA</p>
-        <p>PUNKTY<br>(NA MECZ)</p>
-        <p class='tabela-divider'></p>
-        <p>TRAFIONE 1x2</p>
+        <p>ZWYCIĘZCA (FINALISTA)</p>
+        <p>DRUGI<br>FINALISTA</p>
+        <p>KRÓL<br>STRZELCÓW</p>
+      </div>
+      <div class='tabela-bonusy-row'>
+        <p></p>
+        <p><span class='bold gold'>+10</span> <span class='bold'>(+5)</span></p>
+        <p class='bold gold'>+5</p>
+        <p class='bold gold'>+5</p>
       </div>
       `;
 
@@ -63,34 +67,36 @@
           if (array[i][0] === "" || array[i][0] === null) { // pomiń puste rubryki
           } else {
 
-            if (array[i][5] === "1") {
-              ranking += `<div class='ranking-row'>`;
-            } else if (array[i][5] === "2") {
-              ranking += `<div class='ranking-row faza-grupowa'>`;
+            bonusy += `<p>${array[i][0]} ${array[i][1]}<span class='bold gold'>${array[i][2]}</span></p>`;
+            if(array[i][15] === TRUE) {
+              bonusy += `<p class='bold gold'>${array[i][14]}</p>`;
+            } if(array[i][16] === TRUE) {
+              bonusy += `<p class='bold'>${array[i][14]}</p>`;
             } else {
-              ranking += `<div class='ranking-row finalista'>`;
+              bonusy += `<p>${array[i][14]}</p>`;
             }
-            ranking += `
-              <p>${counter}</p>
-              <p>${array[i][0]}</p>
-              <p>${array[i][1]}</p>
-              <p>${array[i][2]}</p>
-              <p class='tabela-divider'>|</p>
-              <p>${array[i][3]}</p>
-              <p>${array[i][4]}</p>
-            </div>`;
-            counter += 1;
+            if(array[i][18] === TRUE) {
+              bonusy += `<p class='bold gold'>${array[i][17]}</p>`;
+            } else {
+              bonusy += `<p>${array[i][17]}</p>`;
+            }
+            if(array[i][20] === TRUE) {
+              bonusy += `<p class='bold gold'>${array[i][19]}</p>`;
+            } else {
+              bonusy += `<p>${array[i][19]}</p>`;
+            }
+            bonusy += `</div>`;
         }
 
       }
 
-      print(ranking,"#tabela-ranking");
+      print(bonusy,"#tabela-bonusy");
     }
 
     var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         console.log(response.result);
-        createRanking(response.result.values);
+        createBonusy(response.result.values);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
@@ -114,7 +120,7 @@
    function handleClientLoad() {gapi.load('client:auth2', initClient);}
    function updateSignInStatus(isSignedIn) {
 
-       makeApiCallRanking();
+       makeApiCallBonusy();
    }
    </script>
    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
