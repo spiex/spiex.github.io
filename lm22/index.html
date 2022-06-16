@@ -1,0 +1,302 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabelka LM 2021/22</title>
+
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ^ BOXICONS -->
+    <link rel="stylesheet" type="text/css" href="./scss/style.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/lm21/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/lm21/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/lm21/favicon-16x16.png">
+    <link rel="manifest" href="/lm21/site.webmanifest">
+  </head>
+  <body>
+
+  <nav>
+    <div class='logotyp-tabelki'><div><img src='img/logoLMmegawhite.png'></div><a href="punktacja.html" class='infolink'><i class='bx bx-info-circle' ></i><span class='infotekst'>INFO</span></a></div>
+
+    <ul>
+      <li><a href="index.html" class='selected'>TABELKA</a></li>
+      <li><a href="kalendarz.html"><i class='bx bx-calendar-star'></i>KALENDARZ</a></li>
+      <li><a href="statystyki.html"><i class='bx bxs-user-plus bigger-bx'></i></a></li>
+    </ul>
+  </nav>
+  <div class="main-wrapper">
+
+
+    <!-- <h2 class='harmonogram-text'><span>HARMONOGRAM DEADLINE'ÓW</span></h2>
+    <div id='progress-blocks-box'>
+      <p class='loading-even'>...ładowanie harmonogramu...</p>
+    </div> -->
+
+    <div id='box-tabele'>
+      <p class='loading'>...ładowanie tabeli...</p>
+    </div>
+
+
+    <h2 class='harmonogram-text'><span>NAJBLIŻSZE MECZE</span></h2>
+    <div id='mecze'>
+      <p class='loading-even'>...ładowanie ostatnich meczów...</p>
+    </div>
+
+    <h2 class='harmonogram-text'><span>KOLEJNY DZIEŃ MECZOWY</span></h2>
+    <div id='nastepnemecze'>
+      <p class='loading-even'>...ładowanie nadchodzących meczów...</p>
+    </div>
+
+    <div class='empty'></div>
+
+<script>
+   function makeApiCallRanking() {
+     var params = {
+       spreadsheetId: '18GyEx8LYEQXl4Dq4_Fso5hRfaWDPA8v0hWbe4g7qbJ8',
+       range: "ranking",
+     };
+
+    // custom functions
+    function print(message, location) {
+      let div = document.querySelector(location);
+      div.innerHTML = message;
+    }
+
+    function createWykres(array) {
+
+      let grupaA = [];
+
+      function sprawdzProgres() { // weryfikuje czy gracz spadł czy awansował i zaznacza, o ile pozycji
+        if (array[i][13]-array[i][12] > 0) {
+            return `<p>▲${array[i][13]-array[i][12]}</p>`;
+          } else if (array[i][13]-array[i][12] < 0) {
+            return `<p>▼${array[i][12]-array[i][13]}</p>`;
+        } else {
+          return `<p></p>`;
+        };
+      };
+
+      grupaA += `
+        <div class='tabela-grupowa'>
+          <div class='tabela-row'>
+            <p></p>
+            <p></p>
+            <p>PUNKTY</p>
+            <p></p>
+            <p class='tabela-divider'></p>
+            <p>TIE<br>BREAKER</p>
+            <p class='tabela-divider'></p>
+            <p>(c)</p>
+          </div>
+      `;
+
+        for (i=1; i < array.length; i++) {
+
+            grupaA += `
+              <div class='tabela-row'>
+                ${sprawdzProgres()}
+                <p>${array[i][0]} ${array[i][1]}<span class='gold'>${array[i][2]}</span></p>
+                <p>${array[i][3]}</p>
+                <p>+${array[i][5]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][8]}</p>
+                <p class='tabela-divider'>|</p>
+                <p>${array[i][11]}</p>
+              </div>
+            `
+        }
+
+      grupaA += `</div>`; // zamknij div "tabela grupowa"
+
+      print(grupaA,"#box-tabele");
+    }
+
+    var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        console.log(response.result);
+        createWykres(response.result.values);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+   } // end of makeApiCallRanking
+
+
+
+   function makeApiCallMecze() {
+     var params = {
+       spreadsheetId: '18GyEx8LYEQXl4Dq4_Fso5hRfaWDPA8v0hWbe4g7qbJ8',
+       range: "schedule",
+     };
+
+    // custom functions
+    function print(message, location) {
+      let div = document.querySelector(location);
+      div.innerHTML = message;
+    }
+
+    function createHarmonogram(array) {
+      let harmonogram = [];
+      let mecze = [];
+      let nastepnemecze = [];
+      let obecnaKolejka = array[0][1];
+
+
+      let nastepnaKolejka = parseInt(array[0][1])+1;
+
+      for (i=1; i < array.length; i++) {
+
+
+        // ====== CREATE MECZE
+
+        if (array[i][1] === obecnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki
+          mecze += `<div class='match-box'>
+            <div class='result-wrapper'>
+              <p class='time'>${array[i][4]}</p>
+              <div class='teams'>
+                <p class='team'>${array[i][5]}</p>
+                <p class='divider'>-</p>
+                <p class='team'>${array[i][6]}</p>
+              </div>
+              <div class='results'>
+                <p class='result'>${array[i][7]}</p>
+                <p class='result'>-</p>
+                <p class='result'>${array[i][8]}</p>
+              </div>
+            </div>
+            <div class='overlay hidden'></div>
+          </div>`;
+          mecze += `<div class='bets-box'>`;
+
+
+          for (h=9; h < array[i].length; h+=6) {
+
+            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
+              // break; do nothing
+            } else {
+
+              mecze += `<div class='bet'>
+                  <p class='time'></p>
+                  <div class='details'>
+                    <p>${array[i][h+5]}</p>
+                    <div class='player-results'>
+                      <p class='bold'>+ ${array[i][h+3]}</p>
+                      <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
+                    </div>
+                  </div>
+                  <div class='results'>
+                    <p>${array[i][h]}</p>
+                    <p>-</p>
+                    <p>${array[i][h+1]}</p>
+                  </div>
+                </div>`;
+            }
+          }
+          mecze += `</div>`; // end of bets-box
+
+
+        } else if (array[i][1] == nastepnaKolejka) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
+
+          nastepnemecze += `<div class='match-box'>
+            <div class='result-wrapper'>
+              <p class='time'>${array[i][4]}</p>
+              <div class='teams'>
+                <p class='team'>${array[i][5]}</p>
+                <p class='divider'>-</p>
+                <p class='team'>${array[i][6]}</p>
+              </div>
+              <div class='results'>
+                <p class='result'>${array[i][7]}</p>
+                <p class='result'>-</p>
+                <p class='result'>${array[i][8]}</p>
+              </div>
+            </div>
+            <div class='overlay hidden'></div>
+          </div>`;
+          nastepnemecze += `<div class='bets-box'>`;
+
+
+          for (h=9; h < array[i].length; h+=6) {
+
+            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
+              // break; do nothing
+            } else {
+
+              nastepnemecze += `<div class='bet'>
+                  <p class='time'></p>
+                  <div class='details'>
+                    <p>${array[i][h+5]}</p>
+                    <div class='player-results'>
+                      <p class='bold'>+ ${array[i][h+3]}</p>
+                      <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
+                    </div>
+                  </div>
+                  <div class='results'>
+                    <p>${array[i][h]}</p>
+                    <p>-</p>
+                    <p>${array[i][h+1]}</p>
+                  </div>
+                </div>`;
+            }
+          }
+          nastepnemecze += `</div>`; // end of bets-box
+
+        } else {
+          // do nothing
+        }
+
+        // ====== CREATE HARMONOGRAM
+        if (array[i][2] >= 1 ) { // jeśli deadline, to data
+
+            if(array[i][7] === "" || array[i][7] === "?") { // jeśli mecz nie ma jeszcze wyniku albo ma "?", podaj jego datę
+              harmonogram += `<div class="progress-block">${array[i][3]}</div>`;
+            } else { // jeśli mecz już się odbył (ma wynik), pokaż ptaka
+              harmonogram += `<div class="progress-block filled"><i class='bx bx-check' ></i></div>`;
+            }
+          }
+        }
+
+      // print(harmonogram,'#progress-blocks-box');
+      print(mecze,'#mecze');
+      print(nastepnemecze,'#nastepnemecze');
+    }
+
+    var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        console.log(response.result);
+        createHarmonogram(response.result.values);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+
+   } // end of makeApiCallMecze
+
+   function initClient() {
+     var API_KEY = 'AIzaSyDFTXEtRhcjBgugoU-aPzpdjo4d9Xdc6yU';
+     var CLIENT_ID = '896208609852-0d4hqobmliea0uq34uoho0lekhs2tch4.apps.googleusercontent.com';
+     var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+     gapi.client.init({
+       'apiKey': API_KEY,
+       'clientId': CLIENT_ID,
+       'scope': SCOPE,
+       'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+     }).then(function() {
+       gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+       updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+     });
+   }
+
+   function handleClientLoad() {gapi.load('client:auth2', initClient);}
+   function updateSignInStatus(isSignedIn) {
+
+       makeApiCallRanking();
+       makeApiCallMecze();
+   }
+ </script>
+ <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+
+
+<script src="script/main.js"></script>
+</body>
+</html>
