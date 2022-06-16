@@ -6,7 +6,7 @@
 
 html {
   //background: rgba(0,0,0,.075);
-  background: $dark-background;
+  background: #000; //$dark-background;
 }
 
 * {
@@ -20,6 +20,7 @@ body {
   max-width: $max-width;
   background-image: url('../img/lm-background2.jpg');
   background-position: bottom center;
+  background-repeat: no-repeat;
 }
 
 p {
