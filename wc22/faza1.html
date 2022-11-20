@@ -193,7 +193,7 @@
                 <p>${array[i][13]}</p>
               </div>
             `
-            grupaAsuma += parseFloat(array[i][6]);
+            grupaAsuma += parseInt(array[i][6]);
           } if (array[i][3] === "B") { // sprawdź czy grupa A
             grupaB += `
               <div class='tabela-row'>
@@ -207,7 +207,7 @@
                 <p>${array[i][13]}</p>
               </div>
             `
-            grupaBsuma += parseFloat(array[i][6]);
+            grupaBsuma += parseInt(array[i][6]);
           } else { // ani grupa A, ani grupa B - puste pole w tabeli
             // nie rób nic
           }
