@@ -319,7 +319,7 @@ a:hover {
 }
 
 #hero:before {
-  content: "";
+  // content: "";
   // background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
@@ -330,6 +330,7 @@ a:hover {
 
 #hero .container {
   padding-top: 72px;
+  position: relative;
 }
 
 #hero h1 {
@@ -347,7 +348,6 @@ a:hover {
 }
 
 #hero .btn-get-started {
-  font-family: "Jost", sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -382,8 +382,13 @@ a:hover {
   margin-right: 8px;
 }
 
-#hero .btn-watch-video:hover i {
-  color: #47b2e4;
+#hero .btn-watch-video:hover i,
+#hero .btn-watch-video:hover span {
+  color: $blue;
+}
+
+#hero span {
+  transition: 0.3s;
 }
 
 #hero .animated {
@@ -446,6 +451,8 @@ a:hover {
     transform: translateY(-10px);
   }
 }
+
+
 
 /*--------------------------------------------------------------
 # Sections General
