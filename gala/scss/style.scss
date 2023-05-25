@@ -19,6 +19,14 @@
 // =========== COLORS
 $blue: #0087e6;
 
+.blue {
+  color: $blue;
+}
+
+.bold {
+  font-weight: 400;
+}
+
 p, h2 {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -35,6 +43,19 @@ a:hover {
 }
 
 
+
+.img-container {
+  overflow: hidden;
+  img {
+    height: 350px;
+    transition: 0.3s ease-out;
+    object-fit: cover;
+  }
+}
+
+.img-container img:hover {
+  transform: scale(1.075);
+}
 
 /*--------------------------------------------------------------
 # Header
@@ -59,6 +80,10 @@ a:hover {
 
 #header .logo {
   color: #fff;
+}
+
+#header .logo img {
+  max-height: 40px;
 }
 
 
@@ -347,7 +372,7 @@ a:hover {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+.btn-get-started {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -361,7 +386,8 @@ a:hover {
 }
 
 #hero .btn-get-started:hover {
-  background: #209dd8;
+  background: #fff;
+  color: $blue;
 }
 
 #hero .btn-watch-video {
@@ -568,7 +594,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/gala.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.8)), url("../img/gala.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -584,7 +610,6 @@ section {
 }
 
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -598,9 +623,9 @@ section {
 }
 
 .cta .cta-btn:hover {
-  background: #ffc451;
-  border-color: #ffc451;
-  color: #151515;
+  background: $blue;
+  border-color: $blue;
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
