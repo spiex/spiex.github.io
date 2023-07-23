@@ -282,6 +282,10 @@ footer {
   z-index: 2;
   cursor: pointer;
   border-radius: 8px;
+  &:active {
+    background-color: $secondary-white-text;
+    opacity: 50%;
+  }
 }
 
 
