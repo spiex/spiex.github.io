@@ -27,7 +27,6 @@ p {
 .box {
   @include flexy($dir: column);
   height: 100%;
-  margin-bottom: 48px;
 }
 
 .box-tabelki,
@@ -40,7 +39,7 @@ p {
 }
 
 .box-tabelki {
-  max-height: 680px;
+  max-height: 1000px;
 }
 
 .box-kontaktu-kafel {
