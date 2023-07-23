@@ -18,7 +18,6 @@ html {
 body {
   margin: 0 auto;
   max-width: $max-width;
-  background-color: $dark-background;
   // background-image: url('../img/lm-background2.jpg');
   // background-position: bottom center;
   // background-repeat: no-repeat;
@@ -220,7 +219,6 @@ footer {
    line-height: 0.05em;
    margin-bottom: 0;
    span {
-     background: $dark-background;
      color: $white;
      font-size: $font-small;
      padding: 0 10px;
