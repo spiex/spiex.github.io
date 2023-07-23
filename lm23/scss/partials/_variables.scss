@@ -1,0 +1,84 @@
+
+
+// $main: #34495e;
+// $secondary-white-text: #FF5154;
+// $secondary-black-text: #F6E8EA;
+// $white: white;
+// $black: #333;
+// $gold: #F2E863;
+// $blue: #31AFD4;
+
+//$main: #0C6697;
+$main: #062d46;
+//$secondary-white-text: #505A5B;
+$secondary-white-text: #347daf;//#38576B;
+$secondary-black-text: #E7EFEF; // pinkish darker gray F6E8EA
+$white: white;
+$black: #333;
+$gold: #F2E863;
+//$blue: #31AFD4;
+$green: #659B5E;
+
+$dark-background: #152028;
+$dark-green: #61988E;
+
+
+// colors
+//$main: #1699e4;
+$gray: #D0D3D4;
+
+
+
+
+
+// sizes
+$font-small: .85em;
+$font-big: 1.1em;
+$font-bigger: 1.25em;
+
+$navbar-height: 100px;
+$footer-height: 44px;
+$max-width: 420px; //420
+
+// MIXINS
+@mixin flexy(
+  $disp: flex,
+  $dir: row,
+  $wrap: null,
+  $just: space-around,
+  $align: center) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin accent-black-text() {
+  background: $secondary-black-text;
+  color: $black;
+}
+
+@mixin accent-white-text() {
+  background: $secondary-white-text;
+  color: $white;
+}
+
+//
+// $main: #16697A;
+//$green: #78be20;
+// $lightblue: #00c1d5;
+//$orange: #e57200;
+// $gray: #D0D3D4;
+// $white: white;
+// $black: black;
+// $gold: #FAC748;
+$red: #F8333C;
+//
+// $firebrick: #AB3428;
+// $gainsboro: #E6E6EA;
+//
+// $neutral: #F7EDF0;
+// $flat-red: #EF5B5B;
+$flat-green: #B0F2B4;
+//
