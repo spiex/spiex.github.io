@@ -27,6 +27,7 @@ p {
 .box {
   @include flexy($dir: column);
   height: 100%;
+  margin-bottom: 48px;
 }
 
 .box-tabelki,
