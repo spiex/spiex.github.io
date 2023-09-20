@@ -145,12 +145,10 @@
       let harmonogram = [];
       let mecze = [];
       let nastepnemecze = [];
-      let ligaeuropy = [];
       let obecnaKolejka = array[0][1];
 
 
       let nastepnaKolejka = parseInt(array[0][1])+1;
-      let rakow = parseInt(array[0][1])+2;
 
       for (i=1; i < array.length; i++) {
 
@@ -249,52 +247,6 @@
           }
           nastepnemecze += `</div>`; // end of bets-box
 
-        } else if (array[i][1] == rakow) { // jeśli numer kolejki meczu = numer aktualnej kolejki+1
-
-          ligaeuropy += `<div class='match-box'>
-            <div class='result-wrapper'>
-              <p class='time'>${array[i][4]}</p>
-              <div class='teams'>
-                <p class='team'>${array[i][5]}</p>
-                <p class='divider'>-</p>
-                <p class='team'>${array[i][6]}</p>
-              </div>
-              <div class='results'>
-                <p class='result'>${array[i][7]}</p>
-                <p class='result'>-</p>
-                <p class='result'>${array[i][8]}</p>
-              </div>
-            </div>
-            <div class='overlay hidden'></div>
-          </div>`;
-          ligaeuropy += `<div class='bets-box'>`;
-
-
-          for (h=9; h < array[i].length; h+=6) {
-
-            if (array[i][h+5] == null || array[i][h+5] === "") { // jeśli dany gracz nie ma wpisanego imienia, pomijaj jego typy
-              // break; do nothing
-            } else {
-
-              ligaeuropy += `<div class='bet'>
-                  <p class='time'></p>
-                  <div class='details'>
-                    <p>${array[i][h+5]}</p>
-                    <div class='player-results'>
-                      <p class='bold'>+ ${array[i][h+3]}</p>
-                      <p class='captain'>${array[i][h+4] === "TRUE" ? "x2" : ""}</p>
-                    </div>
-                  </div>
-                  <div class='results'>
-                    <p>${array[i][h]}</p>
-                    <p>-</p>
-                    <p>${array[i][h+1]}</p>
-                  </div>
-                </div>`;
-            }
-          }
-          ligaeuropy += `</div>`; // end of bets-box
-
         } else {
           // do nothing
         }
@@ -313,7 +265,6 @@
       // print(harmonogram,'#progress-blocks-box');
       print(mecze,'#mecze');
       print(nastepnemecze,'#nastepnemecze');
-      print(ligaeuropy,'#ligaeuropy');
     }
 
     var request = gapi.client.sheets.spreadsheets.values.get(params);

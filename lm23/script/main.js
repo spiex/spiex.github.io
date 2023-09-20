@@ -51,30 +51,3 @@ for (let i = 0; i < nastepnewyniki.length; i++) {
 
   });
 }
-
-const wynikiLE = document.querySelectorAll("#ligaeuropy");
-const boxLE = document.querySelectorAll('.bets-box');
-
-for (let i = 0; i < wynikiLE.length; i++) {
-  wynikiLE[i].addEventListener('click', (e) => {
-
-    // oblicz liczbę typów w danym boksie i ustaw maksymalną wysokość
-    const liczbaTypow = e.target.parentNode.nextElementSibling.querySelectorAll('.bet');
-    const dlugosc = liczbaTypow.length * 24 + 4;
-    // get the mx height of hidden content
-    // liczba typów * 24 px + 4px na dół
-
-      if (e.target.className == "overlay hidden" ) {
-        let box1 = e.target.parentNode;
-        let box2 = box1.nextElementSibling;
-        box2.style.maxHeight = dlugosc + "px";
-        e.target.className = "overlay visible";
-      } else if (e.target.className == "overlay visible" ) {
-        let box1 = e.target.parentNode;
-        let box2 = box1.nextElementSibling;
-        box2.style.maxHeight = "0";
-        e.target.className = "overlay hidden";
-      }
-
-  });
-}
