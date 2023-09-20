@@ -52,11 +52,11 @@ for (let i = 0; i < nastepnewyniki.length; i++) {
   });
 }
 
-const nastepnewyniki = document.querySelectorAll("#ligaeuropy");
-const nastepnybox = document.querySelectorAll('.bets-box');
+const wynikiLE = document.querySelectorAll("#ligaeuropy");
+const boxLE = document.querySelectorAll('.bets-box');
 
-for (let i = 0; i < nastepnewyniki.length; i++) {
-  nastepnewyniki[i].addEventListener('click', (e) => {
+for (let i = 0; i < wynikiLE.length; i++) {
+  wynikiLE[i].addEventListener('click', (e) => {
 
     // oblicz liczbę typów w danym boksie i ustaw maksymalną wysokość
     const liczbaTypow = e.target.parentNode.nextElementSibling.querySelectorAll('.bet');
