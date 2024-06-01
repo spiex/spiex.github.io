@@ -25,7 +25,7 @@ p {
 }
 
 h1 {
-  color: $green;
+  color: $main;
   margin-top: 12px;
 }
 
@@ -339,7 +339,7 @@ footer {
   p:first-child {
     text-align: right;
     font-size: $font-small;
-    color: $green;
+    color: $main;
   }
 }
 
@@ -522,7 +522,7 @@ footer {
     padding-bottom: 2px;
   }
   &:nth-child(1) {
-    border-bottom: 2px solid $main;
+    border-bottom: 2px solid #000;
     p {
       font-size: $font-small;
       text-align: center;
@@ -680,8 +680,8 @@ footer {
   font-size: inherit;
 }
 
-.green {
-  color: $green;
+.main {
+  color: $main;
 }
 
 .gold {
@@ -788,7 +788,7 @@ footer {
 
 .points-example p {
   font-size: $font-small;
-  color: $green;
+  color: $main;
   font-weight: 700;
 }
 
