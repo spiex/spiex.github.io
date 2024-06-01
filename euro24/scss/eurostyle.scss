@@ -432,6 +432,10 @@ footer {
   color: $main; //#008EAA;
 }
 
+.star {
+  font-size: 1.2em;
+}
+
 
 .teams {
   @include flexy($just: space-between);
