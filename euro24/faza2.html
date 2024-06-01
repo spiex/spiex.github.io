@@ -20,8 +20,8 @@
     <div class='logotyp-tabelki'><div><img src='img/logoEURwhite.png'></div><a href="punktacja.html" class='infolink'><i class='bx bx-info-circle' ></i><span class='infotekst'>INFO</span></a></div>
 
     <ul>
-      <li><a href="faza1.html" class='selected'>GRUPOWA</a></li>
-      <li><a href="faza2.html">PUCHAROWA</a></li>
+      <li><a href="faza1.html">GRUPOWA</a></li>
+      <li><a href="faza2.html" class='selected'>PUCHAROWA</a></li>
       <li><a href="faza3.html"><i class='bx bxs-trophy'></i>FINAŁ</a></li>
       <li><a href="statystyki.html"><i class='bx bxs-bar-chart-alt-2' ></i></a></li>
     </ul>
@@ -112,44 +112,44 @@
           grupaC += `<div class='tabela-row'>
               <p></p>
               <p>awans do finału</p>
-              <p>0.0</p>
+              <p>0</p>
               <p></p>
               <p class='tabela-divider'>|</p>
-              <p>0.0</p>
+              <p>0</p>
               <p class='tabela-divider'>|</p>
-              <p>6?</p>
+              <p>5?</p>
             </div>`;
             grupaD += `<div class='tabela-row'>
                 <p></p>
                 <p>awans do finału</p>
-                <p>0.0</p>
+                <p>0</p>
                 <p></p>
                 <p class='tabela-divider'>|</p>
-                <p>0.0</p>
+                <p>0</p>
                 <p class='tabela-divider'>|</p>
-                <p>6?</p>
+                <p>5?</p>
               </div>`;
 
           for (g=0; g < 2; g++) {
             grupaC += `<div class='tabela-row row-white'>
                 <p></p>
                 <p>odpada</p>
-                <p>0.0</p>
+                <p>0</p>
                 <p></p>
                 <p class='tabela-divider'>|</p>
-                <p>0.0</p>
+                <p>0</p>
                 <p class='tabela-divider'>|</p>
-                <p>6?</p>
+                <p>5?</p>
               </div>`;
             grupaD += `<div class='tabela-row row-white'>
                 <p></p>
                 <p>odpada</p>
-                <p>0.0</p>
+                <p>0</p>
                 <p></p>
                 <p class='tabela-divider'>|</p>
-                <p>0.0</p>
+                <p>0</p>
                 <p class='tabela-divider'>|</p>
-                <p>6?</p>
+                <p>5?</p>
               </div>`;
             }
         } else {
@@ -252,8 +252,8 @@
         let harmonogram = [];
         let mecze = [];
         let nastepnemecze = [];
-        let poczatekKolejki = 49;
-        let koniecKolejki = 60;//array[0][12];
+        let poczatekKolejki = 37;
+        let koniecKolejki = 48;//array[0][12];
 
         let obecnaKolejka = array[0][1];
         let nastepnaKolejka = parseInt(array[0][1])+1;

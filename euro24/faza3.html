@@ -20,7 +20,7 @@
     <div class='logotyp-tabelki'><div><img src='img/logoEURwhite.png'></div><a href="punktacja.html" class='infolink'><i class='bx bx-info-circle' ></i><span class='infotekst'>INFO</span></a></div>
 
     <ul>
-      <li><a href="faza1.html" class='selected'>GRUPOWA</a></li>
+      <li><a href="faza1.html">GRUPOWA</a></li>
       <li><a href="faza2.html">PUCHAROWA</a></li>
       <li><a href="faza3.html" class='selected'><i class='bx bxs-trophy'></i>FINAŁ</a></li>
       <li><a href="statystyki.html"><i class='bx bxs-bar-chart-alt-2' ></i></a></li>
@@ -89,20 +89,20 @@
         grupaE += `<div class='tabela-row'>
             <p></p>
             <p>zwycięzca tabelki</p>
-            <p>0.0</p>
+            <p>0</p>
             <p></p>
             <p class='tabela-divider'>|</p>
-            <p>0.0</p>
+            <p>0</p>
             <p class='tabela-divider'>|</p>
             <p>?</p>
           </div>`;
         grupaE += `<div class='tabela-row row-white'>
             <p></p>
-            <p>smuteczek</p>
-            <p>0.0</p>
+            <p>hańba</p>
+            <p>0</p>
             <p></p>
             <p class='tabela-divider'>|</p>
-            <p>0.0</p>
+            <p>0</p>
             <p class='tabela-divider'>|</p>
             <p>?</p>
           </div>`;
@@ -160,7 +160,7 @@
     function createHarmonogram(array) {
       let harmonogram = [];
       let mecze = [];
-      let poczatekKolejki = 61;
+      let poczatekKolejki = 49;
 
       for (i=1; i < array.length; i++) {
         // ====== CREATE MECZE
