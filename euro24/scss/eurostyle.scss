@@ -107,7 +107,7 @@ nav {
     text-decoration: none;
     // @include accent-white-text;
     background: $secondary-black-text;
-    color: $black;
+    color: black;
     //font-variant: small-caps;
 		font-weight: bold;
     font-size: .9em;
@@ -709,7 +709,7 @@ footer {
 
 .button {
   text-decoration: none;
-  color: $white;
+  color: black;
   font-size: $font-small;
   text-align: center;
   padding: 12px 0;
@@ -719,9 +719,10 @@ footer {
   border: none;
   outline: none;
   border-radius: 4px;
-  background: $secondary-white-text;
+  background: $secondary-black-text;
   &:hover {
     background: $main;
+    color: $white;
   }
 }
 
@@ -749,7 +750,7 @@ footer {
     &:first-child {
       border-bottom: 2px solid $black;
       font-weight: 700;
-      background: $gold;
+      background: $main;
       min-height: 36px;
       p {
         font-size: $font-small;
