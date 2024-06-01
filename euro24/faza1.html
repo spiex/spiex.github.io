@@ -179,7 +179,7 @@
       } else {
 
         for (i=1; i < array.length; i++) {
-          if (array[i][3] === "A") { // sprawdź czy grupa A
+          if (array[i][4] === "A") { // sprawdź czy grupa A
 
             grupaA += `
               <div class='tabela-row'>
@@ -194,7 +194,7 @@
               </div>
             `
             grupaAsuma += parseInt(array[i][6]);
-          } if (array[i][3] === "B") { // sprawdź czy grupa A
+          } if (array[i][4] === "B") { // sprawdź czy grupa A
             grupaB += `
               <div class='tabela-row'>
                 ${sprawdzProgres()}
