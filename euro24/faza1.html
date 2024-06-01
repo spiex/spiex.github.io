@@ -179,26 +179,26 @@
       } else {
 
         for (i=1; i < array.length; i++) {
-          if (array[i][4] === "A") { // sprawdź czy grupa A
+          if (array[i][3] === "A") { // sprawdź czy grupa A
 
             grupaA += `
               <div class='tabela-row'>
                 ${sprawdzProgres()}
-                <p>${array[i][1]} ${array[i][2]}<span class='gold'>${array[i][3]}</span></p>
-                <p>${array[i][7]}</p>
-                <p>+${array[i][8]}</p>
+                <p>${array[i][1]} ${array[i][2]}</p>
+                <p>${array[i][6]}</p>
+                <p>+${array[i][7]}</p>
                 <p class='tabela-divider'>|</p>
-                <p>${array[i][9]}</p>
+                <p>${array[i][8]}</p>
                 <p class='tabela-divider'>|</p>
-                <p>${array[i][14]}</p>
+                <p>${array[i][13]}</p>
               </div>
             `
             grupaAsuma += parseInt(array[i][6]);
-          } if (array[i][4] === "B") { // sprawdź czy grupa A
+          } if (array[i][3] === "B") { // sprawdź czy grupa A
             grupaB += `
               <div class='tabela-row'>
                 ${sprawdzProgres()}
-                <p>${array[i][1]} ${array[i][2]}<span class='gold'>${array[i][3]}</span></p>
+                <p>${array[i][1]} ${array[i][2]}</p>
                 <p>${array[i][6]}</p>
                 <p>+${array[i][7]}</p>
                 <p class='tabela-divider'>|</p>
