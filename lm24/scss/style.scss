@@ -937,10 +937,8 @@ footer {
   }
   .tabela-bonusy-row-horizontal-divide {
       @include flexy($dir: column);
-      p {
-        min-width: 20%;
-        max-width: 20%;
-      }
+      min-width: 20%;
+      max-width: 20%;
       //border-bottom: dashed 1px $gray;
   }
 }
