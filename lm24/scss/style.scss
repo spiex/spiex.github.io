@@ -907,7 +907,7 @@ footer {
   margin: 8px auto;
   .tabela-bonusy-row {
     @include flexy;
-    //border-bottom: dashed 1px $gray;
+    border-bottom: dashed 1px $gray;
     p {
       height: 28px;
       flex: 1;
@@ -940,6 +940,6 @@ footer {
   }
   .tabela-bonusy-row-horizontal-divide {
       @include flexy($dir: column);
-      border-bottom: dashed 1px $gray;
+      //border-bottom: dashed 1px $gray;
   }
 }
