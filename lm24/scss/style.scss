@@ -939,7 +939,7 @@ footer {
     }
   }
   .tabela-bonusy-row-horizontal-divide {
-      @include flexy($dir: row);
+      @include flexy($dir: column);
       border-bottom: dashed 1px $gray;
   }
 }
