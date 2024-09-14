@@ -72,32 +72,54 @@
 
             // pokaż gwiazdki
             // bonusy += `<div class='tabela-bonusy-row'><p class='bold'>${array[i][0]} ${array[i][1]}<span class='bold gold'>${array[i][2]}</span></p>`;
-            bonusy += `<div class='tabela-bonusy-row'><p class='bold'>${array[i][0]}</p>`;
+            bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
+            bonusy += `<div class='tabela-bonusy-row'><p class='bold'>${array[i][0]}</p>`; //imię gracza
+            bonusy += `<p class='bold gold'>${array[i][30]}</p>`; // suma punktów
+            bonusy += `</div>`
+
             if(array[i][15] === "TRUE") {
               bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p class='bold gold'>${array[i][14]}</p>`;
               bonusy += `<p class='bold gold'>${array[i][16]}</p>`;
               bonusy += `</div>`
             } else {
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p>${array[i][14]}</p>`;
+              bonusy += `<p>${array[i][16]}</p>`;
+              bonusy += `</div>`
             }
             if(array[i][17] === "TRUE") {
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p class='bold gold'>${array[i][18]}</p>`;
               bonusy += `<p class='bold gold'>${array[i][20]}</p>`;
+              bonusy += `</div>`
             } else {
-              bonusy += `<p>${array[i][16]}</p>`;
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
+              bonusy += `<p>${array[i][18]}</p>`;
+              bonusy += `<p>${array[i][20]}</p>`;
+              bonusy += `</div>`
             }
             if(array[i][19] === "TRUE") {
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p class='bold gold'>${array[i][22]}</p>`;
               bonusy += `<p class='bold gold'>${array[i][24]}</p>`;
+              bonusy += `</div>`
             } else {
-              bonusy += `<p>${array[i][18]}</p>`;
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
+              bonusy += `<p>${array[i][22]}</p>`;
+              bonusy += `<p>${array[i][24]}</p>`;
+              bonusy += `</div>`
             }
             if(array[i][21] === "TRUE") {
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p class='bold gold'>${array[i][26]}</p>`;
               bonusy += `<p class='bold gold'>${array[i][28]}</p>`;
+              bonusy += `</div>`
             } else {
-              bonusy += `<p>${array[i][20]}</p>`;
+              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
+              bonusy += `<p>${array[i][26]}</p>`;
+              bonusy += `<p>${array[i][28]}</p>`;
+              bonusy += `</div>`
             }
             bonusy += `</div>`;
         }
