@@ -917,8 +917,7 @@ footer {
         text-align: left;
       }
     }
-    &:first-child,
-    &:nth-child(2) {
+    &:first-child {
       background: $main;
       font-weight: 700;
       border-bottom: none;
@@ -931,8 +930,6 @@ footer {
     &:first-child {
       padding-top: 8px;
       border-radius: 8px 8px 0 0;
-    }
-    &:nth-child(2) {
       padding-bottom: 8px;
       margin-bottom: 8px;
       border-radius: 0 0 8px 8px;
