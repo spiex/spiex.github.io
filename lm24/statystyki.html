@@ -87,49 +87,47 @@
             bonusy += `<p class='bold gold'>${array[i][30]}</p>`; // suma punktów
             bonusy += `</div>`
 
+
+            bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
             if(array[i][15] === "TRUE") {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p class='bold gold'>${array[i][14]}</p>`;
-              bonusy += `<p class='bold gold'>${array[i][16]}</p>`;
-              bonusy += `</div>`
             } else {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
               bonusy += `<p>${array[i][14]}</p>`;
-              bonusy += `<p>${array[i][16]}</p>`;
-              bonusy += `</div>`
             }
             if(array[i][17] === "TRUE") {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-              bonusy += `<p class='bold gold'>${array[i][18]}</p>`;
-              bonusy += `<p class='bold gold'>${array[i][20]}</p>`;
-              bonusy += `</div>`
+              bonusy += `<p class='bold gold'>${array[i][16]}</p>`;
             } else {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-              bonusy += `<p>${array[i][18]}</p>`;
-              bonusy += `<p>${array[i][20]}</p>`;
-              bonusy += `</div>`
+              bonusy += `<p>${array[i][16]}</p>`;
             }
             if(array[i][19] === "TRUE") {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-              bonusy += `<p class='bold gold'>${array[i][22]}</p>`;
-              bonusy += `<p class='bold gold'>${array[i][24]}</p>`;
-              bonusy += `</div>`
+              bonusy += `<p class='bold gold'>${array[i][18]}</p>`;
             } else {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-              bonusy += `<p>${array[i][22]}</p>`;
-              bonusy += `<p>${array[i][24]}</p>`;
-              bonusy += `</div>`
+              bonusy += `<p>${array[i][18]}</p>`;
             }
             if(array[i][21] === "TRUE") {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-              bonusy += `<p class='bold gold'>${array[i][26]}</p>`;
-              bonusy += `<p class='bold gold'>${array[i][28]}</p>`;
-              bonusy += `</div>`
+              bonusy += `<p class='bold gold'>${array[i][20]}</p>`;
             } else {
-              bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
+              bonusy += `<p>${array[i][20]}</p>`;
+            }
+            if(array[i][23] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][22]}</p>`;
+            } else {
+              bonusy += `<p>${array[i][22]}</p>`;
+            }
+            if(array[i][25] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][24]}</p>`;
+            } else {
+              bonusy += `<p>${array[i][24]}</p>`;
+            }
+            if(array[i][27] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][26]}</p>`;
+            } else {
               bonusy += `<p>${array[i][26]}</p>`;
+            }
+            if(array[i][29] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][28]}</p>`;
+            } else {
               bonusy += `<p>${array[i][28]}</p>`;
-              bonusy += `</div>`
             }
             bonusy += `</div>`;
         }
