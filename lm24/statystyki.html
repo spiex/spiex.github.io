@@ -84,56 +84,72 @@
 
             bonusy += `<div class='tabela-bonusy-row'>`
             bonusy += `<div class='tabela-bonusy-row-horizontal-divide'><p class='bold'>${array[i][0]}</p>`; //imię gracza
-            bonusy += `<p class='bold gold'>${array[i][30]}</p>`; // suma punktów
+            bonusy += `<p class='bold gold'>${array[i][38]}</p>`; // suma punktów
             bonusy += `</div>`
 
 
             bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
             if(array[i][15] === "TRUE") {
               bonusy += `<p class='bold gold'>${array[i][14]}</p>`;
+            } else if(array[i][16] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][14]}</p>`;
             } else {
               bonusy += `<p>${array[i][14]}</p>`;
             }
-            if(array[i][17] === "TRUE") {
-              bonusy += `<p class='bold gold'>${array[i][16]}</p>`;
+            if(array[i][18] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][17]}</p>`;
+            } else if(array[i][19] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][17]}</p>`;
             } else {
-              bonusy += `<p>${array[i][16]}</p>`;
+              bonusy += `<p>${array[i][17]}</p>`;
             }
             bonusy += `</div>`
             bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-            if(array[i][19] === "TRUE") {
-              bonusy += `<p class='bold gold'>${array[i][18]}</p>`;
-            } else {
-              bonusy += `<p>${array[i][18]}</p>`;
-            }
             if(array[i][21] === "TRUE") {
               bonusy += `<p class='bold gold'>${array[i][20]}</p>`;
+            } else if(array[i][22] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][20]}</p>`;
             } else {
               bonusy += `<p>${array[i][20]}</p>`;
             }
-            bonusy += `</div>`
-            bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
-            if(array[i][23] === "TRUE") {
-              bonusy += `<p class='bold gold'>${array[i][22]}</p>`;
+            if(array[i][24] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][23]}</p>`;
+            } else if(array[i][25] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][23]}</p>`;
             } else {
-              bonusy += `<p>${array[i][22]}</p>`;
-            }
-            if(array[i][25] === "TRUE") {
-              bonusy += `<p class='bold gold'>${array[i][24]}</p>`;
-            } else {
-              bonusy += `<p>${array[i][24]}</p>`;
+              bonusy += `<p>${array[i][23]}</p>`;
             }
             bonusy += `</div>`
             bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
             if(array[i][27] === "TRUE") {
               bonusy += `<p class='bold gold'>${array[i][26]}</p>`;
+            } else if(array[i][28] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][26]}</p>`;
             } else {
               bonusy += `<p>${array[i][26]}</p>`;
             }
-            if(array[i][29] === "TRUE") {
-              bonusy += `<p class='bold gold'>${array[i][28]}</p>`;
+            if(array[i][30] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][29]}</p>`;
+            } else if(array[i][31] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][29]}</p>`;
             } else {
-              bonusy += `<p>${array[i][28]}</p>`;
+              bonusy += `<p>${array[i][29]}</p>`;
+            }
+            bonusy += `</div>`
+            bonusy += `<div class='tabela-bonusy-row-horizontal-divide'>`
+            if(array[i][33] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][32]}</p>`;
+            } else if(array[i][34] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][32]}</p>`;
+            } else {
+              bonusy += `<p>${array[i][32]}</p>`;
+            }
+            if(array[i][36] === "TRUE") {
+              bonusy += `<p class='bold gold'>${array[i][35]}</p>`;
+            } else if(array[i][37] === "TRUE") {
+              bonusy += `<p class='crossed'>${array[i][35]}</p>`;
+            } else {
+              bonusy += `<p>${array[i][35]}</p>`;
             }
             bonusy += `</div>`;
             bonusy += `</div>`; //end row
