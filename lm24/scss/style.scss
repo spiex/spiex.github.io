@@ -7,7 +7,7 @@
 
 html {
   //background: rgba(0,0,0,.075);
-  background: #000; //$dark-background;
+  background: $black; //$dark-background;
 }
 
 * {
@@ -218,7 +218,7 @@ footer {
    line-height: 0.05em;
    margin-bottom: 0;
    span {
-     background: #000;
+     background: $black;
      color: $white;
      font-size: $font-small;
      padding: 0 10px;
