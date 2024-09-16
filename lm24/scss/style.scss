@@ -751,7 +751,7 @@ footer {
 #punktacja-box {
   .punktacja-row {
     @include flexy;
-    //border-bottom: 1px dashed $gray;
+    border-bottom: 1px dashed $white;
     height: 25px;
     p {
       flex: 3;
@@ -759,8 +759,8 @@ footer {
       margin: 0;
       padding: 4px;
       min-height: 100%;
+      font-size: $font-big;
       &:first-child {
-        font-size: $font-big;
         font-weight: 700;
         color: $gold;
       }
